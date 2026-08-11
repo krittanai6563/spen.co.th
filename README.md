@@ -1,1 +1,0 @@
-# spen.co.th
