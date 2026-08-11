@@ -1,101 +1,74 @@
-  <nav id="navbar"
-    class="fixed w-full z-50 transition-all duration-500 ease-in-out top-6 left-0 right-0 px-4 sm:px-8 flex flex-col items-center">
+<nav id="navbar" class="fixed top-6 left-0 right-0 z-50 flex flex-col items-center w-full px-4 sm:px-8 transition-all duration-500 ease-in-out">
 
-    <!-- กล่องพื้นหลังเมนูหลัก -->
-    <div id="navbar-container"
-        class="w-full max-w-[1400px] bg-[#2b3031]/70 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-3.5 flex justify-between items-center shadow-xl transition-all duration-500 ease-in-out">
+    <div id="navbar-container" class="flex justify-between items-center w-full max-w-[1400px] px-6 py-3.5 bg-[#2b3031]/70 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl transition-all duration-500 ease-in-out">
 
-        <!-- Logo Area -->
         <div class="flex-shrink-0 flex items-center cursor-pointer">
             <a href="index.html">
-                <img id="nav-logo" src="component/images/LOGO.png" alt="SPEN Logo"
-                    class="h-12 md:h-14 w-auto object-contain transition-all duration-500 ease-in-out">
+                <img id="nav-logo" src="components/images/LOGO.png" alt="SPEN Logo" class="h-12 md:h-14 w-auto object-contain transition-all duration-500 ease-in-out">
             </a>
         </div>
 
-        <!-- Desktop Menu -->
         <div class="hidden lg:flex items-center space-x-10">
-            <a href="index.html"
-                class="lang-text text-[#05853f] font-medium transition-colors duration-300 text-base tracking-wide"
-                data-th="หน้าแรก" data-en="Home">Home</a>
-            <a href="item.html"
-                class="lang-text text-white hover:text-[#05853f] transition-all duration-300 text-base font-bold tracking-wide hover:-translate-y-0.5"
-                data-th="สินค้าของเรา" data-en="Products">Products</a>
-            <a href="certificate.html"
-                class="lang-text text-white hover:text-[#05853f] transition-all duration-300 text-base font-bold tracking-wide hover:-translate-y-0.5"
-                data-th="ใบรับรอง" data-en="Certifications">Certifications</a>
-            <a href="about.html"
-                class="lang-text text-white hover:text-[#05853f] transition-all duration-300 text-base font-bold tracking-wide hover:-translate-y-0.5"
-                data-th="เกี่ยวกับบริษัท" data-en="Company">Company</a>
-            <a href="contact_us.html"
-                class="lang-text text-white hover:text-[#05853f] transition-all duration-300 text-base font-bold tracking-wide hover:-translate-y-0.5"
-                data-th="ติดต่อเรา" data-en="Contact">Contact</a>
+            <a href="index.html" class="lang-text text-[#05853f] font-medium text-base tracking-wide transition-colors duration-300" data-th="หน้าแรก" data-en="Home">Home</a>
+            <a href="item.html" class="lang-text text-white hover:text-[#05853f] text-base font-bold tracking-wide transition-all duration-300 hover:-translate-y-0.5" data-th="สินค้าของเรา" data-en="Products">Products</a>
+            <a href="certificate.html" class="lang-text text-white hover:text-[#05853f] text-base font-bold tracking-wide transition-all duration-300 hover:-translate-y-0.5" data-th="ใบรับรอง" data-en="Certifications">Certifications</a>
+            <a href="about.html" class="lang-text text-white hover:text-[#05853f] text-base font-bold tracking-wide transition-all duration-300 hover:-translate-y-0.5" data-th="เกี่ยวกับบริษัท" data-en="Company">Company</a>
+            <a href="contact_us.html" class="lang-text text-white hover:text-[#05853f] text-base font-bold tracking-wide transition-all duration-300 hover:-translate-y-0.5" data-th="ติดต่อเรา" data-en="Contact">Contact</a>
         </div>
 
-        <!-- Action Button (Language Dropdown - Desktop) -->
         <div class="hidden lg:flex items-center relative group perspective">
-            <button
-                class="bg-gradient-to-r from-[#094d23] to-[#059644] text-white px-5 py-2.5 rounded-xl text-sm font-normal transition-all duration-300 flex items-center gap-2 shadow-lg shadow-green-900/30 group-hover:shadow-green-500/40 group-hover:scale-105">
+            <button class="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#094d23] to-[#059644] text-white text-sm font-normal rounded-xl shadow-lg shadow-green-900/30 group-hover:shadow-green-500/40 group-hover:scale-105 transition-all duration-300">
                 <i class="ph ph-globe text-xl"></i>
                 <span id="desktop-lang-text">Language</span>
-                <i class="ph ph-caret-down font-bold ml-1 transition-transform duration-500 ease-out group-hover:-rotate-180"></i>
+                <i class="ph ph-caret-down ml-1 font-bold transition-transform duration-500 ease-out group-hover:-rotate-180"></i>
             </button>
 
-            <div
-                class="absolute right-0 top-[120%] mt-2 w-40 bg-[#1a1d1e]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] transform origin-top-right translate-y-4 group-hover:translate-y-0 scale-95 group-hover:scale-100 overflow-hidden z-50">
+            <div class="absolute right-0 top-[120%] z-50 w-40 mt-2 bg-[#1a1d1e]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] transform origin-top-right translate-y-4 group-hover:translate-y-0 scale-95 group-hover:scale-100 overflow-hidden">
                 <div class="flex flex-col p-1.5 gap-1">
-                    <a href="#" onclick="changeLanguage('en'); return false;"
-                        class="px-4 py-2.5 text-white hover:bg-white/10 hover:text-[#059644] rounded-lg transition-all duration-300 text-sm flex items-center gap-3 hover:translate-x-1">
+                    <a href="#" onclick="changeLanguage('en'); return false;" class="flex items-center gap-3 px-4 py-2.5 text-white hover:bg-white/10 hover:text-[#059644] text-sm rounded-lg transition-all duration-300 hover:translate-x-1">
                         <span class="text-lg leading-none">🇺🇸</span> English
                     </a>
-                    <a href="#" onclick="changeLanguage('th'); return false;"
-                        class="px-4 py-2.5 text-white hover:bg-white/10 hover:text-[#059644] rounded-lg transition-all duration-300 text-sm flex items-center gap-3 hover:translate-x-1">
+                    <a href="#" onclick="changeLanguage('th'); return false;" class="flex items-center gap-3 px-4 py-2.5 text-white hover:bg-white/10 hover:text-[#059644] text-sm rounded-lg transition-all duration-300 hover:translate-x-1">
                         <span class="text-lg leading-none">🇹🇭</span> ไทย
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu Button -->
         <div class="lg:hidden flex items-center">
-            <button id="mobile-menu-btn"
-                class="text-white text-2xl hover:text-[#05853f] transition-colors focus:outline-none">
+            <button id="mobile-menu-btn" class="text-white text-2xl hover:text-[#05853f] transition-colors focus:outline-none">
                 <i id="mobile-menu-icon" class="ph ph-list transition-transform duration-300"></i>
             </button>
         </div>
+
     </div>
 
-    <!-- Mobile Menu Dropdown -->
-    <div id="mobile-menu"
-        class="hidden w-full max-w-[1400px] mt-2 bg-[#2b3031]/95 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 opacity-0 transform -translate-y-2 origin-top">
-        <div class="px-6 py-6 flex flex-col space-y-5">
+    <div id="mobile-menu" class="hidden w-full max-w-[1400px] mt-2 bg-[#2b3031]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 opacity-0 transform -translate-y-2 origin-top">
+        <div class="flex flex-col space-y-5 px-6 py-6">
             <a href="index.html" class="lang-text text-[#05853f] font-medium text-lg" data-th="หน้าแรก" data-en="Home">Home</a>
             <a href="products.html" class="lang-text text-white hover:text-[#05853f] font-bold text-lg transition-colors" data-th="สินค้าของเรา" data-en="Products">Products</a>
             <a href="certificate.html" class="lang-text text-white hover:text-[#05853f] font-bold text-lg transition-colors" data-th="ใบรับรอง" data-en="Certifications">Certifications</a>
             <a href="about.html" class="lang-text text-white hover:text-[#05853f] font-bold text-lg transition-colors" data-th="เกี่ยวกับบริษัท" data-en="Company">Company</a>
             <a href="#contact-section" class="lang-text text-white hover:text-[#05853f] font-bold text-lg transition-colors" data-th="ติดต่อเรา" data-en="Contact">Contact</a>
 
-            <!-- เส้นคั่น -->
-            <div class="w-full h-[1px] bg-white/10 my-2"></div>
+            <div class="w-full h-[1px] my-2 bg-white/10"></div>
 
-            <!-- Language Mobile -->
-            <div class="flex items-center justify-between pt-2">
+            <div class="flex justify-between items-center pt-2">
                 <div class="flex items-center gap-3 text-white font-bold text-lg">
                     <i class="ph ph-globe text-2xl text-[#059644]"></i>
                     <span class="lang-text" data-th="ภาษา" data-en="Language">Language</span>
                 </div>
 
-                <div class="flex items-center bg-black/20 border border-white/10 rounded-xl p-1 shadow-inner">
-                    <a href="#" id="btn-lang-en" onclick="changeLanguage('en'); return false;"
-                        class="flex items-center gap-2 bg-[#059644] text-white px-3 py-1.5 rounded-lg text-sm font-bold shadow-md transition-all">
+                <div class="flex items-center p-1 bg-black/20 border border-white/10 rounded-xl shadow-inner">
+                    <a href="#" id="btn-lang-en" onclick="changeLanguage('en'); return false;" class="flex items-center gap-2 px-3 py-1.5 bg-[#059644] text-white text-sm font-bold rounded-lg shadow-md transition-all">
                         <span class="text-base leading-none">EN</span>
                     </a>
-                    <a href="#" id="btn-lang-th" onclick="changeLanguage('th'); return false;"
-                        class="flex items-center gap-2 text-gray-400 hover:text-white px-3 py-1.5 rounded-lg text-sm font-bold transition-all">
+                    <a href="#" id="btn-lang-th" onclick="changeLanguage('th'); return false;" class="flex items-center gap-2 px-3 py-1.5 text-gray-400 hover:text-white text-sm font-bold rounded-lg transition-all">
                         <span class="text-base leading-none">TH</span>
                     </a>
                 </div>
             </div>
         </div>
     </div>
+
 </nav>

@@ -32,7 +32,7 @@ window.changeLanguage = function(lang) {
     }
 };
 
-async function loadComponents() {
+async function loadcomponentss() {
     try {
    const headerRes = await fetch('components/header.html');
         if (headerRes.ok) document.getElementById('header-placeholder').innerHTML = await headerRes.text();
@@ -45,7 +45,7 @@ async function loadComponents() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await loadComponents();
+    await loadcomponentss();
 
     const currentLang = localStorage.getItem('siteLang') || 'th';
     window.changeLanguage(currentLang);
@@ -356,10 +356,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (imgContainer && serviceCards.length > 0) {
         const serviceImages = [
-            "component/images/Core_Services/Capabilities & Equipment.jpg",
-            "component/images/Core_Services/Quality & Precision.jpg",
-            "component/images/Core_Services/Process Control & Traceability.jpg",
-            "component/images/Core_Services/On-Time Delivery.jpg"
+            "components/images/Core_Services/Capabilities & Equipment.jpg",
+            "components/images/Core_Services/Quality & Precision.jpg",
+            "components/images/Core_Services/Process Control & Traceability.jpg",
+            "components/images/Core_Services/On-Time Delivery.jpg"
         ];
 
         let currentIndex = -1;
