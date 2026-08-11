@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Single Point Engineering | วิศวกรรมแม่นยำระดับโลก</title>
+    <meta name="description" content="Single Point Engineering ผู้นำด้านวิศวกรรมคุณภาพ มาตรฐานสากล พร้อมบริการครบวงจร">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #0f1c1a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            font-size: 17px; /* ฐานใหญ่ขึ้นเล็กน้อย */
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        :root {
+            --primary: #008080;
+            --primary-dark: #006666;
+            --primary-light: #20b2aa;
+            --primary-soft: #e6f3f3;
+            --gray-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --border-light: #e2e8f0;
+            --green-highlight: #2e7d32;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 12px 0;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text h1 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.2px;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+
+        @media (min-width: 480px) {
+            .logo-img { height: 55px; }
+            .logo-text h1 { font-size: 1.1rem; }
+            .logo-text p { font-size: 0.75rem; }
+        }
+
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .desktop-nav ul {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .desktop-nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: 0.2s;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .desktop-nav a:hover {
+            color: var(--primary);
+        }
+
+        /* LANGUAGE DROPDOWN - click + hover persistent */
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-btn {
+            background: white;
+            border: 1px solid var(--border-light);
+            padding: 8px 16px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+        .lang-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .lang-content {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 5px);
+            background: white;
+            min-width: 150px;
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border-light);
+            z-index: 101;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+            pointer-events: none;
+        }
+        .lang-content.show {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .lang-content a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .lang-content a:hover {
+            background: var(--primary-soft);
+            color: var(--primary);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* ========== MOBILE SCROLLABLE NAV ========== */
+        .mobile-nav-wrapper {
+            display: none;
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            padding: 6px 0 8px 0;
+            background: rgba(255, 255, 255, 0.96);
+            border-top: 1px solid var(--border-light);
+            white-space: nowrap;
+        }
+
+        .mobile-nav-wrapper ul {
+            display: inline-flex;
+            gap: 4px;
+            list-style: none;
+            padding: 0 16px;
+            margin: 0;
+        }
+
+        .mobile-nav-wrapper li {
+            display: inline-block;
+        }
+
+        .mobile-nav-wrapper a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.8rem;
+            padding: 6px 12px;
+            border-radius: 40px;
+            display: inline-block;
+        }
+
+        .mobile-nav-wrapper a:active {
+            background: var(--primary-soft);
+            color: var(--primary);
+        }
+
+        @media (max-width: 800px) {
+            .desktop-nav { display: none; }
+            .mobile-nav-wrapper { display: block; }
+        }
+
+        .main-content { padding-top: 80px; }
+        @media (max-width: 800px) { .main-content { padding-top: 100px; } }
+
+        /* ========== HERO VIDEO ========== */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 540px;
+            overflow: hidden;
+            background-color: #0a2a2a;
+        }
+
+        #hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero { min-height: 500px; }
+            #hero-video { object-position: 30% center; }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.45) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            margin-bottom: 32px;
+            color: white;
+            max-width: 700px;
+        }
+
+        /* ===== ปรับปุ่มให้ชิดขอบล่าง ===== */
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: absolute;
+            bottom: 20px;         /* ชิดขอบล่างของ hero section */
+            left: 0;
+            right: 0;
+            padding: 0 20px;
+        }
+
+        /* สำหรับมือถือ ปรับระยะขอบให้ชิดมากขึ้น */
+        @media (max-width: 640px) {
+            .hero-buttons {
+                bottom: 15px;
+                gap: 12px;
+            }
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-outline {
+                padding: 10px 22px;
+                font-size: 0.85rem;
+            }
+        }
+
+        .btn-primary, .btn-outline {
+            padding: 12px 28px;
+            font-size: 0.9rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.2s;
+            display: inline-block;
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            border: 2px solid white;
+            color: white;
+        }
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        @media (min-width: 640px) {
+            .hero-content h1 { font-size: 2.6rem; }
+            .hero-content p { font-size: 1.2rem; }
+            .hero-buttons { bottom: 30px; }
+        }
+
+        /* sections */
+        .about, .expertise, .values, .product-slider, .contact-section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .section-header .subtitle {
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: block;
+            font-size: 1.1rem;
+        }
+        .section-header h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        @media (max-width: 768px) {
+            .section-header h2 { font-size: 2rem; }
+        }
+
+        .about-grid {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        .about-image img {
+            max-width: 100%;
+            border-radius: 28px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .partner-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        .partner-badge {
+            background: var(--gray-bg);
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { flex-direction: column; gap: 35px; }
+        }
+
+        .cards-grid, .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .values-grid { grid-template-columns: repeat(3, 1fr); }
+        @media (max-width: 1024px) {
+            .cards-grid, .values-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .cards-grid, .values-grid { grid-template-columns: 1fr; }
+        }
+
+        .expertise-card, .value-card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 28px;
+            border: 1px solid var(--border-light);
+            transition: 0.25s;
+        }
+        .expertise-card:hover, .value-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-light);
+        }
+        .card-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-soft);
+            margin-bottom: 18px;
+        }
+        .value-card { text-align: center; }
+        .value-icon { font-size: 2.8rem; margin-bottom: 18px; }
+
+        /* ========== PRODUCT SLIDER ========== */
+        .slider-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .slider-wrapper {
+            overflow: hidden;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+            background: #f0f4f4;
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .slider-slide {
+            flex: 0 0 100%;
+            aspect-ratio: 16 / 9;
+            position: relative;
+            background: #eef2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #fefefe;
+            padding: 8px;
+            transition: transform 0.3s;
+        }
+        .slider-slide img:hover {
+            transform: scale(1.01);
+        }
+        .slide-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            padding: 6px 18px;
+            border-radius: 40px;
+            border-left: 4px solid var(--primary);
+        }
+        .slide-label span {
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            font-size: 1.3rem;
+            color: var(--primary);
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+        .slider-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-50%) scale(1.05);
+        }
+        .slider-btn.prev { left: -5px; }
+        .slider-btn.next { right: -5px; }
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 28px;
+        }
+        .dot-btn {
+            width: 10px;
+            height: 10px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+        .dot-btn.active {
+            background: var(--primary);
+            transform: scale(1.4);
+        }
+        @media (max-width: 768px) {
+            .slider-container { max-width: 100%; padding: 0 12px; }
+            .slider-btn { width: 38px; height: 38px; font-size: 1rem; }
+            .slider-btn.prev { left: 0px; }
+            .slider-btn.next { right: 0px; }
+            .slider-slide img { padding: 4px; }
+            .slide-label span { font-size: 0.7rem; }
+        }
+
+        /* Contact section */
+        .contact-wrapper {
+            display: flex;
+            gap: 50px;
+            background: white;
+            border-radius: 32px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .contact-info, .contact-form { flex: 1; }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+        .contact-detail i {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-soft);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        .green-extension {
+            background: #e8f5e9;
+            color: var(--green-highlight);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px 20px;
+            border: 1px solid var(--border-light);
+            border-radius: 28px;
+            background: var(--gray-bg);
+            font-family: inherit;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 48px;
+            font-weight: 700;
+            width: 100%;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .contact-wrapper { flex-direction: column; padding: 30px 24px; gap: 35px; }
+        }
+
+        /* Footer */
+        footer {
+            background: #0a2a2a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col { flex: 1; min-width: 180px; }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+        }
+        .footer-col p, .footer-col a {
+            color: #e0e8e0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2a5a5a;
+            font-size: 0.75rem;
+        }
+        .scroll-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: 0.2s;
+            z-index: 99;
+        }
+        .scroll-top.show { opacity: 1; }
+        #tempPrecisionSlide { display: none; }
+
+        /* Popup Notification */
+        .notification-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        .notification-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .notification-card {
+            position: relative;
+            max-width: 360px;
+            width: 85%;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
+        }
+        .notification-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .card-close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            background: rgba(0, 0, 0, 0.6);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="main-content" id="mainContent">
+    <header id="header">
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="https://i.postimg.cc/bZYYVgTW/picture4-cut2-122x123.png" alt="Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1 data-key="company_name">SINGLE POINT ENGINEERING COMPANY LIMITED</h1>
+                    <p data-key="company_tagline">Quality Engineering, Global Standards</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="desktop-nav">
+                    <ul>
+                        <li><a href="index.html" data-key="menu_home">หน้าแรก</a></li>
+                        <li><a href="item.html" data-key="menu_products">สินค้า</a></li>
+                        <li><a href="certificate.html" data-key="menu_certificate">ใบรับรอง</a></li>
+                        <li><a href="about.html" data-key="menu_company">บริษัท</a></li>
+                        <li><a href="contact_us.html" data-key="menu_contact">ติดต่อ</a></li>
+                    </ul>
+                </div>
+                <div class="lang-dropdown">
+                    <div class="lang-btn" id="langBtnText">🌐 ภาษา ▼</div>
+                    <div class="lang-content" id="langContent">
+                        <a data-lang="th">🇹🇭 ภาษาไทย</a>
+                        <a data-lang="en">🇬🇧 English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-nav-wrapper">
+            <ul>
+                <li><a href="index.html" data-key="menu_home">หน้าแรก</a></li>
+                <li><a href="item.html" data-key="menu_products">สินค้า</a></li>
+                <li><a href="certificate.html" data-key="menu_certificate">ใบรับรอง</a></li>
+                <li><a href="about.html" data-key="menu_company">บริษัท</a></li>
+                <li><a href="contact_us.html" data-key="menu_contact">ติดต่อ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <video autoplay loop muted playsinline id="hero-video">
+            <source src="video_spen/SPEN%20Company%20Profile%20V.9%20Male_TH.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 data-key="hero_title">พลังแห่งวิศวกรรม ขับเคลื่อนโลกสู่วันพรุ่งนี้</h1>
+            <p data-key="hero_desc">โซลูชันวิศวกรรมคุณภาพสูง มาตรฐานสากล พร้อมบริการครบวงจรโดยทีมงานมืออาชีพ</p>
+            <div class="hero-buttons">
+                <a href="item.html" class="btn-primary" data-key="hero_btn1">ดูสินค้าทั้งหมด →</a>
+                <a href="#contact" class="btn-outline" data-key="hero_btn2">ติดต่อเรา</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle" data-key="about_subtitle">▎เกี่ยวกับเรา</span>
+                <h2 data-key="about_title">Single Point Engineering Co., Ltd.</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p data-key="about_desc1">เราคือผู้นำด้านวิศวกรรมคุณภาพ ให้บริการผลิตภัณฑ์ที่มีความแม่นยำสูง ระบบกลไกคุณภาพ และเทคโนโลยีการตรวจสอบที่ทันสมัย ครบวงจรในที่เดียว</p>
+                    <p data-key="about_desc2">ด้วยประสบการณ์กว่า 30 ปี เราได้รับความไว้วางใจจากพันธมิตรระดับโลกในอุตสาหกรรมอิเล็กทรอนิกส์ ยานยนต์ และพลังงาน</p>
+                    <div class="partner-badges">
+                        <span class="partner-badge">🏆 ISO 9001:2025</span>
+                        <span class="partner-badge">🏆 IATF 16949</span>
+                        <span class="partner-badge">🏆 ISO 14001</span>
+                        <span class="partner-badge">🏆 ISO 13485</span>
+                        <span class="partner-badge">🏆 ISO 14064-1</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://i.postimg.cc/W4vWtgkw/Screenshot-2026-05-28-145442.png" alt="About">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="expertise">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle" data-key="expertise_subtitle">▎ความเชี่ยวชาญ</span>
+                <h2 data-key="expertise_title">บริการหลักของเรา</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="expertise-card"><div class="card-number">01</div><h3 data-key="exp1_title">High Quality Product</h3><p data-key="exp1_desc">ผลิตภัณฑ์วิศวกรรมคุณภาพสูง โดยเครื่องจักรมีมาตรฐานสูง </p></div>
+                <div class="expertise-card"><div class="card-number">02</div><h3 data-key="exp2_title">High Mechanical Components</h3><p data-key="exp2_desc">ชิ้นส่วนกลไกคุณภาพเยี่ยม ทนทาน ใช้งานได้ยาวนาน</p></div>
+                <div class="expertise-card"><div class="card-number">03</div><h3 data-key="exp3_title">High Inspected Technology</h3><p data-key="exp3_desc">เทคโนโลยีการตรวจสอบที่แม่นยำ ด้วยเครื่องมือทันสมัย</p></div>
+                <div class="expertise-card"><div class="card-number">04</div><h3 data-key="exp4_title">International Certification</h3><p data-key="exp4_desc">ใบรับรองมาตรฐานโลก ISO, BSI, LROA รับประกันคุณภาพ</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle" data-key="values_subtitle">▎คุณค่าของเรา</span>
+                <h2 data-key="values_title">Core Values</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card"><div class="value-icon">🎯</div><h3 data-key="value1_title">ความเป็นเลิศ</h3><p data-key="value1_desc">มุ่งมั่นส่งมอบความเป็นเลิศในทุกบริการ มาตรฐานสูงกว่าที่คาดหวัง</p></div>
+                <div class="value-card"><div class="value-icon">🤝</div><h3 data-key="value2_title">มุ่งเน้นลูกค้า</h3><p data-key="value2_desc">ลูกค้าสำคัญที่สุด สร้างความพึงพอใจและความสัมพันธ์ระยะยาว</p></div>
+                <div class="value-card"><div class="value-icon">🌟</div><h3 data-key="value3_title">ความซื่อสัตย์สุจริต</h3><p data-key="value3_desc">ดำเนินธุรกิจด้วยจริยธรรม โปร่งใส ไว้วางใจได้</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-slider">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle" data-key="product_slider_subtitle">▎พรีเมียมโซลูชัน</span>
+                <h2 data-key="product_slider_title">OUR PRODUCTS</h2>
+            </div>
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slider-track" id="sliderTrack">
+                        <div class="slider-slide"><img src="https://i.postimg.cc/kG0jFYJw/Screenshot-2026-05-28-094815.png"><div class="slide-label"><span>HDD PARTS</span></div></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/RZF8zbFp/Screenshot-2026-05-29-113738.png"><div class="slide-label"><span>AUTOMOTIVE</span></div></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/XvqzWCzJ/Screenshot-2026-05-28-095059.png"><div class="slide-label"><span>MACHINE PARTS</span></div></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/ydBnd3f2/Screenshot-2026-05-28-100430.png"><div class="slide-label"><span>CAMERA</span></div></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/qR0xpzLZ/Screenshot-2026-05-29-113917.png"><div class="slide-label"><span>AEROSPACE</span></div></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/dVtWRCvr/Screenshot-2026-05-28-095210.png"><div class="slide-label"><span>MEDICAL</span></div></div>
+                        <div class="slider-slide" id="mainPrecisionSlide"><img src="https://i.postimg.cc/x1NKVKvr/472955.jpg"><div class="slide-label"><span>PRECISION</span></div></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/bvgH9ygy/tar.jpg"><div class="slide-label"><span>PRECISION</span></div></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/8cC6KWpM/472953.jpg"><div class="slide-label"><span>PRECISION</span></div></div>
+                    </div>
+                </div>
+                <button class="slider-btn prev" id="prevBtn">❮</button>
+                <button class="slider-btn next" id="nextBtn">❯</button>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle" data-key="contact_subtitle">▎ติดต่อสอบถาม</span>
+                <h2 data-key="contact_title">เราพร้อมให้บริการคุณ</h2>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3 data-key="contact_info_title">ข้อมูลติดต่อ</h3>
+                    <div class="contact-detail"><i class="fas fa-map-marker-alt"></i><p data-key="contact_address">53,53/2 Moo 3, Indra Industrial Park,<br>Namtan, Inburi, Singburi 16110</p></div>
+                    <div class="contact-detail"><i class="fas fa-phone"></i><p><a href="tel:+6636812886">+66 (0) 36-812-886</a> <span class="green-extension">ต่อ 29</span> / <a href="tel:+66863399079">086-339-9079</a></p></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i><p><a href="mailto:sale@spen.co.th">sale@spen.co.th</a></p></div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/sale@spen.co.th" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="form-group"><input type="text" name="ชื่อ" placeholder="ชื่อของคุณ *" required data-key-placeholder="form_name"></div>
+                        <div class="form-group"><input type="email" name="อีเมล" placeholder="อีเมลของคุณ *" required data-key-placeholder="form_email"></div>
+                        <div class="form-group"><input type="tel" name="เบอร์โทร" placeholder="เบอร์โทรศัพท์" data-key-placeholder="form_phone"></div>
+                        <div class="form-group"><textarea name="ข้อความ" rows="4" placeholder="ข้อความของคุณ *" required data-key-placeholder="form_message"></textarea></div>
+                        <button type="submit" class="submit-btn" data-key="form_btn">ส่งข้อความ →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h4 data-key="footer_company">Single Point Engineering</h4><p data-key="footer_tagline">Quality Engineering, Global Standards</p><p>© 2026 SPEN</p></div>
+                <div class="footer-col"><h4 data-key="footer_quick">เมนูด่วน</h4><p><a href="index.html" data-key="menu_home">หน้าแรก</a></p><p><a href="item.html" data-key="menu_products">สินค้า</a></p><p><a href="certificate.html" data-key="menu_certificate">ใบรับรอง</a></p><p><a href="about.html" data-key="menu_company">บริษัท</a></p><p><a href="contact_us.html" data-key="menu_contact">ติดต่อ</a></p></div>
+                <div class="footer-col"><h4 data-key="footer_contact">ติดต่อเรา</h4><p>📞 <a href="tel:+6636812886">036-812-886</a> ต่อ 29</p><p>📱 <a href="tel:+66863399079">086-339-9079</a></p><p>✉️ <a href="mailto:sale@spen.co.th">sale@spen.co.th</a></p></div>
+            </div>
+            <div class="copyright"><p data-key="copyright">© 2026 Single Point Engineering Co., Ltd. | สงวนลิขสิทธิ์</p></div>
+        </div>
+    </footer>
+    <a href="#" id="scrollTopBtn" class="scroll-top">↑</a>
+</div>
+
+<div id="newsPopup" class="notification-overlay">
+    <div class="notification-card">
+        <button class="card-close-btn" id="closePopupBtn">✕</button>
+        <img src="https://i.postimg.cc/JhZp135b/Gemini-Generated-Image-v82xhzv82xhzv82x.png" alt="ข่าวสาร">
+    </div>
+</div>
+
+<script>
+    // Translations
+    const translations = {
+        th: {
+            company_name: "SINGLE POINT ENGINEERING COMPANY LIMITED", company_tagline: "Quality Engineering, Global Standards",
+            menu_home: "หน้าแรก", menu_products: "สินค้า", menu_certificate: "ใบรับรอง", menu_company: "บริษัท", menu_contact: "ติดต่อ",
+            hero_title: "พลังแห่งวิศวกรรม ขับเคลื่อนโลกสู่วันพรุ่งนี้", hero_desc: "โซลูชันวิศวกรรมคุณภาพสูง มาตรฐานสากล พร้อมบริการครบวงจรโดยทีมงานมืออาชีพ",
+            hero_btn1: "ดูสินค้าทั้งหมด →", hero_btn2: "ติดต่อเรา",
+            about_subtitle: "▎เกี่ยวกับเรา", about_title: "Single Point Engineering Co., Ltd.",
+            about_desc1: "เราคือผู้นำด้านวิศวกรรมคุณภาพ ให้บริการผลิตภัณฑ์ที่มีความแม่นยำสูง ระบบกลไกคุณภาพ และเทคโนโลยีการตรวจสอบที่ทันสมัย ครบวงจรในที่เดียว",
+            about_desc2: "ด้วยประสบการณ์กว่า 30 ปี เราได้รับความไว้วางใจจากพันธมิตรระดับโลก",
+            expertise_subtitle: "▎ความเชี่ยวชาญ", expertise_title: "บริการหลักของเรา",
+            exp1_title: "High Quality Product", exp1_desc: "ผลิตภัณฑ์วิศวกรรมคุณภาพสูง โดยเครื่องจักรมีมาตรฐานสูง ",
+            exp2_title: "High Mechanical Components", exp2_desc: "ชิ้นส่วนกลไกคุณภาพเยี่ยม ทนทาน",
+            exp3_title: "High Inspected Technology", exp3_desc: "เทคโนโลยีการตรวจสอบที่แม่นยำ",
+            exp4_title: "International Certification", exp4_desc: "ใบรับรองมาตรฐานโลก ISO, IATF",
+            values_subtitle: "▎คุณค่าของเรา", values_title: "Core Values",
+            value1_title: "ความเป็นเลิศ", value1_desc: "มุ่งมั่นส่งมอบความเป็นเลิศในทุกบริการ",
+            value2_title: "มุ่งเน้นลูกค้า", value2_desc: "ลูกค้าสำคัญที่สุด สร้างความพึงพอใจ",
+            value3_title: "ความซื่อสัตย์", value3_desc: "ดำเนินธุรกิจด้วยจริยธรรม โปร่งใส",
+            product_slider_subtitle: "▎พรีเมียมโซลูชัน", product_slider_title: "OUR PRODUCTS",
+            contact_subtitle: "▎ติดต่อสอบถาม", contact_title: "เราพร้อมให้บริการคุณ",
+            contact_info_title: "ข้อมูลติดต่อ", contact_address: "53,53/2 Moo 3, Indra Industrial Park,<br>Namtan, Inburi, Singburi 16110",
+            form_name: "ชื่อของคุณ *", form_email: "อีเมลของคุณ *", form_phone: "เบอร์โทรศัพท์", form_message: "ข้อความของคุณ *", form_btn: "ส่งข้อความ →",
+            footer_company: "Single Point Engineering", footer_tagline: "Quality Engineering, Global Standards",
+            footer_quick: "เมนูด่วน", footer_contact: "ติดต่อเรา", copyright: "© 2026 Single Point Engineering Co., Ltd. | สงวนลิขสิทธิ์"
+        },
+        en: {
+            company_name: "SINGLE POINT ENGINEERING COMPANY LIMITED", company_tagline: "Quality Engineering, Global Standards",
+            menu_home: "Home", menu_products: "Products", menu_certificate: "Certificate", menu_company: "Company", menu_contact: "Contact",
+            hero_title: "The Power of Engineering Driving Tomorrow", hero_desc: "High-quality engineering solutions, international standards, complete service",
+            hero_btn1: "All Products →", hero_btn2: "Contact Us",
+            about_subtitle: "▎About Us", about_title: "Single Point Engineering Co., Ltd.",
+            about_desc1: "Leader in quality engineering, high-precision products, modern inspection technology.",
+            about_desc2: "30+ years experience trusted by global partners",
+            expertise_subtitle: "▎Expertise", expertise_title: "Our Core Services",
+            exp1_title: "High Quality Product", exp1_desc: "High-quality engineering products, high-standard machinery",
+            exp2_title: "High Mechanical Components", exp2_desc: "Durable mechanical components",
+            exp3_title: "High Inspected Technology", exp3_desc: "Precision inspection technology",
+            exp4_title: "International Certification", exp4_desc: "ISO, IATF, BSI certification",
+            values_subtitle: "▎Our Values", values_title: "Core Values",
+            value1_title: "Excellence", value1_desc: "Commitment to excellence beyond expectations",
+            value2_title: "Customer Focus", value2_desc: "Customers first, long-term relationships",
+            value3_title: "Integrity", value3_desc: "Ethics, transparency, trust",
+            product_slider_subtitle: "▎Premium Solutions", product_slider_title: "OUR PRODUCTS",
+            contact_subtitle: "▎Contact Us", contact_title: "Ready to Serve You",
+            contact_info_title: "Contact Info", contact_address: "53,53/2 Moo 3, Indra Industrial Park,<br>Namtan, Inburi, Singburi 16110",
+            form_name: "Your Name *", form_email: "Your Email *", form_phone: "Phone Number", form_message: "Your Message *", form_btn: "Send →",
+            footer_company: "Single Point Engineering", footer_tagline: "Quality Engineering, Global Standards",
+            footer_quick: "Quick Menu", footer_contact: "Contact Us", copyright: "© 2026 Single Point Engineering Co., Ltd. | All Rights Reserved"
+        }
+    };
+
+    let currentLang = localStorage.getItem('spen_lang') === 'en' ? 'en' : 'th';
+    function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('spen_lang', lang);
+        applyTranslations();
+        const btn = document.getElementById('langBtnText');
+        if (btn) btn.innerHTML = lang === 'th' ? '🌐 ภาษา ▼' : '🌐 Language ▼';
+        const content = document.getElementById('langContent');
+        if (content) content.classList.remove('show');
+    }
+    function applyTranslations() {
+        const t = translations[currentLang];
+        if (!t) return;
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (t[key] !== undefined) el.innerHTML = t[key];
+        });
+        document.querySelectorAll('[data-key-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-key-placeholder');
+            if (t[key]) el.placeholder = t[key];
+        });
+    }
+    applyTranslations();
+
+    // Dropdown logic
+    const langBtn = document.getElementById('langBtnText');
+    const langContent = document.getElementById('langContent');
+    let closeTimer = null;
+    if (langBtn && langContent) {
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (closeTimer) clearTimeout(closeTimer);
+            langContent.classList.toggle('show');
+        });
+        langContent.addEventListener('mouseleave', () => {
+            closeTimer = setTimeout(() => { langContent.classList.remove('show'); }, 1800);
+        });
+        langContent.addEventListener('mouseenter', () => { if (closeTimer) clearTimeout(closeTimer); });
+        document.querySelectorAll('#langContent a').forEach(opt => {
+            opt.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const lang = opt.getAttribute('data-lang');
+                if (lang) setLanguage(lang);
+                langContent.classList.remove('show');
+                if (closeTimer) clearTimeout(closeTimer);
+            });
+        });
+        document.addEventListener('click', (e) => {
+            if (!langBtn.contains(e.target) && !langContent.contains(e.target)) {
+                langContent.classList.remove('show');
+                if (closeTimer) clearTimeout(closeTimer);
+            }
+        });
+    }
+
+    // Date-based promo slide (3-4 June 2026)
+    function updatePrecisionSlide() {
+        const main = document.getElementById('mainPrecisionSlide');
+        const temp = document.getElementById('tempPrecisionSlide');
+        if (!main || !temp) return;
+        const today = new Date();
+        const isSpecial = (today.getFullYear() === 2026 && today.getMonth() === 5 && (today.getDate() === 3 || today.getDate() === 4));
+        main.style.display = isSpecial ? 'none' : 'block';
+        temp.style.display = isSpecial ? 'block' : 'none';
+    }
+    updatePrecisionSlide();
+
+    // Slider fully replicated from item.html
+    setTimeout(() => {
+        const track = document.getElementById('sliderTrack');
+        const getVisibleSlides = () => Array.from(document.querySelectorAll('.slider-slide')).filter(s => getComputedStyle(s).display !== 'none');
+        let slides = getVisibleSlides();
+        let currentIndex = 0, total = slides.length;
+        let autoInterval, isTransitioning = false;
+        const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn'), dotsContainer = document.getElementById('sliderDots');
+
+        function rebuild() {
+            slides = getVisibleSlides();
+            total = slides.length;
+            if (currentIndex >= total) currentIndex = Math.max(0, total - 1);
+            updatePosition(true);
+            createDots();
+        }
+        function updatePosition(noTransition = false) {
+            if (noTransition) track.style.transition = 'none';
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            if (noTransition) setTimeout(() => track.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1)', 20);
+        }
+        function createDots() {
+            if (!dotsContainer) return;
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                let dot = document.createElement('button');
+                dot.classList.add('dot-btn');
+                if (i === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+        }
+        function updateDots() {
+            document.querySelectorAll('.dot-btn').forEach((dot, i) => {
+                if (i === currentIndex) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+        }
+        function goToSlide(idx) {
+            if (isTransitioning || idx === currentIndex || idx < 0 || idx >= total) return;
+            isTransitioning = true;
+            currentIndex = idx;
+            updatePosition();
+            updateDots();
+            setTimeout(() => { isTransitioning = false; }, 500);
+            resetAuto();
+        }
+        function nextSlide() { if (isTransitioning) return; goToSlide((currentIndex + 1) % total); }
+        function prevSlide() { if (isTransitioning) return; goToSlide((currentIndex - 1 + total) % total); }
+        function startAuto() { if (autoInterval) clearInterval(autoInterval); autoInterval = setInterval(nextSlide, 5500); }
+        function resetAuto() { clearInterval(autoInterval); startAuto(); }
+
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        createDots();
+        startAuto();
+        const wrapper = document.querySelector('.slider-wrapper');
+        if (wrapper) {
+            wrapper.addEventListener('mouseenter', () => clearInterval(autoInterval));
+            wrapper.addEventListener('mouseleave', startAuto);
+        }
+        window.addEventListener('resize', () => rebuild());
+        const observer = new MutationObserver(() => rebuild());
+        const mainSlide = document.getElementById('mainPrecisionSlide');
+        const tempSlide = document.getElementById('tempPrecisionSlide');
+        if (mainSlide) observer.observe(mainSlide, { attributes: true, attributeFilter: ['style'] });
+        if (tempSlide) observer.observe(tempSlide, { attributes: true, attributeFilter: ['style'] });
+    }, 100);
+
+    // Scroll
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 250) scrollBtn.classList.add('show');
+        else scrollBtn.classList.remove('show');
+        if (window.scrollY > 50) header.classList.add('header-scrolled');
+        else header.classList.remove('header-scrolled');
+    });
+    if (scrollBtn) scrollBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+    // Popup
+    const popup = document.getElementById('newsPopup');
+    const closePopup = document.getElementById('closePopupBtn');
+    function closePopupFunc() {
+        if (popup) {
+            popup.classList.add('hidden');
+            setTimeout(() => { if (popup) popup.style.display = 'none'; }, 300);
+        }
+    }
+    let timer = setTimeout(closePopupFunc, 5000);
+    if (closePopup) closePopup.addEventListener('click', () => { clearTimeout(timer); closePopupFunc(); });
+    if (popup) popup.addEventListener('click', (e) => { if (e.target === popup) { clearTimeout(timer); closePopupFunc(); } });
+</script>
+</body>
+</html>

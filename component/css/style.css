@@ -1,0 +1,93 @@
+/* --- โค้ดในไฟล์ style.css --- */
+
+@font-face {
+    font-family: 'Neue Haas Display';
+    src: url('../fonts/NeueHaasDisplayRoman.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Haas Display';
+    src: url('../fonts/NeueHaasDisplayMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Haas Display';
+    src: url('../fonts/NeueHaasDisplayBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Haas Display';
+    src: url('../fonts/NeueHaasDisplayBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Neue Haas Display', sans-serif;
+}
+
+.hero-bg {
+    background-image: url('../images/Homepage_SPEN.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+.cert-bg {
+    background-image: linear-gradient(to right, rgba(2, 51, 24, 0.95), rgba(2, 51, 24, 0.8)), url('https://placehold.co/1920x600/023318/069948?text=Factory+Background');
+    background-size: cover;
+    background-position: center;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.delay-200 { animation-delay: 200ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-800 { animation-delay: 800ms; }
+.delay-1000 { animation-delay: 1000ms; }
+
+.draw-border {
+    stroke-dasharray: 308;
+    stroke-dashoffset: 308;
+    transition: stroke-dashoffset 1s ease-in-out;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.draw-border.drawn {
+    stroke-dashoffset: 0;
+}

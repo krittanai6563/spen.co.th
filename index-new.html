@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPEN - The Power of Engineering Driving Tomorrow</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="component/images/main-Logo-google.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="component/images/main-Logo-google.png">
+    <link rel="stylesheet" href="component/css/style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        spen: {
+                            green: '#069948',
+                            dark: '#023318',
+                            black: '#111111',
+                            gray: '#f5f5f5',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Neue Haas Display"', '"Neue Haas Grotesk Display Pro"', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+                        neue: ['"Neue Haas Display"', 'sans-serif']
+                    },
+                    // เพิ่ม Keyframes สำหรับเอฟเฟกต์วงกลมลอยขึ้นลง
+                    keyframes: {
+                        bounce: {
+                            '0%, 100%': { transform: 'translateY(-50%)' }, // ลอยอยู่ตำแหน่งปกติ
+                            '50%': { transform: 'translateY(calc(-50% - 15px))' }, // ลอยขึ้นไปอีก 15px
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }, // ลอยขึ้น 10px
+                        }
+
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="font-sans text-spen-black antialiased bg-white selection:bg-spen-green selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar"
+        class="fixed w-full z-50 transition-all duration-500 ease-in-out top-6 left-0 right-0 px-4 sm:px-8 flex flex-col items-center">
+
+        <!-- กล่องพื้นหลังเมนูหลัก -->
+        <div id="navbar-container"
+            class="w-full max-w-[1400px] bg-[#2b3031]/70 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-3.5 flex justify-between items-center shadow-xl transition-all duration-500 ease-in-out">
+
+            <!-- Logo Area -->
+            <div class="flex-shrink-0 flex items-center cursor-pointer">
+                <img id="nav-logo" src="component/images/LOGO.png" alt="SPEN Logo"
+                    class="h-12 md:h-14 w-auto object-contain transition-all duration-500 ease-in-out">
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-10">
+                <a href="#"
+                    class="text-[#05853f] font-medium transition-colors duration-300 text-base tracking-wide">Home</a>
+                <a href="#"
+                    class="text-white hover:text-[#05853f] transition-all duration-300 text-base font-bold tracking-wide hover:-translate-y-0.5">Products</a>
+                <a href="#"
+                    class="text-white hover:text-[#05853f] transition-all duration-300 text-base font-bold tracking-wide hover:-translate-y-0.5">Certifications</a>
+                <a href="#"
+                    class="text-white hover:text-[#05853f] transition-all duration-300 text-base font-bold tracking-wide hover:-translate-y-0.5">Company</a>
+                <a href="#"
+                    class="text-white hover:text-[#05853f] transition-all duration-300 text-base font-bold tracking-wide hover:-translate-y-0.5">Contact</a>
+            </div>
+
+            <!-- Action Button (Language Dropdown - Desktop) -->
+            <div class="hidden lg:flex items-center relative group perspective">
+                <button
+                    class="bg-gradient-to-r from-[#094d23] to-[#059644] text-white px-5 py-2.5 rounded-xl text-sm font-normal transition-all duration-300 flex items-center gap-2 shadow-lg shadow-green-900/30 group-hover:shadow-green-500/40 group-hover:scale-105">
+                    <i class="ph ph-globe text-xl"></i>
+                    Language
+                    <i
+                        class="ph ph-caret-down font-bold ml-1 transition-transform duration-500 ease-out group-hover:-rotate-180"></i>
+                </button>
+
+                <div
+                    class="absolute right-0 top-[120%] mt-2 w-40 bg-[#1a1d1e]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] transform origin-top-right translate-y-4 group-hover:translate-y-0 scale-95 group-hover:scale-100 overflow-hidden z-50">
+                    <div class="flex flex-col p-1.5 gap-1">
+                        <a href="#"
+                            class="px-4 py-2.5 text-white hover:bg-white/10 hover:text-[#059644] rounded-lg transition-all duration-300 text-sm flex items-center gap-3 hover:translate-x-1">
+                            <span class="text-lg leading-none">🇺🇸</span> English
+                        </a>
+                        <a href="#"
+                            class="px-4 py-2.5 text-white hover:bg-white/10 hover:text-[#059644] rounded-lg transition-all duration-300 text-sm flex items-center gap-3 hover:translate-x-1">
+                            <span class="text-lg leading-none">🇹🇭</span> ไทย
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden flex items-center">
+                <button id="mobile-menu-btn"
+                    class="text-white text-2xl hover:text-[#05853f] transition-colors focus:outline-none">
+                    <i id="mobile-menu-icon" class="ph ph-list transition-transform duration-300"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown (แสดงเฉพาะตอนกดเปิดบนมือถือ) -->
+        <div id="mobile-menu"
+            class="hidden w-full max-w-[1400px] mt-2 bg-[#2b3031]/95 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 opacity-0 transform -translate-y-2 origin-top">
+            <div class="px-6 py-6 flex flex-col space-y-5">
+                <a href="#" class="text-[#05853f] font-medium text-lg">Home</a>
+                <a href="#" class="text-white hover:text-[#05853f] font-bold text-lg transition-colors">Products</a>
+                <a href="#"
+                    class="text-white hover:text-[#05853f] font-bold text-lg transition-colors">Certifications</a>
+                <a href="#" class="text-white hover:text-[#05853f] font-bold text-lg transition-colors">Company</a>
+                <a href="#" class="text-white hover:text-[#05853f] font-bold text-lg transition-colors">Contact</a>
+
+                <!-- เส้นคั่น -->
+                <div class="w-full h-[1px] bg-white/10 my-2"></div>
+
+                <!-- Language Mobile -->
+                <div class="flex items-center justify-between pt-2">
+                    <!-- ฝั่งซ้าย: ไอคอนและข้อความ -->
+                    <div class="flex items-center gap-3 text-white font-bold text-lg">
+                        <i class="ph ph-globe text-2xl text-spen-green"></i>
+                        <span>Language</span>
+                    </div>
+
+                    <div class="flex items-center bg-black/20 border border-white/10 rounded-xl p-1 shadow-inner">
+                        <a href="#"
+                            class="flex items-center gap-2 bg-spen-green text-white px-3 py-1.5 rounded-lg text-sm font-bold shadow-md transition-all">
+                            <span class="text-base leading-none">EN</span>
+                        </a>
+                        <a href="#"
+                            class="flex items-center gap-2 text-gray-400 hover:text-white px-3 py-1.5 rounded-lg text-sm font-bold transition-all">
+                            <span class="text-base leading-none">🇹🇭</span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ปรับความสูงเป็น min-h-[100svh] สำหรับมือถือ และเพิ่ม pt-28 เพื่อหลบเมนูด้านบน -->
+    <section
+        class="relative w-full min-h-[100svh] lg:min-h-screen flex items-center hero-bg pt-28 pb-24 lg:pt-20 overflow-hidden">
+
+        <!-- เลเยอร์สีดำบางๆ เผื่อกรณีใช้สคริปต์ Parallax -->
+        <div id="hero-overlay" class="absolute inset-0 bg-black/10 z-0 pointer-events-none transition-opacity"></div>
+
+        <div class="w-full max-w-[1400px] mx-auto px-5 sm:px-8 relative z-10">
+            <div id="hero-content" class="max-w-2xl mt-4 sm:mt-10 transition-transform duration-75 ease-out">
+
+                <!-- 1. ป้ายกำกับ (ปรับขนาดข้อความบนมือถือ) -->
+                <div
+                    class="flex items-center gap-3 mb-4 opacity-0 animate-fade-in-up delay-200 [animation-fill-mode:forwards]">
+                    <div class="w-5 sm:w-6 h-[1.5px] bg-gray-200"></div>
+                    <span
+                        class="text-gray-200 text-sm sm:text-base lg:text-lg font-light tracking-wide uppercase sm:normal-case">High
+                        Precision Manufacturing</span>
+                </div>
+
+                <!-- 2. หัวข้อหลัก (ปรับขนาดตาม Breakpoints) -->
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.15] sm:leading-[1.1] mb-5 sm:mb-6 opacity-0 animate-fade-in-up delay-400 [animation-fill-mode:forwards]">
+                    The Power of Engineering<br class="hidden sm:block">
+                    <span class="sm:hidden"> </span>Driving Tomorrow
+                </h1>
+
+                <!-- 3. ข้อความรายละเอียด (ปรับให้อ่านง่ายขึ้นบนมือถือ) -->
+                <p
+                    class="text-gray-200 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 max-w-xl leading-relaxed font-light opacity-0 animate-fade-in-up delay-600 [animation-fill-mode:forwards]">
+                    At Single Point Engineering, 'We Deliver Excellence' is not just a promise,
+                    but the foundation of our daily operations. Our customers value high-precision
+                    products, deep industry understanding, and responsive service.
+                </p>
+
+                <!-- 4. ปุ่ม Action (ปรับให้เต็มจอในมือถือ และวางคู่กันในแท็บเล็ต/เดสก์ท็อป) -->
+                <div
+                    class="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-5 mb-10 sm:mb-12 opacity-0 animate-fade-in-up delay-800 [animation-fill-mode:forwards]">
+                    <button
+                        class="w-full sm:w-auto bg-[#05853f] hover:bg-green-700 text-white px-6 sm:px-8 py-3.5 sm:py-4 lg:py-3.5 rounded-xl text-base lg:text-lg font-medium transition-all flex items-center justify-center gap-3 shadow-lg shadow-spen-green/20 hover:scale-105">
+                        All Products <i class="ph ph-arrow-right text-lg"></i>
+                    </button>
+                    <button
+                        class="w-full sm:w-auto bg-gradient-to-r from-white/30 to-white/10 hover:from-white/40 hover:to-white/20 border border-white/30 text-white px-6 sm:px-8 py-3.5 sm:py-4 lg:py-3.5 rounded-xl text-base lg:text-lg font-medium transition-all backdrop-blur-md flex items-center justify-center gap-3 shadow-lg shadow-black/10 hover:scale-105">
+                        Contact Us <i class="ph ph-arrow-right text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- 5. โลโก้ลูกค้า (ปรับขนาดวงกลมให้เล็กลงนิดหน่อยในมือถือ) -->
+                <div
+                    class="flex items-center gap-3 sm:gap-4 opacity-0 animate-fade-in-up delay-1000 [animation-fill-mode:forwards]">
+                    <div class="flex -space-x-2 sm:-space-x-1 hover:-space-x-0 transition-all duration-300">
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white flex items-center justify-center p-1.5 z-30 shadow-md hover:scale-110 transition-transform cursor-pointer">
+                            <img src="component/images/Group 185783.svg" alt="Customer 1"
+                                class="w-full h-full object-contain">
+                        </div>
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white flex items-center justify-center p-1.5 z-20 shadow-md hover:scale-110 transition-transform cursor-pointer">
+                            <img src="component/images/Logo_Circle_Cosmo.svg" alt="Customer 2"
+                                class="w-full h-full object-contain">
+                        </div>
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white flex items-center justify-center p-1.5 z-10 shadow-md hover:scale-110 transition-transform cursor-pointer">
+                            <img src="component/images/Logo_Circle_Kyocera.svg" alt="Customer 3"
+                                class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                    <div
+                        class="text-white text-xs sm:text-sm font-light tracking-wide leading-tight cursor-pointer hover:text-[#05853f] transition-colors">
+                        <span class="block">See All</span>
+                        <span class="block">Our Customers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- Statistics Section -->
+    <section
+        class="py-14 border-b border-gray-200 relative overflow-hidden bg-gray-100 bg-[url('component/images/background.jpg')] bg-cover bg-center">
+
+        <!-- เลเยอร์สีขาวบางๆ เพื่อช่วยให้ตัวหนังสืออ่านง่ายขึ้นเวลามีพื้นหลัง (ปรับความเข้มที่ bg-white/80) -->
+        <div class="absolute inset-0 bg-white/80 lg:bg-white/60 pointer-events-none"></div>
+
+        <div class="max-w-[1400px] mx-auto px-5 sm:px-8 relative z-10">
+            <!-- ปรับเป็น Grid 2 คอลัมน์บนมือถือ และเรียงแถวเดียวบนหน้าจอใหญ่ -->
+            <div class="grid grid-cols-2 gap-y-10 gap-x-4 lg:flex lg:justify-between lg:items-center w-full">
+
+                <!-- Stat 1: Years Experience -->
+                <div
+                    class="stat-item flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 opacity-0">
+                    <img src="component/images/Years Experience.svg" alt="Clock Icon"
+                        class="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm">
+                    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                        <h3 class="text-4xl md:text-[42px] font-black text-black leading-none tracking-tight">
+                            <span class="counter-value" data-target="30">0</span>+
+                        </h3>
+                        <p class="text-xs md:text-[14px] text-gray-700 font-medium md:font-light mt-1.5 tracking-wide">
+                            Years Experience</p>
+                    </div>
+                </div>
+
+                <!-- Stat 2: Global Customers -->
+                <div
+                    class="stat-item flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 opacity-0">
+                    <img src="component/images/Global Customers.svg" alt="Globe Icon"
+                        class="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm">
+                    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                        <h3 class="text-4xl md:text-[42px] font-black text-black leading-none tracking-tight">
+                            <span class="counter-value" data-target="190">0</span>+
+                        </h3>
+                        <p class="text-xs md:text-[14px] text-gray-700 font-medium md:font-light mt-1.5 tracking-wide">
+                            Global Customers</p>
+                    </div>
+                </div>
+
+                <!-- Stat 3: Factory Area -->
+                <div
+                    class="stat-item flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 opacity-0">
+                    <img src="component/images/Factory Area.svg" alt="Factory Icon"
+                        class="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm">
+                    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                        <h3
+                            class="text-4xl md:text-[42px] font-black text-black leading-none tracking-tight flex items-baseline">
+                            <span class="counter-value" data-target="2.8" data-decimals="1">0.0</span>K
+                            <span class="text-base md:text-[20px] font-bold ml-1 md:ml-1.5 tracking-normal">sq.m.</span>
+                        </h3>
+                        <p class="text-xs md:text-[14px] text-gray-700 font-medium md:font-light mt-1.5 tracking-wide">
+                            Factory Area</p>
+                    </div>
+                </div>
+
+                <!-- Stat 4: Employees -->
+                <div
+                    class="stat-item flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 opacity-0">
+                    <img src="component/images/Icon_Employees.svg" alt="User Icon"
+                        class="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm">
+                    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                        <h3 class="text-4xl md:text-[42px] font-black text-black leading-none tracking-tight">
+                            <span class="counter-value" data-target="190">0</span>
+                        </h3>
+                        <p class="text-xs md:text-[14px] text-gray-700 font-medium md:font-light mt-1.5 tracking-wide">
+                            Employees</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="py-20 md:py-34 bg-white overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+                <!-- ฝั่งซ้าย: รูปภาพ (เฟดและเลื่อนลงจากด้านบน) -->
+                <div
+                    class="order-2 lg:order-1 relative w-full aspect-[4/3] about-img opacity-0 -translate-y-16 transition-all duration-1000 ease-out">
+                    <div class="absolute inset-0 w-full h-full rounded-2xl overflow-hidden">
+                        <img src="component/images/AdobeStock.png" alt="SPEN Factory Building"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- ฝั่งขวา: ข้อความ (เพิ่ม id="about-parallax" สำหรับทำเอฟเฟกต์เลื่อนตามเมาส์) -->
+                <div id="about-parallax" class="order-1 lg:order-2 flex flex-col justify-center">
+
+                    <!-- ก้อนที่ 1: หัวข้อย่อย -->
+                    <div
+                        class="about-item flex items-center gap-3 mb-4 opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <div class="w-6 h-[2px] bg-[#05853f]"></div>
+                        <span class="text-black font-bold text-xl tracking-wide">About Us</span>
+                    </div>
+
+                    <!-- ก้อนที่ 2: หัวข้อหลัก -->
+                    <h2
+                        class="about-item text-4xl md:text-5xl font-black text-black mb-8 leading-[1.1] tracking-tight opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        Single Point <br>Engineering Co., Ltd.
+                    </h2>
+
+                    <!-- ก้อนที่ 3 และ 4: ย่อหน้าข้อความ -->
+                    <div
+                        class="text-gray-500 font-light text-base md:text-[17px] leading-relaxed tracking-wide space-y-4">
+                        <p class="about-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                            Leader in quality engineering, high-precision products, modern inspection technology. 30+
+                            years experience trusted by global partners.
+                        </p>
+                        <p class="about-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                            For over 28 years, Single Point Engineering (SPEN) has been a trusted partner in
+                            high-precision manufacturing. As a BOI-promoted company with two state-of-the-art facilities
+                            in Thailand, SPEN is built on a legacy of excellence, continuous expansion, and technical
+                            innovation.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Products Section -->
+    <section class="py-20 md:py-34 bg-white overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+
+                <!-- ฝั่งบน (Mobile) / ฝั่งขวา (Desktop): รูปภาพ -->
+                <div
+                    class="order-1 lg:order-2 relative w-full aspect-[4/3] lg:aspect-[4/3.5] product-img opacity-0 -translate-y-16 transition-all duration-1000 ease-out">
+                    <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden">
+                        <img src="component/images/Our Products/That Powers Progress.png" alt="Precision Inspection"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- ฝั่งล่าง (Mobile) / ฝั่งซ้าย (Desktop): ข้อความ (มี id="products-parallax") -->
+                <div id="products-parallax"
+                    class="order-2 lg:order-1 flex flex-col justify-center transition-transform duration-75 ease-out">
+
+                    <!-- ก้อนที่ 1: หัวข้อย่อย -->
+                    <div
+                        class="product-item flex items-center gap-3 mb-4 opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <div class="w-6 h-[2px] bg-[#05853f]"></div>
+                        <span class="text-black font-bold text-lg md:text-xl tracking-wide">Our Products</span>
+                    </div>
+
+                    <!-- ก้อนที่ 2: หัวข้อหลัก -->
+                    <h2
+                        class="product-item text-4xl md:text-5xl font-black text-black mb-6 md:mb-8 leading-[1.1] tracking-tight opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        That Powers Progress
+                    </h2>
+
+                    <!-- ก้อนที่ 3: เนื้อหาพารากราฟ -->
+                    <div
+                        class="product-item text-gray-500 font-light text-base md:text-[17px] leading-relaxed tracking-wide space-y-4 mb-8 md:mb-10 opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <p>Our commitment to quality and compliance is reflected in our globally recognized
+                            certifications: ISO 9001:2015 for quality management, ISO 14001:2015 for environmental
+                            responsibility, and IATF 16949:2016 for automotive-grade manufacturing. These standards are
+                            more than checkboxes, they define how we work, think, and deliver.</p>
+                        <p>SPEN proudly serves some of the world's most demanding industries, including automotive,
+                            aerospace, hard disk drives, cameras, medical devices, and electronics. Whether you're
+                            launching a new product or seeking a long-term manufacturing partner, SPEN delivers the
+                            precision, reliability, and responsiveness your business demands.</p>
+                    </div>
+
+                    <!-- ก้อนที่ 4: โลโก้ Certifications (ปรับย่อขนาดลงในมือถือ และเว้นระยะให้สวยงาม) -->
+                    <div
+                        class="product-item flex flex-wrap items-center gap-3 sm:gap-4 opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <img src="component/images/Our Products/IATF 16949.svg" alt="IATF 16949"
+                            class="h-10 sm:h-12 md:h-14 w-auto object-contain">
+                        <img src="component/images/Our Products/ISO 9001.svg" alt="ISO 9001"
+                            class="h-10 sm:h-12 md:h-14 w-auto object-contain">
+                        <img src="component/images/Our Products/MASCI.svg" alt="ISO 14001"
+                            class="h-10 sm:h-12 md:h-14 w-auto object-contain">
+                        <img src="component/images/Our Products/INTERCERT.svg" alt="Cert 4"
+                            class="h-10 sm:h-12 md:h-14 w-auto object-contain">
+                        <img src="component/images/Our Products/BSI.svg" alt="Cert 5"
+                            class="h-10 sm:h-12 md:h-14 w-auto object-contain border border-gray-200 rounded bg-white">
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+    <section class="py-20 md:py-32 bg-white overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-8 w-full">
+
+            <!-- Wrapper พิเศษสำหรับทำ Parallax (id="serve-title-parallax") -->
+            <div id="serve-title-parallax" class="transition-transform duration-75 ease-out">
+
+                <!-- Header: Plus Sign & Text (ยังคงคลาส serve-item ไว้เฟดตอนแรก) -->
+                <div
+                    class="mb-16 md:mb-24 flex items-start gap-4 md:gap-8 serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                    <!-- เครื่องหมายบวก -->
+                    <span
+                        class="text-spen-green text-5xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black leading-none mt-1 md:mt-3 block">
+                        +
+                    </span>
+                    <!-- ข้อความ -->
+                    <h2
+                        class="text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] font-black text-black leading-[1.1] tracking-tight">
+                        The Industries<br>We Serve
+                    </h2>
+                </div>
+
+            </div>
+
+            <!-- Middle Content Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12 mb-16 lg:mb-20 items-start">
+
+                <!-- Left Column: Heading & Text -->
+                <div class="flex flex-col serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                    <h2
+                        class="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[3rem] font-black text-black leading-[1.1] tracking-tight mb-6 md:mb-8">
+                        Premium<br>Solutions
+                    </h2>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-8 h-[2px] bg-spen-green"></div>
+                        <h3 class="text-xl md:text-2xl font-bold text-black">Our Products</h3>
+                    </div>
+                    <p class="text-gray-500 text-sm md:text-base leading-relaxed pr-4">
+                        Explore our range of high-precision machined components engineered<br class="hidden xl:block">
+                        to meet the demanding requirements of global industries.
+                    </p>
+                </div>
+
+                <!-- Center Column: HDD Parts -->
+                <div
+                    class="flex flex-col items-start text-left w-full pt-4 lg:pt-10 serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                    <img src="component/images/Serve/Icon_HDD.svg" alt="HDD Icon"
+                        class="h-10 md:h-12 w-auto mb-6 md:mb-8">
+                    <div class="w-full h-[1px] bg-gray-300 mb-6"></div>
+                    <h4 class="text-xl md:text-2xl font-bold text-black mb-3 md:mb-4">HDD Parts</h4>
+                    <p class="text-gray-500 text-sm md:text-base leading-relaxed pr-4">
+                        We satisfy your needs with stringent<br class="hidden lg:block">
+                        engineering and high quality products.
+                    </p>
+                </div>
+
+                <!-- Right Column: NON-HDD Parts -->
+                <div
+                    class="flex flex-col items-start text-left w-full pt-4 lg:pt-10 serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                    <div class="relative mb-6 md:mb-8">
+                        <img src="component/images/Serve/Icon_Non HDD.svg" alt="NON-HDD Icon"
+                            class="h-10 md:h-12 w-auto">
+                    </div>
+                    <div class="w-full h-[1px] bg-gray-300 mb-6"></div>
+                    <h4 class="text-xl md:text-2xl font-bold text-black mb-3 md:mb-4">NON-HDD Parts</h4>
+                    <p class="text-gray-500 text-sm md:text-base leading-relaxed pr-4">
+                        We support from design to mass<br class="hidden lg:block">
+                        production.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Products Gallery (สไลด์การ์ด) -->
+            <div id="product-slider"
+                class="flex gap-4 sm:gap-5 md:gap-6 overflow-x-auto pb-6 hide-scrollbar snap-x snap-mandatory justify-start cursor-grab scroll-smooth serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+
+                <!-- Card 1 -->
+                <div
+                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                        <img src="component/images/Serve/electronics.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            alt="Electronics">
+                    </div>
+                    <div
+                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                        <h5 class="font-bold text-black text-sm md:text-base xl:text-lg">Electronics</h5>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                        <img src="component/images/Serve/automotive.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            alt="Automotive">
+                    </div>
+                    <div
+                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                        <h5 class="font-bold text-black text-sm md:text-base xl:text-lg">Automotive</h5>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                        <img src="component/images/Serve/machine part.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            alt="Machined Parts">
+                    </div>
+                    <div
+                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                        <h5 class="font-bold text-black text-sm md:text-base xl:text-lg">Machined Parts</h5>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                        <img src="component/images/Serve/hard drive.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            alt="Hard Drive">
+                    </div>
+                    <div
+                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                        <h5 class="font-bold text-black text-sm md:text-base xl:text-lg">Hard Drive</h5>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                        <img src="component/images/Serve/watch.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            alt="Watch">
+                    </div>
+                    <div
+                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                        <h5 class="font-bold text-black text-sm md:text-base xl:text-lg">Watch</h5>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div
+                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                        <img src="component/images/Serve/camera.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            alt="Camera">
+                    </div>
+                    <div
+                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                        <h5 class="font-bold text-black text-sm md:text-base xl:text-lg">Camera</h5>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div
+                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                        <img src="component/images/Serve/Medical.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            alt="Medical">
+                    </div>
+                    <div
+                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                        <h5 class="font-bold text-black text-sm md:text-base xl:text-lg">Medical</h5>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div
+                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                        <img src="component/images/Serve/drone.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            alt="Drones">
+                    </div>
+                    <div
+                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                        <h5 class="font-bold text-black text-sm md:text-base xl:text-lg">Drones</h5>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination Indicator (ทำงานร่วมกับ JS เดิมของคุณ) -->
+            <div class="flex justify-center items-center mt-6 md:mt-10 gap-3 md:gap-4 h-6 serve-item opacity-0 translate-y-8 transition-all duration-1000 ease-out"
+                id="slider-dots">
+                <!-- จุดไข่ปลาจะถูกสร้างและจัดการคลาสด้วย JavaScript -->
+            </div>
+
+        </div>
+    </section>
+
+
+    <section
+        class="py-20 md:py-32 bg-spen-dark text-white relative bg-[url('component/images/Core_Services/Frame.jpg')] bg-cover bg-center bg-no-repeat overflow-hidden">
+
+
+        <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full relative z-10">
+
+            <!-- Header -->
+            <div
+                class="text-center mb-12 md:mb-16 core-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                <div class="flex justify-center items-center gap-2 mb-4">
+                    <div class="w-6 h-[2px] bg-spen-green"></div>
+                    <span class="text-spen-green font-semibold uppercase tracking-wider text-sm">Expertise</span>
+                    <div class="w-6 h-[2px] bg-spen-green"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold">Our Core Services</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+
+                <!-- ฝั่งซ้าย: รูปภาพใหญ่ (ย่อความสูงลงในมือถือเพื่อไม่ให้กินที่เกินไป) -->
+                <div id="core-img-container"
+                    class="order-1 lg:order-1 rounded-2xl md:rounded-[2rem] overflow-hidden h-[300px] sm:h-[400px] lg:h-auto relative bg-black core-item opacity-0 -translate-y-12 transition-all duration-1000 ease-out shadow-2xl">
+                    <img src="component/images/Core_Services/Frame.jpg"
+                        class="w-full h-full object-cover opacity-80 transition-opacity duration-500 absolute inset-0"
+                        alt="Core Service">
+                </div>
+
+                <!-- ฝั่งขวา: Services Grid -->
+                <div class="order-2 lg:order-2 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 h-full"
+                    id="service-cards-container">
+
+                    <!-- Service 1: Quality & Precision -->
+                    <!-- เพิ่ม core-item เพื่อให้ลอยขึ้นมาทีละก้อน -->
+                    <div class="service-card core-item opacity-0 translate-y-12 relative border border-white/10 bg-white/5 p-6 md:p-8 rounded-2xl transition-transform duration-500 flex flex-col cursor-pointer overflow-hidden z-0"
+                        data-index="0">
+
+                        <!-- เลเยอร์พื้นหลังที่จะสว่างขึ้นเมื่อ Active (ใช้วิธีนี้จะเปลี่ยนได้นุ่มนวลมาก) -->
+                        <div
+                            class="card-active-bg absolute inset-0 bg-[url('component/images/Core_Services/AdobeStock_986289906_2%20(1).jpg')] bg-cover bg-center opacity-0 transition-opacity duration-500 z-0">
+                        </div>
+                        <div
+                            class="card-active-overlay absolute inset-0 bg-white/95 opacity-0 transition-opacity duration-500 z-0">
+                        </div>
+
+                        <!-- เนื้อหาในการ์ด -->
+                        <div class="relative z-10">
+                            <img class="service-icon w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 transition-all duration-500"
+                                src="component/images/Core_Services/Ellipse 5(1).svg"
+                                data-active="component/images/Core_Services/Ellipse 5-4 (1).svg"
+                                data-inactive="component/images/Core_Services/Ellipse 5 (1).svg" alt="Quality Icon">
+                            <h4
+                                class="service-title text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-500 text-white">
+                                Quality <br>& Precision</h4>
+                            <p class="service-desc text-sm leading-relaxed transition-colors duration-500 text-white">
+                                At SPEN, precision isn’t a goal—it’s a guarantee. With machining tolerances under 3
+                                microns
+                                and ISO 9001, IATF 16949, and ISO 14001 certifications, we ensure every part meets the
+                                highest standards.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Capabilities & Equipment -->
+                    <div class="service-card core-item opacity-0 translate-y-12 relative border border-white/10 bg-white/5 p-6 md:p-8 rounded-2xl transition-transform duration-500 flex flex-col cursor-pointer overflow-hidden z-0"
+                        data-index="1">
+                        <div
+                            class="card-active-bg absolute inset-0 bg-[url('component/images/Core_Services/AdobeStock_986289906_2%20(1).jpg')] bg-cover bg-center opacity-0 transition-opacity duration-500 z-0">
+                        </div>
+                        <div
+                            class="card-active-overlay absolute inset-0 bg-white/95 opacity-0 transition-opacity duration-500 z-0">
+                        </div>
+
+                        <div class="relative z-10">
+                            <img class="service-icon w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 transition-all duration-500"
+                                src="component/images/Core_Services/Ellipse 5-5 (1).svg"
+                                data-active="component/images/Core_Services/Ellipse 5-1 (1).svg"
+                                data-inactive="component/images/Core_Services/Ellipse 5-5 (1).svg" alt="Equipment Icon">
+                            <h4
+                                class="service-title text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-500 text-white">
+                                Capabilities <br>& Equipment</h4>
+                            <p class="service-desc text-sm leading-relaxed transition-colors duration-500 text-white">
+                                With over 140 advanced CNC machines across two BOI-approved facilities, SPEN delivers
+                                high
+                                precision turning, milling, and complex component manufacturing at scale.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Process Control & Traceability -->
+                    <div class="service-card core-item opacity-0 translate-y-12 relative border border-white/10 bg-white/5 p-6 md:p-8 rounded-2xl transition-transform duration-500 flex flex-col cursor-pointer overflow-hidden z-0"
+                        data-index="2">
+                        <div
+                            class="card-active-bg absolute inset-0 bg-[url('component/images/Core_Services/AdobeStock_986289906_2%20(1).jpg')] bg-cover bg-center opacity-0 transition-opacity duration-500 z-0">
+                        </div>
+                        <div
+                            class="card-active-overlay absolute inset-0 bg-white/95 opacity-0 transition-opacity duration-500 z-0">
+                        </div>
+
+                        <div class="relative z-10">
+                            <img class="service-icon w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 transition-all duration-500"
+                                src="component/images/Core_Services/Ellipse 5-2 (1).svg"
+                                data-active="component/images/Core_Services/Ellipse 5-6 (1).svg"
+                                data-inactive="component/images/Core_Services/Ellipse 5-2 (1).svg" alt="Process Icon">
+                            <h4
+                                class="service-title text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-500 text-white">
+                                Process Control <br>& Traceability</h4>
+                            <p class="service-desc text-sm leading-relaxed transition-colors duration-500 text-white">
+                                SPEN maintains strict process control at every stage of production, supported by
+                                real-time
+                                monitoring and ISO-certified workflows. Full traceability ensures accountability.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: On-Time Delivery -->
+                    <div class="service-card core-item opacity-0 translate-y-12 relative border border-white/10 bg-white/5 p-6 md:p-8 rounded-2xl transition-transform duration-500 flex flex-col cursor-pointer overflow-hidden z-0"
+                        data-index="3">
+                        <div
+                            class="card-active-bg absolute inset-0 bg-[url('component/images/Core_Services/AdobeStock_986289906_2%20(1).jpg')] bg-cover bg-center opacity-0 transition-opacity duration-500 z-0">
+                        </div>
+                        <div
+                            class="card-active-overlay absolute inset-0 bg-white/95 opacity-0 transition-opacity duration-500 z-0">
+                        </div>
+
+                        <div class="relative z-10">
+                            <img class="service-icon w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 transition-all duration-500"
+                                src="component/images/Core_Services/Ellipse 5-3 (1).svg"
+                                data-active="component/images/Core_Services/Ellipse 5-7 (1).svg"
+                                data-inactive="component/images/Core_Services/Ellipse 5-3 (1).svg" alt="Delivery Icon">
+                            <h4
+                                class="service-title text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-500 text-white">
+                                On-Time <br>Delivery</h4>
+                            <p class="service-desc text-sm leading-relaxed transition-colors duration-500 text-white">
+                                SPEN prioritizes on-time delivery through meticulous production planning, real-time
+                                workflow
+                                tracking, and proactive coordination with clients to meet tight deadlines.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ปรับ bg-gradient-to-r และใช้รหัสสี from-[#023318] (เขียวเข้ม) ไปยัง to-[#069948] (เขียวสว่าง) -->
+    <section class="bg-gradient-to-r from-[#023318] to-[#069948] py-16 md:py-24 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full">
+            <!-- จัดให้เป็นแนวนอนบน Desktop และแนวตั้งบน Mobile -->
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 text-white">
+
+                <!-- Left: Title -->
+                <h2
+                    class="core-value-item opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out text-5xl sm:text-6xl lg:text-7xl font-black leading-tight lg:w-1/4 text-center lg:text-left">
+                    Core<br class="hidden lg:block"> Values
+                </h2>
+
+                <!-- Right: Values Grid (เรียง 3 คอลัมน์บนแท็บเล็ตและคอมฯ, 1 คอลัมน์บนมือถือ) -->
+                <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 lg:gap-10 w-full">
+
+                    <!-- Item 1: Excellence -->
+                    <div
+                        class="core-value-item opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out flex items-center gap-4 lg:gap-5">
+                        <!-- ขยายไอคอนให้ใหญ่ขึ้น -->
+                        <img src="component/images/Core_Services/Icon_Goal (1).svg"
+                            class="w-16 h-16 md:w-16 lg:w-20 lg:h-20 object-contain shrink-0" alt="Excellence">
+                        <div class="flex flex-col text-left">
+                            <h4 class="font-bold text-xl md:text-xl lg:text-2xl mb-1 text-white">Excellence</h4>
+                            <p class="text-sm md:text-sm lg:text-base text-white/90 leading-relaxed font-light">
+                                Commitment to excellence<br class="hidden xl:block">
+                                beyond expectations
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Customer Focus -->
+                    <div
+                        class="core-value-item opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out flex items-center gap-4 lg:gap-5">
+                        <!-- ขยายไอคอนให้ใหญ่ขึ้น -->
+                        <img src="component/images/Core_Services/Icon Customer Focus (1).svg"
+                            class="w-16 h-16 md:w-16 lg:w-20 lg:h-20 object-contain shrink-0" alt="Customer Focus">
+                        <div class="flex flex-col text-left">
+                            <h4 class="font-bold text-xl md:text-xl lg:text-2xl mb-1 text-white">Customer Focus</h4>
+                            <p class="text-sm md:text-sm lg:text-base text-white/90 leading-relaxed font-light">
+                                Customers first, long-term<br class="hidden xl:block">
+                                relationships
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Integrity -->
+                    <div
+                        class="core-value-item opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out flex items-center gap-4 lg:gap-5">
+                        <!-- ขยายไอคอนให้ใหญ่ขึ้น -->
+                        <img src="component/images/Core_Services/Icon_Excellence (1).svg"
+                            class="w-16 h-16 md:w-16 lg:w-20 lg:h-20 object-contain shrink-0" alt="Integrity">
+                        <div class="flex flex-col text-left">
+                            <h4 class="font-bold text-xl md:text-xl lg:text-2xl mb-1 text-white">Integrity</h4>
+                            <p class="text-sm md:text-sm lg:text-base text-white/90 leading-relaxed font-light">
+                                Ethics, transparency, trust
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section class="py-20 bg-white overflow-hidden">
+
+    <!-- 1. Market Segments & Circle Stats -->
+    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full">
+        <!-- Header Section -->
+        <div class="flex flex-col items-center text-center">
+            <div class="flex justify-center items-center gap-3 mb-3 mt-10">
+                <div class="w-6 h-[2px] bg-spen-green"></div>
+                <span class="text-black font-bold text-sm tracking-wide">Market Segments</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-black mb-16 md:mb-20">
+                Industry sectors served by SPEN
+            </h2>
+        </div>
+
+        <!-- Circle Stats (สมการ: กว้าง 28% ซ้อนทับ -4% = 100% เต็มขอบ และข้อความไม่โดนบัง) -->
+      <!-- Circle Stats (Responsive Layout: เรียงซ้อนแนวตั้ง -> ตาราง 2x2 -> เรียงซ้อนแนวนอน) -->
+<div class="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row justify-center items-center sm:place-items-center w-full -space-y-6 sm:space-y-0 sm:gap-8 md:gap-12 lg:gap-0 lg:-space-x-[4%] mb-20 md:mb-32" id="stats-container">
+
+    <!-- Stat 1: Electronics (อยู่ล่างสุด z-10) -->
+    <!-- ปรับขนาดให้ตายตัวในมือถือ/แท็บเล็ต และใช้เปอร์เซ็นต์ในหน้าจอใหญ่ (w-[240px] -> w-[280px] -> w-[28%]) -->
+    <div class="stat-circle opacity-0 translate-y-10 transition-all duration-500 ease-out z-10 shrink-0 relative w-[240px] sm:w-[260px] md:w-[280px] lg:w-[28%] aspect-square rounded-full bg-white/85 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(6,153,72,0.15)] mx-auto">
+        <!-- เส้นขอบ SVG -->
+        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
+            <defs>
+                <linearGradient id="greenGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#069948" stop-opacity="1" />
+                    <stop offset="100%" stop-color="#069948" stop-opacity="0.05" />
+                </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="49" fill="none" stroke="url(#greenGrad1)" stroke-width="1.5" class="draw-border"></circle>
+        </svg>
+
+        <!-- ปรับขนาดฟอนต์ให้ Responsive ตามขนาดหน้าจอ -->
+        <div class="flex items-baseline text-spen-green font-bold relative z-10">
+            <span class="text-6xl sm:text-7xl lg:text-[4rem] xl:text-[5.5rem] tracking-tight stat-number" data-target="44">0</span>
+            <span class="text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">%</span>
+        </div>
+        <span class="text-sm md:text-base xl:text-lg text-gray-500 font-medium mt-1 xl:mt-2 relative z-10">Electronics</span>
+    </div>
+
+    <!-- Stat 2: Automotive (ทับบนวงแรก z-20) -->
+    <div class="stat-circle opacity-0 translate-y-10 transition-all duration-500 ease-out z-20 shrink-0 relative w-[240px] sm:w-[260px] md:w-[280px] lg:w-[28%] aspect-square rounded-full bg-white/85 backdrop-blur-md border border-white/60 flex flex-col items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] mx-auto">
+        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
+            <defs>
+                <linearGradient id="grayGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#e5e7eb" stop-opacity="1" />
+                    <stop offset="100%" stop-color="#f9fafb" stop-opacity="0.05" />
+                </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="49" fill="none" stroke="url(#grayGrad2)" stroke-width="1" class="draw-border"></circle>
+        </svg>
+
+        <div class="flex items-baseline text-black font-light relative z-10">
+            <span class="text-6xl sm:text-7xl lg:text-[4rem] xl:text-[5.5rem] tracking-tight stat-number" data-target="31">0</span>
+            <span class="text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">%</span>
+        </div>
+        <span class="text-sm md:text-base xl:text-lg text-gray-500 font-medium mt-1 xl:mt-2 relative z-10">Automotive</span>
+    </div>
+
+    <!-- Stat 3: Machined Parts (ทับบนวงที่สอง z-30) -->
+    <div class="stat-circle opacity-0 translate-y-10 transition-all duration-500 ease-out z-30 shrink-0 relative w-[240px] sm:w-[260px] md:w-[280px] lg:w-[28%] aspect-square rounded-full bg-white/85 backdrop-blur-md border border-white/60 flex flex-col items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] mx-auto">
+        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
+            <defs>
+                <linearGradient id="grayGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#e5e7eb" stop-opacity="1" />
+                    <stop offset="100%" stop-color="#f9fafb" stop-opacity="0.05" />
+                </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="49" fill="none" stroke="url(#grayGrad3)" stroke-width="1" class="draw-border"></circle>
+        </svg>
+
+        <div class="flex items-baseline text-black font-light relative z-10">
+            <span class="text-6xl sm:text-7xl lg:text-[4rem] xl:text-[5.5rem] tracking-tight stat-number" data-target="16">0</span>
+            <span class="text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">%</span>
+        </div>
+        <span class="text-sm md:text-base xl:text-lg text-gray-500 font-medium mt-1 xl:mt-2 relative z-10">Machined Parts</span>
+    </div>
+
+    <!-- Stat 4: Hard Drive & Watch (ทับบนสุด z-40) -->
+    <div class="stat-circle opacity-0 translate-y-10 transition-all duration-500 ease-out z-40 shrink-0 relative w-[240px] sm:w-[260px] md:w-[280px] lg:w-[28%] aspect-square rounded-full bg-white/85 backdrop-blur-md border border-white/60 flex flex-col items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] mx-auto">
+        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
+            <defs>
+                <linearGradient id="grayGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#e5e7eb" stop-opacity="1" />
+                    <stop offset="100%" stop-color="#f9fafb" stop-opacity="0.05" />
+                </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="49" fill="none" stroke="url(#grayGrad4)" stroke-width="1" class="draw-border"></circle>
+        </svg>
+
+        <div class="flex items-baseline text-black font-light relative z-10">
+            <span class="text-6xl sm:text-7xl lg:text-[4rem] xl:text-[5.5rem] tracking-tight stat-number" data-target="3.5" data-decimal="1">0</span>
+            <span class="text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">%</span>
+        </div>
+        <span class="text-sm md:text-base xl:text-lg text-gray-500 font-medium mt-1 xl:mt-2 relative z-10">Hard Drive & Watch</span>
+    </div>
+
+</div>
+    </div>
+
+    <!-- 2. Map Section -->
+    <div class="mb-20 md:mb-32 relative pt-10 px-5 sm:px-8 max-w-[1400px] mx-auto w-full" id="map-section">
+
+        <!-- Title (เพิ่ม id="map-title-parallax" เพื่อจับ Parallax Scrolling) -->
+        <div id="map-title-parallax" class="transition-transform duration-75 ease-out z-20 relative">
+            <h2 class="text-4xl sm:text-5xl md:text-[5.5rem] font-black text-black text-center mb-10 md:mb-16 leading-[1.05] tracking-tight">
+                Trusted By<br>Industry Leaders
+            </h2>
+        </div>
+
+        <div class="relative w-full mx-auto">
+            <!-- Map Image -->
+            <img src="component/images/Core_Services/World+Map.png" alt="World Map"
+                class="w-full h-auto object-contain opacity-0 translate-y-10 scale-95 transition-all duration-1000 ease-out"
+                id="world-map-img">
+
+            <!-- Bottom Left Text -->
+            <div class="static md:absolute bottom-0 left-0 max-w-[280px] lg:max-w-[320px] mx-auto md:mx-0 mt-8 md:mt-0 text-center md:text-left opacity-0 translate-y-8 transition-all duration-1000 delay-300 ease-out" id="map-text">
+                <p class="text-[12px] lg:text-[13px] text-gray-500 leading-relaxed font-medium animate-[float_5s_ease-in-out_infinite]">
+                    Trusted by leading global manufacturers and technology companies, SPEN delivers
+                    precision-engineered components that meet the highest standards of quality, reliability, and
+                    performance.
+                </p>
+            </div>
+
+            <!-- Green Circle Badge -->
+            <div class="absolute top-[20%] right-[-10px] md:top-1/2 md:right-[-20px] lg:right-[-40px] transform -translate-y-1/2 bg-[#069948] text-white w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 rounded-full flex flex-col items-center justify-center shadow-[0_15px_40px_rgba(6,153,72,0.3)] opacity-0 scale-50 transition-all duration-700 delay-500 cubic-bezier-out z-10 animate-[bounce_4s_ease-in-out_infinite]" id="map-badge">
+                <div class="flex items-start leading-none mb-0.5 md:mb-1">
+                    <span class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight" id="map-counter" data-target="190">0</span>
+                    <span class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight">+</span>
+                </div>
+                <span class="text-[8px] sm:text-[10px] md:text-xs font-semibold text-center leading-tight mt-0.5 md:mt-1">
+                    Global Company<br>Trust Ours
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Trusted by specialists (Logos) -->
+    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full">
+        <div class="text-left">
+            <h3 class="text-3xl md:text-4xl lg:text-5xl font-black text-black mb-10 md:mb-14">Trusted by specialists</h3>
+
+            <!-- Category 1: Customer -->
+            <div class="mb-10 md:mb-14 logo-section opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                <div class="flex items-center gap-3 mb-4 md:mb-6">
+                    <div class="w-6 h-[2px] bg-spen-green"></div>
+                    <span class="text-gray-500 text-sm font-semibold uppercase tracking-wider">Customer</span>
+                </div>
+                <div class="flex flex-wrap gap-5 sm:gap-6 lg:gap-8 items-center justify-start">
+                    <img src="component/images/Logo_Company_Single/Group 188318.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188319.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188320.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188321.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188325.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188326.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 1883s19.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188328.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188329.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188322.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188323.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188324.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                </div>
+            </div>
+
+            <!-- Category 2: Material Suppliers -->
+            <div class="mb-10 md:mb-14 logo-section opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                <div class="flex items-center gap-3 mb-4 md:mb-6">
+                    <div class="w-6 h-[2px] bg-spen-green"></div>
+                    <span class="text-gray-500 text-sm font-semibold uppercase tracking-wider">Material Suppliers</span>
+                </div>
+                <div class="flex flex-wrap gap-5 sm:gap-6 lg:gap-8 items-center justify-start">
+                    <img src="component/images/Logo_Company_Single/Group 188318-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188319-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188320-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188321-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188325-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188326-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 188327-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                </div>
+            </div>
+
+            <!-- Category 3: Tooling Suppliers -->
+            <div class="mb-10 md:mb-14 logo-section opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                <div class="flex items-center gap-3 mb-4 md:mb-6">
+                    <div class="w-6 h-[2px] bg-spen-green"></div>
+                    <span class="text-gray-500 text-sm font-semibold uppercase tracking-wider">Tooling Suppliers</span>
+                </div>
+                <div class="flex flex-wrap gap-5 sm:gap-6 lg:gap-8 items-center justify-start">
+                    <img src="component/images/Logo_Company_Single/Group 188322z.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                    <img src="component/images/Logo_Company_Single/Group 1883s19.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+    <!-- เพิ่มภาพพื้นหลังผ่านสไตล์ inline หรือคลาส CSS (อย่าลืมเปลี่ยน path รูปภาพพื้นหลังของคุณ) -->
+  <!-- เพิ่ม min-h-[100svh] lg:min-h-screen และ flex items-center เพื่อให้เต็มจอ -->
+<section class="min-h-[100svh] lg:min-h-screen flex items-center py-20 md:py-28 text-white relative bg-[url('component/images/Serve/Rectangle.jpg')] bg-cover bg-top bg-no-repeat overflow-hidden">
+
+    <!-- ปรับความมืดจาก 70% ลดเหลือ 30% เพื่อให้ภาพพื้นหลังสว่างและชัดเจนขึ้น -->
+    <div class="absolute inset-0 bg-black/30"></div>
+
+    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            <!-- ฝั่งซ้าย: ข้อความ -->
+            <div id="cert-text-parallax" class="transition-transform duration-75 ease-out flex flex-col justify-center">
+                
+                <h2 class="cert-item opacity-0 translate-y-12 transition-all duration-1000 ease-out text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight drop-shadow-md">
+                    International<br>Certification
+                </h2>
+                
+                <div class="cert-item opacity-0 translate-y-12 transition-all duration-1000 ease-out flex items-center gap-3 mb-6 drop-shadow-sm">
+                    <div class="w-6 h-[2px] bg-spen-green"></div>
+                    <span class="text-white font-semibold uppercase tracking-wider text-xs sm:text-sm">Management System Certified</span>
+                </div>
+                
+                <p class="cert-item opacity-0 translate-y-12 transition-all duration-1000 ease-out text-white/90 drop-shadow-sm mb-6 leading-relaxed text-sm md:text-base">
+                    All products are inspected for quality throughout the production process by the qualified
+                    inspector. All high quality raw materials are inspected on arrival. Inspection continues
+                    throughout the production process, followed by random testing of products, using accurate and
+                    high technology calibration instruments and equipment with management according to international
+                    quality and environmental standards.
+                </p>
+                
+                <p class="cert-item opacity-0 translate-y-12 transition-all duration-1000 ease-out text-white/90 drop-shadow-sm leading-relaxed text-sm md:text-base">
+                    Single Point Engineering Company Limited commits to environmental management by adhering to the
+                    requirements and related law in order to use resources worthily, including reduce water
+                    pollution, noise pollution, air pollution, soil contamination and various wastes, as well as
+                    continual improvement and development to maintain the good quality of life for employees and
+                    communities.
+                </p>
+
+            </div>
+
+            <!-- ฝั่งขวา: สไลเดอร์ใบเซอร์ + จุดไข่ปลา -->
+            <!-- ฝั่งขวา: สไลเดอร์ใบเซอร์ + จุดไข่ปลา -->
+            <!-- เพิ่มระยะห่างบนมือถือด้วย mt-12 md:mt-16 -->
+            <div class="cert-item opacity-0 translate-y-12 transition-all duration-1000 ease-out relative flex flex-col items-center justify-center mt-12 md:mt-16 lg:mt-0">
+
+                <!-- กล่องสไลเดอร์ -->
+                <div class="w-full aspect-[1279/722] relative overflow-hidden rounded-2xl shadow-2xl bg-black/20 backdrop-blur-md border border-white/10" id="cert-slider">
+
+                    <!-- สไลด์ที่ 1 (ลบ p-3 ออก และใช้ object-cover เพื่อให้ภาพเต็มกรอบ) -->
+                    <div class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
+                        <img src="component/images/certificate/certificate-1.png" alt="Green Industry Certificate" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- สไลด์ที่ 2 -->
+                    <div class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
+                        <img src="component/images/certificate/certificate-2.png" alt="ISO 9001" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- สไลด์ที่ 3 -->
+                    <div class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
+                        <img src="component/images/certificate/certificate-3.png" alt="ISO 14001" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- สไลด์ที่ 4 -->
+                    <div class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
+                        <img src="component/images/certificate/certificate-4.png" alt="IATF 16949" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- สไลด์ที่ 5 -->
+                    <div class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
+                        <img src="component/images/certificate/certificate-5.png" alt="ISO 45001" class="w-full h-full object-cover">
+                    </div>
+
+                </div>
+
+                <!-- จุดไข่ปลา (Pagination Dots) ด้านล่าง -->
+                <div class="flex justify-center items-center mt-6 lg:mt-8 gap-3 h-6" id="cert-dots">
+                    <!-- จุดไข่ปลาจะถูกสร้างและจัดการคลาสด้วย JavaScript อัตโนมัติ -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+   <section class="py-20 md:py-24 bg-white overflow-hidden">
+    <!-- ปรับ px-4 sm:px-8 ให้ระยะขอบเท่ากับ Section อื่นๆ -->
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-8 w-full">
+
+        <!-- หัวข้อหลัก -->
+        <div class="text-center mb-16 contact-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+            <h2 class="text-3xl md:text-5xl lg:text-[2.5rem] font-black text-black leading-tight tracking-tight">
+                "We Are Proud To Be<br class="hidden sm:block"> 
+                The Strength Behind Our Customer's Success"
+            </h2>
+        </div>
+
+        <!-- Layout หลัก (แบ่งซ้าย-ขวา 50/50 บนจอใหญ่, เรียงบนลงล่างในมือถือ) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+
+            <!-- ฝั่งซ้าย: กล่องข้อมูลติดต่อ -->
+            <!-- ปรับระยะ p-6 ในมือถือ เพื่อไม่ให้กินพื้นที่ขอบซ้ายขวามากเกินไป -->
+            <div class="bg-[#F7F7F7] rounded-2xl p-6 sm:p-10 md:p-14 shadow-sm contact-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-4 h-[2px] bg-[#008844]"></div>
+                    <span class="text-[#008844] font-medium text-sm">Contact Us</span>
+                </div>
+
+                <h3 class="text-3xl sm:text-4xl md:text-[2.5rem] font-black text-black mb-4 tracking-tight">Ready to Serve You</h3>
+                <p class="text-gray-400 text-sm mb-10 md:mb-12">Our team is ready to provide advice and answer all your questions</p>
+
+                <div class="space-y-6 md:space-y-8">
+                    <!-- Address -->
+                    <div class="flex gap-4 md:gap-5 items-start group">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#008844]/10 group-hover:bg-[#008844] transition-colors duration-300 flex items-center justify-center flex-shrink-0 text-[#008844] group-hover:text-white shadow-sm">
+                            <i class="ph-fill ph-map-pin text-xl md:text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-black text-sm md:text-base mb-1">Head Office</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">
+                                53,53/2 Moo 3, Indra Industrial Park,<br>Namtan, Inburi, Singburi 16110, Thailand
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex gap-4 md:gap-5 items-start group">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#008844]/10 group-hover:bg-[#008844] transition-colors duration-300 flex items-center justify-center flex-shrink-0 text-[#008844] group-hover:text-white shadow-sm">
+                            <i class="ph-fill ph-phone text-xl md:text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-black text-sm md:text-base mb-1">Phone</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">
+                                +66 (0) 36-812-886 ต่อ 29<br>086-339-9079
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex gap-4 md:gap-5 items-start group">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#008844]/10 group-hover:bg-[#008844] transition-colors duration-300 flex items-center justify-center flex-shrink-0 text-[#008844] group-hover:text-white shadow-sm">
+                            <i class="ph-fill ph-envelope-simple text-xl md:text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-black text-sm md:text-base mb-1">Email</h4>
+                            <a href="mailto:sale@spen.co.th" class="text-gray-500 text-sm hover:text-[#008844] transition-colors">sale@spen.co.th</a>
+                        </div>
+                    </div>
+
+                    <!-- Fax -->
+                    <div class="flex gap-4 md:gap-5 items-start group">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#008844]/10 group-hover:bg-[#008844] transition-colors duration-300 flex items-center justify-center flex-shrink-0 text-[#008844] group-hover:text-white shadow-sm">
+                            <i class="ph-fill ph-printer text-xl md:text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-black text-sm md:text-base mb-1">Fax</h4>
+                            <p class="text-gray-500 text-sm">+66 (0) 36-812-887</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ฝั่งขวา: ฟอร์มส่งข้อความ -->
+            <div class="lg:pt-6 contact-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                <h3 class="text-2xl sm:text-[1.75rem] font-bold text-black mb-6 md:mb-8 tracking-tight">Send us a message</h3>
+
+                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4 md:space-y-5">
+                    
+                    <!-- ใส่ Access Key ที่ได้จากอีเมลตรงนี้ -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                        <div>
+                            <input type="text" name="First Name" placeholder="First Name*"
+                                class="w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition"
+                                required>
+                        </div>
+                        <div>
+                            <input type="text" name="Last Name" placeholder="Last Name*"
+                                class="w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                        <div>
+                            <input type="email" name="Email" placeholder="Email*"
+                                class="w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition"
+                                required>
+                        </div>
+                        <div>
+                            <input type="tel" name="Phone Number" placeholder="Phone Number*"
+                                class="w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition"
+                                required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <textarea name="Message" placeholder="Message Here..." rows="5"
+                            class="w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition resize-none"></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                            class="w-full sm:w-auto justify-center bg-gradient-to-r from-[#00552b] to-[#008844] hover:from-[#004724] hover:to-[#007339] text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-green-900/20 hover:shadow-green-900/40 hover:-translate-y-1">
+                            <span>Send Message</span>
+                            <i class="ph ph-arrow-right text-base font-bold"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+  <footer class="bg-[#141414] bg-cover bg-center bg-no-repeat text-white pt-20 md:pt-24 pb-8 border-t-0 font-sans overflow-hidden"
+    style="background-image: url('component/images/footer (2).png');">
+    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full">
+
+        <!-- Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-8 mb-16 md:mb-20">
+
+            <!-- 1. Logo & About -->
+            <div class="lg:col-span-4 lg:pr-6 footer-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                <div class="mb-6">
+                    <img src="component/images/LOGO.png" alt="Single Point Engineering Logo"
+                        class="h-14 md:h-16 w-auto object-contain">
+                </div>
+                <p class="text-gray-400 text-[13px] md:text-[14px] leading-[1.8] text-justify md:text-left">
+                    Quality Engineering, Global Standards. At Single Point Engineering, "We Deliver Excellence" is
+                    not just a promise, but the foundation of our daily operations. Our customers value
+                    high-precision products, deep industry understanding, and responsive service. We are committed
+                    to building long-term partnerships and providing proactive support to help our customers grow
+                    and succeed.
+                </p>
+            </div>
+
+            <!-- 2. Quick Menu -->
+            <div class="lg:col-span-2 lg:pl-6 footer-item opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-100">
+                <!-- เพิ่มเส้นใต้ด้วย border-b border-white/10 และ pb-3 -->
+                <div class="border-b border-white/10 pb-3 mb-6">
+                    <h4 class="text-white text-lg font-bold">Quick Menu</h4>
+                </div>
+                <ul class="space-y-4 md:space-y-5">
+                    <li><a href="#" class="text-gray-400 hover:text-[#008844] transition-colors text-[13px] md:text-sm">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-[#008844] transition-colors text-[13px] md:text-sm">Products</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-[#008844] transition-colors text-[13px] md:text-sm">Certifications</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-[#008844] transition-colors text-[13px] md:text-sm">Company</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-[#008844] transition-colors text-[13px] md:text-sm">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- 3. Contact Us -->
+            <div class="lg:col-span-3 footer-item opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-200">
+                <!-- เพิ่มเส้นใต้ด้วย border-b border-white/10 และ pb-3 -->
+                <div class="border-b border-white/10 pb-3 mb-6">
+                    <h4 class="text-white text-lg font-bold">Contact Us</h4>
+                </div>
+                <div class="space-y-5 md:space-y-6">
+                    <!-- Head Office -->
+                    <div class="flex gap-4 items-start">
+                        <!-- เปลี่ยนสีพื้นหลังเป็นสีเขียวทึบ และไอคอนเป็นสีขาว -->
+                        <div class="w-8 h-8 rounded-md bg-[#008844] flex items-center justify-center flex-shrink-0 text-white mt-1 shadow-sm">
+                            <i class="ph-fill ph-map-pin text-[16px]"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white text-[13px] font-bold mb-1">Head Office</h5>
+                            <p class="text-gray-400 text-[12px] leading-relaxed">53,53/2 Moo 3, Indra Industrial
+                                Park,<br>Namtan, Inburi, Singburi 16110, Thailand</p>
+                        </div>
+                    </div>
+                    <!-- Phone -->
+                    <div class="flex gap-4 items-start">
+                        <!-- เปลี่ยนสีพื้นหลังเป็นสีเขียวทึบ และไอคอนเป็นสีขาว -->
+                        <div class="w-8 h-8 rounded-md bg-[#008844] flex items-center justify-center flex-shrink-0 text-white mt-1 shadow-sm">
+                            <i class="ph-fill ph-phone text-[16px]"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white text-[13px] font-bold mb-1">Phone</h5>
+                            <p class="text-gray-400 text-[12px] leading-relaxed">+66 (0) 36-812-886 ต่อ
+                                29<br>086-339-9079</p>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="flex gap-4 items-start">
+                        <!-- เปลี่ยนสีพื้นหลังเป็นสีเขียวทึบ และไอคอนเป็นสีขาว -->
+                        <div class="w-8 h-8 rounded-md bg-[#008844] flex items-center justify-center flex-shrink-0 text-white mt-1 shadow-sm">
+                            <i class="ph-fill ph-envelope-simple text-[16px]"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white text-[13px] font-bold mb-1">Email</h5>
+                            <a href="mailto:sale@spen.co.th"
+                                class="text-gray-400 text-[12px] hover:text-white transition-colors">sale@spen.co.th</a>
+                        </div>
+                    </div>
+                    <!-- Fax -->
+                    <div class="flex gap-4 items-start">
+                        <!-- เปลี่ยนสีพื้นหลังเป็นสีเขียวทึบ และไอคอนเป็นสีขาว -->
+                        <div class="w-8 h-8 rounded-md bg-[#008844] flex items-center justify-center flex-shrink-0 text-white mt-1 shadow-sm">
+                            <i class="ph-fill ph-printer text-[16px]"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white text-[13px] font-bold mb-1">Fax</h5>
+                            <p class="text-gray-400 text-[12px]">+66 (0) 36-812-887</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Map -->
+            <div class="lg:col-span-3 footer-item opacity-0 translate-y-12 transition-all duration-1000 ease-out delay-300">
+                <!-- เพิ่มเส้นใต้ด้วย border-b border-white/10 และ pb-3 -->
+                <div class="border-b border-white/10 pb-3 mb-6">
+                    <h4 class="text-white text-lg font-bold">Map</h4>
+                </div>
+                <div class="w-full h-[200px] md:h-[240px] rounded-xl overflow-hidden relative shadow-lg ring-1 ring-white/10">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d18970.23382023037!2d100.368137!3d14.977725!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e1f1f633688f01%3A0xb57fb82b8179ee40!2sSingle%20Point%20Engineering%20Co.%2C%20Ltd.!5e1!3m2!1sen!2sth!4v1786277828168!5m2!1sen!2sth"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Copyright & Links -->
+        <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 footer-item opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-500">
+            <p class="text-[#888888] text-[12px] md:text-[13px] text-center md:text-left">
+                &copy; 2026 Single Point Engineering Co., Ltd. | All Rights Reserved
+            </p>
+            <div class="flex items-center space-x-3 text-[12px] md:text-[13px] text-[#888888]">
+                <a href="#" class="hover:text-white transition">Privacy policy</a>
+                <span>/</span>
+                <a href="#" class="hover:text-white transition">Terms of use</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".counter-value");
+            const animationDuration = 2000; // ระยะเวลาวิ่ง (2 วินาที)
+
+            const startCounting = (counter) => {
+                // หยุดแอนิเมชันเก่าก่อนเริ่มใหม่ ป้องกันตัวเลขกระตุก
+                if (counter.animationId) {
+                    cancelAnimationFrame(counter.animationId);
+                }
+
+                const target = parseFloat(counter.getAttribute("data-target"));
+                const decimals = parseInt(counter.getAttribute("data-decimals") || 0);
+                let startTime = null;
+
+                const updateCount = (currentTime) => {
+                    if (!startTime) startTime = currentTime;
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / animationDuration, 1);
+
+                    const easeOut = 1 - Math.pow(1 - progress, 4);
+                    const currentVal = target * easeOut;
+
+                    if (progress < 1) {
+                        counter.innerText = currentVal.toFixed(decimals);
+                        counter.animationId = requestAnimationFrame(updateCount);
+                    } else {
+                        counter.innerText = target.toFixed(decimals);
+                    }
+                };
+
+                counter.animationId = requestAnimationFrame(updateCount);
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const counter = entry.target;
+
+                    if (entry.isIntersecting) {
+                        // เมื่อเลื่อนมาเห็นหน้าจอ ให้เริ่มวิ่งทันที
+                        startCounting(counter);
+                    } else {
+                        // เมื่อเลื่อนผ่านจนมองไม่เห็น ให้รีเซ็ตค่าเป็น 0 เพื่อรอวิ่งรอบใหม่
+                        if (counter.animationId) {
+                            cancelAnimationFrame(counter.animationId);
+                        }
+                        const decimals = parseInt(counter.getAttribute("data-decimals") || 0);
+                        counter.innerText = (0).toFixed(decimals);
+                    }
+                });
+            }, {
+                threshold: 0.1 // ทำงานทันทีเมื่อเห็นกล่องสถิติแค่ 10%
+            });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // ==========================================
+            // 1. แอนิเมชัน เลื่อนขึ้น-ลง (Slide up/down)
+            // ==========================================
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0', '-translate-y-16', 'translate-y-16');
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            const animElements = document.querySelectorAll('.scroll-anim');
+            animElements.forEach(el => observer.observe(el));
+
+
+            // ==========================================
+            // 2. แอนิเมชัน Scroll Text Scrubbing (สว่างทีละคำ)
+            // ==========================================
+            const scrubContainers = document.querySelectorAll('.scrub-target');
+
+            // เตรียมแยกข้อความเป็นคำๆ และหุ้มด้วยแท็ก span
+            scrubContainers.forEach(container => {
+                const paragraphs = container.querySelectorAll('p');
+                paragraphs.forEach(p => {
+                    const words = p.innerText.split(' ');
+                    p.innerHTML = words.map(word =>
+                        `<span class="scrub-word opacity-30 transition-opacity duration-200">${word}</span>`
+                    ).join(' ');
+                });
+            });
+
+            // ตรวจจับการเลื่อนหน้าจอเพื่อปรับความสว่าง
+            window.addEventListener('scroll', () => {
+                const windowHeight = window.innerHeight;
+
+                scrubContainers.forEach(container => {
+                    const rect = container.getBoundingClientRect();
+
+                    // เช็คว่าข้อความเลื่อนเข้ามาในกรอบการมองเห็นหรือยัง
+                    if (rect.top < windowHeight && rect.bottom > 0) {
+
+                        // กำหนดจุดเริ่มสว่าง (เมื่อข้อความอยู่ประมาณ 85% ของหน้าจอ)
+                        const startPoint = windowHeight * 0.85;
+                        // กำหนดจุดสว่างครบ (เมื่อข้อความเลื่อนไปถึงประมาณ 30% ของหน้าจอ)
+                        const endPoint = windowHeight * 0.3;
+
+                        // ระยะทางที่เลื่อนผ่านมาแล้ว
+                        const scrolled = startPoint - rect.top;
+                        // ระยะทางทั้งหมดที่ใช้แสดงแอนิเมชัน
+                        const totalScrollable = startPoint - endPoint + (rect.height * 0.5);
+
+                        // คำนวณเปอร์เซ็นต์ (0 ถึง 1)
+                        let progress = scrolled / totalScrollable;
+                        progress = Math.max(0, Math.min(1, progress));
+
+                        const words = container.querySelectorAll('.scrub-word');
+                        // คำนวณจำนวนคำที่ต้องเปลี่ยนให้สว่าง
+                        const wordsToShow = Math.floor(progress * words.length);
+
+                        words.forEach((word, index) => {
+                            if (index < wordsToShow) {
+                                word.style.opacity = '1';
+                                word.style.color = '#111111'; // เปลี่ยนเป็นสีดำเข้ม
+                            } else {
+                                word.style.opacity = '0.3'; // กลับไปเทาจางๆ
+                                word.style.color = 'inherit';
+                            }
+                        });
+                    }
+                });
+            });
+
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('product-slider');
+            const dotsContainer = document.getElementById('slider-dots');
+
+            const cards = Array.from(slider.children).filter(child => child.tagName === 'DIV');
+
+            let autoPlayTimer;
+            const autoPlayDelay = 3000; // เวลาเปลี่ยนการ์ดอัตโนมัติ (3 วินาที)
+            let dots = []; // เก็บตัวแปรจุดไข่ปลาทั้งหมด
+
+            // 1. ฟังก์ชันสร้างจุดไข่ปลา (คำนวณใหม่ทุกครั้งที่โหลดหน้าหรือย่อขยายจอ)
+            function initSlider() {
+                if (cards.length === 0) return;
+
+                const cardWidth = cards[0].offsetWidth;
+                const gap = parseFloat(getComputedStyle(slider).gap) || 16;
+                const itemWidth = cardWidth + gap;
+
+                // คำนวณระยะที่เลื่อนได้มากที่สุด และจำนวนจุดไข่ปลาที่ควรมี
+                const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+                const maxSteps = Math.round(maxScrollLeft / itemWidth) + 1;
+
+                dotsContainer.innerHTML = '';
+                dots = [];
+
+                for (let i = 0; i < maxSteps; i++) {
+                    const dot = document.createElement('button');
+                    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+
+                    dot.addEventListener('click', () => {
+                        slider.scrollTo({
+                            left: i * itemWidth,
+                            behavior: 'smooth'
+                        });
+                    });
+                    dotsContainer.appendChild(dot);
+                    dots.push(dot); // เก็บจุดไว้ใน Array
+                }
+                updateActiveDot(); // อัปเดตสีจุดไข่ปลาทันทีที่สร้างเสร็จ
+            }
+
+            // 2. ฟังก์ชันอัปเดตหน้าตาไข่ปลาให้ตรงกับระยะที่ Scroll
+            function updateActiveDot() {
+                if (cards.length === 0 || dots.length === 0) return;
+
+                const cardWidth = cards[0].offsetWidth;
+                const gap = parseFloat(getComputedStyle(slider).gap) || 16;
+                const itemWidth = cardWidth + gap;
+
+                // หาว่าตอนนี้อยู่สเต็ปที่เท่าไหร่
+                let activeIndex = Math.round(slider.scrollLeft / itemWidth);
+
+                // ป้องกัน Index ล้น
+                if (activeIndex >= dots.length) activeIndex = dots.length - 1;
+                if (activeIndex < 0) activeIndex = 0;
+
+                dots.forEach((dot, index) => {
+                    if (index === activeIndex) {
+                        dot.className = 'w-6 h-6 rounded-full border-2 border-spen-green flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out shrink-0';
+                        dot.innerHTML = '<div class="w-2.5 h-2.5 bg-spen-green rounded-full"></div>';
+                    } else {
+                        dot.className = 'w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300 ease-in-out cursor-pointer shrink-0';
+                        dot.innerHTML = '';
+                    }
+                });
+            }
+
+            // ดักจับการ Scroll และการย่อขยายหน้าจอ (Resize)
+            slider.addEventListener('scroll', updateActiveDot);
+            window.addEventListener('resize', initSlider);
+
+            // 3. ฟังก์ชันเลื่อนอัตโนมัติทีละ 1 การ์ด และวนลูป
+            function startAutoPlay() {
+                stopAutoPlay();
+                autoPlayTimer = setInterval(() => {
+                    const cardWidth = cards[0].offsetWidth;
+                    const gap = parseFloat(getComputedStyle(slider).gap) || 16;
+                    const itemWidth = cardWidth + gap;
+
+                    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 2) {
+                        // ถ้าสุดแล้ว เด้งกลับมา 0
+                        slider.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        // เลื่อนขวาทีละ 1 การ์ด
+                        slider.scrollTo({ left: slider.scrollLeft + itemWidth, behavior: 'smooth' });
+                    }
+                }, autoPlayDelay);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayTimer);
+            }
+
+            // เริ่มต้นการทำงานทั้งหมด
+            initSlider();
+            startAutoPlay();
+
+            // 4. หยุดพักเวลาเมาส์ชี้ หรือกำลังเอานิ้วไถ
+            slider.addEventListener('mouseenter', stopAutoPlay);
+            slider.addEventListener('touchstart', stopAutoPlay, { passive: true });
+
+            slider.addEventListener('mouseleave', startAutoPlay);
+            slider.addEventListener('touchend', startAutoPlay);
+
+            // ---------------------------------------------------------
+            // Drag to scroll
+            // ---------------------------------------------------------
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                stopAutoPlay();
+                slider.classList.add('cursor-grabbing');
+                slider.classList.remove('cursor-grab', 'snap-mandatory');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                startAutoPlay();
+                slider.classList.remove('cursor-grabbing');
+                slider.classList.add('cursor-grab', 'snap-mandatory');
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                if (isDown) {
+                    isDown = false;
+                    startAutoPlay();
+                    slider.classList.remove('cursor-grabbing');
+                    slider.classList.add('cursor-grab', 'snap-mandatory');
+                }
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+
+            mobileMenuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+
+                if (isHidden) {
+                    // เปิดเมนู
+                    mobileMenu.classList.remove('hidden');
+                    // รอจังหวะนิดนึงเพื่อให้ transition CSS ทำงานได้สมูท
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('opacity-0', '-translate-y-2');
+                        mobileMenu.classList.add('opacity-100', 'translate-y-0');
+                    }, 10);
+
+                    // เปลี่ยนไอคอน Hamburger เป็น X
+                    mobileMenuIcon.classList.remove('ph-list');
+                    mobileMenuIcon.classList.add('ph-x');
+                    mobileMenuIcon.classList.add('rotate-90'); // เพิ่มเอฟเฟกต์หมุนนิดนึง
+                } else {
+                    // ปิดเมนู
+                    mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+                    mobileMenu.classList.add('opacity-0', '-translate-y-2');
+
+                    // รอแอนิเมชันจางหายเสร็จ (300ms) ค่อยซ่อนกล่อง
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 300);
+
+                    // เปลี่ยนไอคอน X กลับเป็น Hamburger
+                    mobileMenuIcon.classList.remove('ph-x', 'rotate-90');
+                    mobileMenuIcon.classList.add('ph-list');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // แอนิเมชันแสดงก้อนสถิติทีละก้อน (Staggered Fade-in)
+            const statItems = document.querySelectorAll('.stat-item');
+
+            const statObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // ใช้ setTimeout หน่วงเวลาทีละ 200ms ให้ลอยขึ้นมาเป็นโดมิโน่
+                        setTimeout(() => {
+                            entry.target.classList.add('animate-fade-in-up');
+                        }, index * 200);
+
+                        // เมื่อทำงานแล้วให้หยุดจับตาดู
+                        statObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 }); // ทำงานเมื่อเลื่อนมาเห็นกล่อง 20%
+
+            statItems.forEach(item => statObserver.observe(item));
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // ... (ส่วนที่ 1: setupStaggeredAnimation เก็บไว้เหมือนเดิมครับ) ...
+
+            // ==========================================
+            // 2. ฟังก์ชันสลับการ์ดและรูปภาพ Core Services แบบ Crossfade
+            // ==========================================
+            const imgContainer = document.getElementById('core-img-container');
+            const cards = document.querySelectorAll('.service-card');
+
+            const serviceImages = [
+                "component/images/Core_Services/Capabilities & Equipment.jpg",
+                "component/images/Core_Services/Quality & Precision.jpg",
+                "component/images/Core_Services/Process Control & Traceability.jpg",
+                "component/images/Core_Services/On-Time Delivery.jpg"
+            ];
+
+            let currentIndex = -1; // ตั้งค่าเริ่มต้นเป็น -1 เพื่อให้รันใบแรกได้
+            let autoPlayTimer;
+            const autoPlayDelay = 4000;
+
+            function updateServiceState(index) {
+                if (currentIndex === index) return;
+                currentIndex = index;
+
+                // --- 1. อนิเมชั่นเปลี่ยนรูปภาพ (Smooth Crossfade & Slide Up) ---
+                if (imgContainer) {
+                    // หารูปเดิมที่กำลังแสดงอยู่
+                    const oldImg = imgContainer.querySelector('.current-img');
+
+                    // สร้างรูปภาพใหม่ขึ้นมา
+                    const newImg = document.createElement('img');
+                    newImg.src = serviceImages[index];
+                    // ตั้งค่าเริ่มต้น: โปร่งใส (opacity-0) และกดต่ำลงไป (translate-y-16)
+                    newImg.className = 'current-img w-full h-full object-cover absolute inset-0 z-20 transition-all duration-1000 opacity-0 translate-y-16';
+                    newImg.style.transitionTimingFunction = 'cubic-bezier(0.16, 1, 0.3, 1)'; // ให้จังหวะสมูท
+                    newImg.alt = "Core Service";
+
+                    imgContainer.appendChild(newImg);
+
+                    // บังคับให้เบราว์เซอร์รีเฟรชการสร้าง Element ใหม่ 1 จังหวะ
+                    void newImg.offsetWidth;
+
+                    // สั่งให้รูปใหม่ "สว่างขึ้น" และ "ลอยขึ้นมาตรงกลาง"
+                    newImg.classList.remove('opacity-0', 'translate-y-16');
+                    newImg.classList.add('opacity-80', 'translate-y-0');
+
+                    // จัดการรูปเก่า (ถ้ามี) ให้ลอยขึ้นไปด้านบนและจางหายไป
+                    if (oldImg) {
+                        oldImg.classList.remove('current-img', 'translate-y-0', 'opacity-80');
+                        oldImg.classList.add('opacity-0', '-translate-y-16', 'z-10'); // ถอยเลเยอร์ไปด้านหลัง
+
+                        // รอให้อนิเมชั่นจบ (1 วินาที) แล้วลบรูปเก่าทิ้ง (ช่วยประหยัดหน่วยความจำ)
+                        setTimeout(() => {
+                            if (oldImg.parentElement) oldImg.remove();
+                        }, 1000);
+                    }
+                }
+
+                // --- 2. จัดการสไตล์ของการ์ด ---
+                cards.forEach((card, i) => {
+                    const icon = card.querySelector('.service-icon');
+                    const title = card.querySelector('.service-title');
+                    const desc = card.querySelector('.service-desc');
+                    const activeBg = card.querySelector('.card-active-bg');
+                    const activeOverlay = card.querySelector('.card-active-overlay');
+
+                    if (i === index) {
+                        // สถานะ Active
+                        card.classList.add('scale-[1.03]', 'shadow-2xl', 'z-10', 'border-gray-300');
+                        card.classList.remove('bg-white/5', 'border-white/10', 'hover:bg-white/10', 'z-0');
+
+                        if (activeBg) activeBg.classList.remove('opacity-0');
+                        if (activeOverlay) activeOverlay.classList.remove('opacity-0');
+
+                        if (icon) icon.src = icon.getAttribute('data-active');
+                        if (title) title.classList.replace('text-white', 'text-spen-green');
+                        if (desc) desc.classList.replace('text-white', 'text-gray-800');
+
+                    } else {
+                        // สถานะ Inactive
+                        card.classList.remove('scale-[1.03]', 'shadow-2xl', 'z-10', 'border-gray-300');
+                        card.classList.add('bg-white/5', 'border-white/10', 'hover:bg-white/10', 'z-0');
+
+                        if (activeBg) activeBg.classList.add('opacity-0');
+                        if (activeOverlay) activeOverlay.classList.add('opacity-0');
+
+                        if (icon) icon.src = icon.getAttribute('data-inactive');
+                        if (title) title.classList.replace('text-spen-green', 'text-white');
+                        if (desc) desc.classList.replace('text-gray-800', 'text-white');
+                    }
+                });
+            }
+
+            function startAutoPlay() {
+                clearInterval(autoPlayTimer);
+                autoPlayTimer = setInterval(() => {
+                    let nextIndex = (currentIndex + 1) % cards.length;
+                    updateServiceState(nextIndex);
+                }, autoPlayDelay);
+            }
+
+            cards.forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    updateServiceState(index);
+                    startAutoPlay();
+                });
+
+                card.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+                card.addEventListener('mouseleave', startAutoPlay);
+            });
+
+            // เริ่มทำงานครั้งแรกที่โหลดหน้า
+            updateServiceState(0);
+            startAutoPlay();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const circles = document.querySelectorAll('.stat-circle');
+            let hasAnimated = false; // ป้องกันการรันซ้ำเวลาเลื่อนจอไปมา
+
+            // ฟังก์ชันสั่งงานอนิเมชั่นทีละวง (ใช้ Promise เพื่อรอให้เสร็จก่อนไปวงต่อไป)
+            const animateCircle = (circle, index) => {
+                return new Promise(resolve => {
+                    // 1. เฟดวงกลมให้แสดงขึ้นมา
+                    circle.classList.remove('opacity-0', 'translate-y-10');
+                    circle.classList.add('opacity-100', 'translate-y-0');
+
+                    // 2. จัดการตัวเลขวิ่ง
+                    const numberEl = circle.querySelector('.stat-number');
+                    if (numberEl) {
+                        const target = parseFloat(numberEl.getAttribute('data-target'));
+                        const hasDecimal = numberEl.hasAttribute('data-decimal');
+                        const duration = 1000; // เวลาให้ตัวเลขวิ่ง (1 วินาที)
+                        const frameRate = 30;
+                        const totalFrames = Math.round((duration / 1000) * frameRate);
+                        let currentFrame = 0;
+
+                        const counter = setInterval(() => {
+                            currentFrame++;
+                            const progress = currentFrame / totalFrames;
+                            const current = target * (1 - Math.pow(1 - progress, 3)); // Ease out
+
+                            numberEl.innerText = hasDecimal ? current.toFixed(1) : Math.round(current);
+
+                            if (currentFrame >= totalFrames) {
+                                clearInterval(counter);
+                                numberEl.innerText = hasDecimal ? target.toFixed(1) : target;
+                            }
+                        }, 1000 / frameRate);
+                    }
+
+                    // 3. จัดการเส้นขอบวิ่ง (สำหรับวงแรกที่มี SVG)
+                    const svgBorder = circle.querySelector('.draw-border');
+                    if (svgBorder) {
+                        // หน่วงเวลาเล็กน้อยให้วงกลมโผล่มาก่อน แล้วค่อยวาดเส้น
+                        setTimeout(() => {
+                            svgBorder.classList.add('drawn');
+                        }, 200);
+                    }
+
+                    // รอ 1 วินาที (เพื่อให้วงแรกโหลดขอบเสร็จ) ค่อยแจ้งว่าเสร็จแล้ว ให้วงต่อไปเริ่มได้
+                    setTimeout(() => {
+                        resolve();
+                    }, 1000);
+                });
+            };
+
+            // ใช้ IntersectionObserver จับว่าหน้าจอเลื่อนมาถึงหรือยัง
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !hasAnimated) {
+                    hasAnimated = true; // ล็อคไว้ไม่ให้รันซ้ำ
+
+                    // รันฟังก์ชันตามลำดับ (Sequential Execution)
+                    const runSequence = async () => {
+                        for (let i = 0; i < circles.length; i++) {
+                            await animateCircle(circles[i], i);
+                        }
+                    };
+
+                    runSequence();
+                }
+            }, { threshold: 0.3 }); // เริ่มรันเมื่อเห็นกล่องคอนเทนเนอร์ 30%
+
+            const container = document.getElementById('stats-container');
+            if (container) observer.observe(container);
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // อนิเมชั่นส่วนแผนที่
+            const mapSection = document.getElementById('map-section');
+            const mapImg = document.getElementById('world-map-img');
+            const mapText = document.getElementById('map-text');
+            const mapBadge = document.getElementById('map-badge');
+            const mapCounter = document.getElementById('map-counter');
+
+
+            let mapAnimated = false;
+
+            const mapObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !mapAnimated) {
+                    mapAnimated = true;
+
+                    // 1. โชว์แผนที่ (Fade & Scale In)
+                    if (mapImg) {
+                        mapImg.classList.remove('opacity-0', 'translate-y-10', 'scale-95');
+                        mapImg.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+                    }
+
+                    // 2. โชว์ข้อความซ้ายล่าง
+                    if (mapText) {
+                        mapText.classList.remove('opacity-0', 'translate-y-8');
+                        mapText.classList.add('opacity-100', 'translate-y-0');
+                    }
+
+                    // 3. โชว์วงกลมสีเขียว (Pop In)
+                    if (mapBadge) {
+                        // ใช้ cubic-bezier เพื่อให้มีเอฟเฟกต์เด้งดึ๋งเล็กน้อย
+                        mapBadge.style.transitionTimingFunction = "cubic-bezier(0.34, 1.56, 0.64, 1)";
+                        mapBadge.classList.remove('opacity-0', 'scale-50');
+                        mapBadge.classList.add('opacity-100', 'scale-100');
+                    }
+
+                    // 4. อนิเมชั่นตัวเลข 190+ วิ่ง
+                    if (mapCounter) {
+                        const target = parseInt(mapCounter.getAttribute('data-target'));
+                        const duration = 2000; // วิ่ง 2 วินาที
+                        const frameRate = 30;
+                        const totalFrames = Math.round((duration / 1000) * frameRate);
+                        let currentFrame = 0;
+
+                        // หน่วงเวลาให้วงกลมโผล่มาก่อนค่อยเริ่มนับ (Delay 500ms)
+                        setTimeout(() => {
+                            const counter = setInterval(() => {
+                                currentFrame++;
+                                const progress = currentFrame / totalFrames;
+                                // Ease-out
+                                const current = target * (1 - Math.pow(1 - progress, 3));
+
+                                mapCounter.innerText = Math.round(current);
+
+                                if (currentFrame >= totalFrames) {
+                                    clearInterval(counter);
+                                    mapCounter.innerText = target;
+                                }
+                            }, 1000 / frameRate);
+                        }, 500);
+                    }
+                }
+            }, { threshold: 0.3 }); // ทำงานเมื่อเลื่อนมาเห็นส่วนนี้ 30%
+
+            if (mapSection) {
+                mapObserver.observe(mapSection);
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.logo-section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // หน่วงเวลาทีละนิดให้แต่ละหมวดค่อยๆ ไล่ขึ้นมา
+                        setTimeout(() => {
+                            entry.target.classList.add('animate-fade-in-up');
+                        }, index * 200);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(sec => observer.observe(sec));
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.cert-slide');
+            const dotsContainer = document.getElementById('cert-dots');
+
+            let currentIndex = 0;
+            let slideInterval;
+            const delay = 4000; // เวลาเปลี่ยนภาพอัตโนมัติ (4 วินาที)
+            let dots = [];
+
+            function initCertSlider() {
+                if (slides.length === 0) return;
+
+                dotsContainer.innerHTML = '';
+                dots = [];
+
+                slides.forEach((_, i) => {
+                    const dot = document.createElement('button');
+                    dot.setAttribute('aria-label', `Go to certificate slide ${i + 1}`);
+
+                    dot.addEventListener('click', () => {
+                        showCertSlide(i);
+                        stopAutoSlide();
+                        startAutoSlide();
+                    });
+
+                    dotsContainer.appendChild(dot);
+                    dots.push(dot);
+                });
+
+                updateCertDots();
+            }
+
+            // ฟังก์ชันแสดงสไลด์แบบเลื่อนจากขวา
+            function showCertSlide(index) {
+                if (index >= slides.length) index = 0;
+                if (index < 0) index = slides.length - 1;
+
+                currentIndex = index;
+
+                slides.forEach((slide, i) => {
+                    if (i === currentIndex) {
+                        // รูปที่กำลังแสดง ดันมาอยู่ตรงกลางจอ (0)
+                        slide.style.transform = 'translateX(0)';
+                        slide.style.zIndex = '10';
+                    } else if (i < currentIndex) {
+                        // รูปที่ผ่านมาแล้ว เลื่อนออกไปทางซ้าย (-100%)
+                        slide.style.transform = 'translateX(-100%)';
+                        slide.style.zIndex = '1';
+                    } else {
+                        // รูปที่รออยู่ทางขวา รอเลื่อนเข้ามา (100%)
+                        slide.style.transform = 'translateX(100%)';
+                        slide.style.zIndex = '1';
+                    }
+                });
+
+                updateCertDots();
+            }
+
+            function updateCertDots() {
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.className = 'w-6 h-6 rounded-full border-2 border-spen-green flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out shrink-0';
+                        dot.innerHTML = '<div class="w-2.5 h-2.5 bg-spen-green rounded-full"></div>';
+                    } else {
+                        dot.className = 'w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300 ease-in-out cursor-pointer shrink-0';
+                        dot.innerHTML = '';
+                    }
+                });
+            }
+
+            function startAutoSlide() {
+                stopAutoSlide();
+                slideInterval = setInterval(() => {
+                    let nextIndex = (currentIndex + 1) % slides.length;
+                    showCertSlide(nextIndex);
+                }, delay);
+            }
+
+            function stopAutoSlide() {
+                clearInterval(slideInterval);
+            }
+
+            // เริ่มต้นการทำงาน
+            initCertSlider();
+            showCertSlide(0);
+            startAutoSlide();
+
+            const sliderContainer = document.getElementById('cert-slider');
+            if (sliderContainer) {
+                sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+                sliderContainer.addEventListener('mouseleave', startAutoSlide);
+            }
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 1. ฟังก์ชันทำเอฟเฟกต์เฟดลอยขึ้นทีละก้อน (ใช้ได้กับทุก Section) ---
+            const setupStaggeredAnimation = (itemClass, imgClass) => {
+                const items = document.querySelectorAll(itemClass);
+                const imgItem = document.querySelector(imgClass);
+
+                const observer = new IntersectionObserver((entries) => {
+                    let delayTime = 0;
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.remove('opacity-0', 'translate-y-12', '-translate-y-16');
+                                entry.target.classList.add('opacity-100', 'translate-y-0');
+                            }, delayTime);
+
+                            delayTime += 200; // หน่วงเวลาก้อนถัดไป
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                if (imgItem) observer.observe(imgItem);
+                items.forEach(item => observer.observe(item));
+            };
+
+            // เรียกใช้งานแอนิเมชันให้ทั้ง About Us และ Our Products
+            setupStaggeredAnimation('.about-item', '.about-img');
+            setupStaggeredAnimation('.product-item', '.product-img');
+            setupStaggeredAnimation('.serve-item', null);
+            setupStaggeredAnimation('.core-item', null);
+            setupStaggeredAnimation('.core-value-item', null);
+            setupStaggeredAnimation('.logo-section', null);
+            setupStaggeredAnimation('.cert-item', null);
+            setupStaggeredAnimation('.contact-item', null);
+            setupStaggeredAnimation('.footer-item', null);
+
+
+            // --- 2. ฟังก์ชัน Parallax Scrolling (ทำงานเฉพาะ Desktop) ---
+            window.addEventListener('scroll', () => {
+
+                // เช็คความกว้างหน้าจอ: ถ้าเป็นมือถือหรือแท็บเล็ต (ต่ำกว่า 1024px) 
+                if (window.innerWidth < 1024) {
+                    // ให้ยกเลิกการเลื่อน (รีเซ็ตตำแหน่งกลับเป็น 0px ป้องกันบักเวลาหมุนจอ)
+                    const parallaxEls = document.querySelectorAll('#about-parallax, #products-parallax');
+                    parallaxEls.forEach(el => {
+                        if (el) el.style.transform = 'translateY(0px)';
+                    });
+                    return; // หยุดการทำงานคำสั่งด้านล่างทันที
+                }
+
+                // ถ้าเป็น Desktop ค่อยให้ทำงาน
+                const parallaxElements = [
+                    document.getElementById('about-parallax'),
+                    document.getElementById('products-parallax'),
+                    document.getElementById('serve-title-parallax'),
+                    document.getElementById('map-title-parallax'),
+                    document.getElementById('cert-text-parallax')
+                ];
+
+                parallaxElements.forEach(el => {
+                    if (el) {
+                        const rect = el.getBoundingClientRect();
+                        const viewHeight = window.innerHeight;
+
+                        // ให้ขยับเฉพาะตอนที่ Section นั้นเลื่อนเข้ามาในจอแล้ว
+                        if (rect.top <= viewHeight && rect.bottom >= 0) {
+                            const speed = 0.15; // ความเร็วของการเลื่อน (ยิ่งมากยิ่งเลื่อนเยอะ)
+                            const yPos = (rect.top - viewHeight / 2) * speed;
+                            el.style.transform = `translateY(${yPos}px)`;
+                        }
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

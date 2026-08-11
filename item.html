@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Single Point Engineering | ผลิตภัณฑ์คุณภาพสูง</title>
+    <meta name="description" content="Single Point Engineering ผลิตภัณฑ์คุณภาพสูง ชิ้นส่วนยานยนต์ อุปกรณ์การแพทย์ อากาศยาน และอื่นๆ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #0f1c1a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        :root {
+            --primary: #008080;
+            --primary-dark: #006666;
+            --primary-light: #20b2aa;
+            --primary-soft: #e6f3f3;
+            --gray-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --border-light: #e2e8f0;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            padding: 10px 0;
+            gap: 10px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 1;
+            min-width: 0;
+        }
+
+        .logo-img {
+            height: 42px;
+            width: auto;
+            flex-shrink: 0;
+        }
+
+        .logo-text h1 {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.2px;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .logo-text p {
+            font-size: 0.55rem;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+
+        @media (min-width: 380px) {
+            .logo-img { height: 46px; }
+            .logo-text h1 { font-size: 0.8rem; }
+            .logo-text p { font-size: 0.6rem; }
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+        }
+        .desktop-nav ul {
+            display: flex;
+            gap: 1.2rem;
+            list-style: none;
+        }
+        .desktop-nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: 0.2s;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .desktop-nav a:hover { color: var(--primary); }
+
+        /* LANGUAGE DROPDOWN */
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-btn {
+            background: white;
+            border: 1px solid var(--border-light);
+            padding: 6px 12px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+        .lang-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .lang-content {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            right: 0;
+            background: white;
+            min-width: 130px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-light);
+            z-index: 101;
+            overflow: hidden;
+            margin-top: 8px;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            pointer-events: none;
+        }
+        .lang-content.show {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .lang-content a {
+            display: block;
+            padding: 10px 16px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .lang-content a:hover { background: var(--primary-soft); color: var(--primary); }
+
+        /* Mobile Navigation */
+        .mobile-nav-wrapper {
+            display: none;
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            padding: 6px 0 8px 0;
+            background: rgba(255,255,255,0.96);
+            border-top: 1px solid var(--border-light);
+            white-space: nowrap;
+        }
+        .mobile-nav-wrapper::-webkit-scrollbar { height: 2px; }
+        .mobile-nav-wrapper::-webkit-scrollbar-track { background: var(--border-light); border-radius: 10px; }
+        .mobile-nav-wrapper::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 10px; }
+        .mobile-nav-wrapper ul {
+            display: inline-flex;
+            gap: 3px;
+            list-style: none;
+            padding: 0 16px;
+            margin: 0;
+        }
+        .mobile-nav-wrapper li { display: inline-block; }
+        .mobile-nav-wrapper a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: 0.2s;
+            font-size: 0.7rem;
+            padding: 5px 10px;
+            border-radius: 40px;
+            background: transparent;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        .mobile-nav-wrapper a:active { background: var(--primary-soft); color: var(--primary); }
+
+        @media (max-width: 850px) {
+            .desktop-nav { display: none; }
+            .mobile-nav-wrapper { display: block; }
+        }
+
+        .main-content { padding-top: 90px; }
+        @media (max-width: 850px) { .main-content { padding-top: 105px; } }
+
+        /* ========== PRODUCT SLIDER SECTION (ปรับขนาดให้เล็กลง) ========== */
+        .product-slider-section {
+            padding: 50px 0 80px;
+            background: white;
+            min-height: auto;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .section-header .subtitle {
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 0.9rem;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        @media (max-width: 768px) {
+            .section-header h2 { font-size: 1.8rem; }
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 1000px;      /* จำกัดความกว้างสูงสุด */
+            margin: 0 auto;
+        }
+        .slider-wrapper {
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            background-color: #1a2a2a;  /* พื้นหลังเข้มสำหรับรูปที่มี aspect ratio ไม่เท่ากัน */
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slider-slide {
+            flex: 0 0 100%;
+            /* ลดความสูงลง: จาก 16/9 เป็น 3/2 ทำให้กรอบเล็กลง */
+            aspect-ratio: 3 / 2;
+            position: relative;
+            background: #1a2a2a;
+        }
+        .slider-slide img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;    /* เปลี่ยนจาก cover เป็น contain ให้เห็นรูปเต็มไม่ตัด */
+            top: 0;
+            left: 0;
+        }
+        /* ปุ่มเลื่อนรูป */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            font-size: 1.2rem;
+            color: var(--primary);
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+        .slider-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        .slider-btn.prev {
+            left: 12px;
+        }
+        .slider-btn.next {
+            right: 12px;
+        }
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 28px;
+        }
+        .dot-btn {
+            width: 10px;
+            height: 10px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+        .dot-btn.active {
+            background: var(--primary);
+            transform: scale(1.4);
+        }
+        @media (max-width: 768px) {
+            .slider-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+            .slider-btn.prev {
+                left: 8px;
+            }
+            .slider-btn.next {
+                right: 8px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #0a2a2a;
+            color: white;
+            padding: 40px 0 25px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 160px;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .footer-col p, .footer-col a {
+            font-size: 0.8rem;
+            color: #e0e8e0;
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        .footer-col a:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #2a5a5a;
+            font-size: 0.7rem;
+            color: #c0d0c8;
+        }
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: 0.2s;
+            z-index: 99;
+        }
+        .scroll-top.show { opacity: 1; }
+
+        #tempPrecisionSlide { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="main-content" id="mainContent">
+    <header id="header">
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="https://i.postimg.cc/bZYYVgTW/picture4-cut2-122x123.png" alt="Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1 data-key="company_name">SINGLE POINT ENGINEERING COMPANY LIMITED</h1>
+                    <p data-key="company_tagline">Quality Engineering, Global Standards</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="desktop-nav">
+                    <ul>
+                        <li><a href="index.html" data-key="menu_home">Home</a></li>
+                        <li><a href="Item.html" data-key="menu_products">Products</a></li>
+                        <li><a href="certificate.html" data-key="menu_certificate">Certificate</a></li>
+                        <li><a href="about.html" data-key="menu_company">Company</a></li>
+                        <li><a href="contact_us.html" data-key="menu_contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="lang-dropdown">
+                    <div class="lang-btn" id="langBtnText">🌐 Language ▼</div>
+                    <div class="lang-content" id="langContent">
+                        <a onclick="setLanguage('th')">🇹🇭 ภาษาไทย</a>
+                        <a onclick="setLanguage('en')">🇬🇧 English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-nav-wrapper">
+            <ul>
+                <li><a href="index.html" data-key="menu_home">Home</a></li>
+                <li><a href="Item.html" data-key="menu_products">Products</a></li>
+                <li><a href="certificate.html" data-key="menu_certificate">Certificate</a></li>
+                <li><a href="about.html" data-key="menu_company">Company</a></li>
+                <li><a href="contact_us.html" data-key="menu_contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Product Slider Section -->
+    <section class="product-slider-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle" data-key="product_slider_subtitle">▎Premium Solutions</span>
+                <h2 data-key="product_slider_title">OUR PRODUCTS</h2>
+            </div>
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slider-track" id="sliderTrack">
+                        <div class="slider-slide"><img src="https://i.postimg.cc/kG0jFYJw/Screenshot-2026-05-28-094815.png" alt="Product"></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/RZF8zbFp/Screenshot-2026-05-29-113738.png" alt="Product"></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/XvqzWCzJ/Screenshot-2026-05-28-095059.png" alt="Product"></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/ydBnd3f2/Screenshot-2026-05-28-100430.png" alt="Product"></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/qR0xpzLZ/Screenshot-2026-05-29-113917.png" alt="Product"></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/dVtWRCvr/Screenshot-2026-05-28-095210.png" alt="Product"></div>
+                        <div class="slider-slide" id="mainPrecisionSlide"><img src="https://i.postimg.cc/x1NKVKvr/472955.jpg" alt="Product"></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/bvgH9ygy/tar.jpg" alt="Product"></div>
+                        <div class="slider-slide"><img src="https://i.postimg.cc/8cC6KWpM/472953.jpg" alt="Product"></div>
+                    </div>
+                </div>
+                <button class="slider-btn prev" id="prevBtn">❮</button>
+                <button class="slider-btn next" id="nextBtn">❯</button>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 data-key="footer_company">Single Point Engineering</h4>
+                    <p data-key="footer_tagline">Quality Engineering, Global Standards</p>
+                    <p>© 2026 SPEN</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-key="footer_quick">Quick Menu</h4>
+                    <p><a href="index.html" data-key="menu_home">Home</a></p>
+                    <p><a href="Item.html" data-key="menu_products">Products</a></p>
+                    <p><a href="certificate.html" data-key="menu_certificate">Certificate</a></p>
+                    <p><a href="about.html" data-key="menu_company">Company</a></p>
+                    <p><a href="contact_us.html" data-key="menu_contact">Contact Us</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-key="footer_contact">Contact Us</h4>
+                    <p>📞 <a href="tel:+6636812886">+66 (0) 36-812-886</a> ext 29</p>
+                    <p>📱 <a href="tel:+66863399079">086-339-9079</a></p>
+                    <p>✉️ <a href="mailto:sale@spen.co.th">sale@spen.co.th</a></p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p data-key="copyright">© 2026 Single Point Engineering Co., Ltd. | All Rights Reserved | ISO 9001:2025 | IATF 16949</p>
+            </div>
+        </div>
+    </footer>
+    <a href="#" id="scrollTopBtn" class="scroll-top">↑</a>
+</div>
+
+<script>
+    const translations = {
+        th: {
+            company_name: "SINGLE POINT ENGINEERING COMPANY LIMITED", company_tagline: "Quality Engineering, Global Standards",
+            menu_home: "หน้าแรก", menu_products: "สินค้า", menu_certificate: "ใบรับรอง", menu_company: "บริษัท", menu_contact: "ติดต่อเรา",
+            product_slider_subtitle: "▎พรีเมียมโซลูชัน", product_slider_title: "สินค้าของเรา",
+            footer_company: "Single Point Engineering", footer_tagline: "Quality Engineering, Global Standards",
+            footer_quick: "เมนูด่วน", footer_contact: "ติดต่อเรา",
+            copyright: "© 2026 Single Point Engineering Co., Ltd. | สงวนลิขสิทธิ์"
+        },
+        en: {
+            company_name: "SINGLE POINT ENGINEERING COMPANY LIMITED", company_tagline: "Quality Engineering, Global Standards",
+            menu_home: "Home", menu_products: "Products", menu_certificate: "Certificate", menu_company: "Company", menu_contact: "Contact Us",
+            product_slider_subtitle: "▎Premium Solutions", product_slider_title: "OUR PRODUCT",
+            footer_company: "Single Point Engineering", footer_tagline: "Quality Engineering, Global Standards",
+            footer_quick: "Quick Menu", footer_contact: "Contact Us",
+            copyright: "© 2026 Single Point Engineering Co., Ltd. | All Rights Reserved"
+        }
+    };
+
+    let currentLang = localStorage.getItem('spen_lang') === 'en' ? 'en' : 'th';
+    
+    function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('spen_lang', lang);
+        applyTranslations();
+        const langBtn = document.getElementById('langBtnText');
+        if (langBtn) {
+            langBtn.innerHTML = lang === 'th' ? '🌐 ภาษา ▼' : '🌐 Language ▼';
+        }
+        const langContent = document.getElementById('langContent');
+        if (langContent) {
+            langContent.classList.remove('show');
+        }
+    }
+    
+    function applyTranslations() {
+        const t = translations[currentLang];
+        if (!t) return;
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (t[key] !== undefined) el.innerHTML = t[key];
+        });
+    }
+    applyTranslations();
+
+    // Language dropdown logic
+    const langBtn = document.getElementById('langBtnText');
+    const langContent = document.getElementById('langContent');
+    let closeTimeout = null;
+    
+    if (langBtn && langContent) {
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (closeTimeout) {
+                clearTimeout(closeTimeout);
+                closeTimeout = null;
+            }
+            langContent.classList.toggle('show');
+        });
+        
+        langContent.addEventListener('mouseleave', () => {
+            closeTimeout = setTimeout(() => {
+                langContent.classList.remove('show');
+                closeTimeout = null;
+            }, 1500);
+        });
+        
+        langContent.addEventListener('mouseenter', () => {
+            if (closeTimeout) {
+                clearTimeout(closeTimeout);
+                closeTimeout = null;
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!langBtn.contains(e.target) && !langContent.contains(e.target)) {
+                langContent.classList.remove('show');
+                if (closeTimeout) {
+                    clearTimeout(closeTimeout);
+                    closeTimeout = null;
+                }
+            }
+        });
+    }
+
+    // Date-based promo slide (3-4 June 2026)
+    function updatePrecisionSlide() {
+        const main = document.getElementById('mainPrecisionSlide');
+        const temp = document.getElementById('tempPrecisionSlide');
+        if (!main || !temp) return;
+        const today = new Date();
+        const isSpecial = (today.getFullYear() === 2026 && today.getMonth() === 5 && (today.getDate() === 3 || today.getDate() === 4));
+        main.style.display = isSpecial ? 'none' : 'block';
+        temp.style.display = isSpecial ? 'block' : 'none';
+    }
+    updatePrecisionSlide();
+
+    // Slider
+    setTimeout(() => {
+        const track = document.getElementById('sliderTrack');
+        const getVisibleSlides = () => Array.from(document.querySelectorAll('.slider-slide')).filter(s => getComputedStyle(s).display !== 'none');
+        let slides = getVisibleSlides();
+        let currentIndex = 0, total = slides.length;
+        let autoInterval, isTransitioning = false;
+        const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn'), dotsContainer = document.getElementById('sliderDots');
+
+        function rebuild() {
+            slides = getVisibleSlides();
+            total = slides.length;
+            if (currentIndex >= total) currentIndex = Math.max(0, total - 1);
+            updatePosition(true);
+            createDots();
+        }
+        function updatePosition(noTransition = false) {
+            if (noTransition) track.style.transition = 'none';
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            if (noTransition) setTimeout(() => track.style.transition = 'transform 0.5s ease', 20);
+        }
+        function createDots() {
+            if (!dotsContainer) return;
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                let dot = document.createElement('button');
+                dot.classList.add('dot-btn');
+                if (i === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+        }
+        function updateDots() {
+            document.querySelectorAll('.dot-btn').forEach((dot, i) => {
+                if (i === currentIndex) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+        }
+        function goToSlide(idx) {
+            if (isTransitioning || idx === currentIndex) return;
+            isTransitioning = true;
+            currentIndex = idx;
+            updatePosition();
+            updateDots();
+            setTimeout(() => { isTransitioning = false; }, 500);
+            resetAuto();
+        }
+        function nextSlide() { if (isTransitioning) return; goToSlide((currentIndex + 1) % total); }
+        function prevSlide() { if (isTransitioning) return; goToSlide((currentIndex - 1 + total) % total); }
+        function startAuto() { if (autoInterval) clearInterval(autoInterval); autoInterval = setInterval(nextSlide, 6000); }
+        function resetAuto() { clearInterval(autoInterval); startAuto(); }
+
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        createDots();
+        startAuto();
+        const wrapper = document.querySelector('.slider-wrapper');
+        if (wrapper) {
+            wrapper.addEventListener('mouseenter', () => clearInterval(autoInterval));
+            wrapper.addEventListener('mouseleave', startAuto);
+        }
+        window.addEventListener('resize', () => { rebuild(); });
+    }, 100);
+
+    // Scroll effects
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 250) scrollBtn.classList.add('show');
+        else scrollBtn.classList.remove('show');
+        if (window.scrollY > 50) header.classList.add('header-scrolled');
+        else header.classList.remove('header-scrolled');
+    });
+    if (scrollBtn) scrollBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+</script>
+</body>
+</html>
