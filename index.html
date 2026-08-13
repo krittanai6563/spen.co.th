@@ -9,8 +9,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="components/images/main-Logo-google.png">
     <link rel="stylesheet" href="components/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -27,18 +28,17 @@
                         }
                     },
                     fontFamily: {
-                      sans: ['"IBM Plex Sans Thai"', 'sans-serif'], 
-                neue: ['"Neue Haas Display"', 'sans-serif']
+                        sans: ['"IBM Plex Sans Thai"', 'sans-serif'],
+                        neue: ['"Neue Haas Display"', 'sans-serif']
                     },
-                    // เพิ่ม Keyframes สำหรับเอฟเฟกต์วงกลมลอยขึ้นลง
                     keyframes: {
                         bounce: {
-                            '0%, 100%': { transform: 'translateY(-50%)' }, // ลอยอยู่ตำแหน่งปกติ
-                            '50%': { transform: 'translateY(calc(-50% - 15px))' }, // ลอยขึ้นไปอีก 15px
+                            '0%, 100%': { transform: 'translateY(-50%)' },
+                            '50%': { transform: 'translateY(calc(-50% - 15px))' },
                         },
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' }, // ลอยขึ้น 10px
+                            '50%': { transform: 'translateY(-10px)' },
                         }
 
                     }
@@ -51,1214 +51,1182 @@
 
 <body class="font-sans text-spen-black antialiased bg-white selection:bg-spen-green selection:text-white">
     <div id="header-placeholder"></div>
-    
-<main>
- <section
-    class="relative w-full min-h-[100svh] lg:min-h-screen flex items-center hero-bg pt-28 pb-24 lg:pt-20 overflow-hidden">
 
-    <!-- เลเยอร์สีดำบางๆ เผื่อกรณีใช้สคริปต์ Parallax -->
-    <div id="hero-overlay" class="absolute inset-0 bg-black/10 z-0 pointer-events-none transition-opacity"></div>
-
-    <div class="w-full max-w-[1400px] mx-auto px-5 sm:px-8 relative z-10">
-        <div id="hero-content" class="max-w-4xl mt-4 sm:mt-10 transition-transform duration-75 ease-out">
-
-            <!-- 1. ป้ายกำกับ (ปรับขนาดข้อความบนมือถือ) -->
-            <div
-                class="flex items-center gap-3 mb-4 opacity-0 animate-fade-in-up delay-200 [animation-fill-mode:forwards]">
-                <div class="w-5 sm:w-6 h-[1.5px] bg-gray-200"></div>
-                <span
-                    class="lang-text text-gray-200 text-sm sm:text-base lg:text-lg font-light tracking-wide uppercase sm:normal-case"
-                    data-th="การผลิตชิ้นส่วนที่มีความแม่นยำ" 
-                    data-en="High Precision Manufacturing">
-                    การผลิตชิ้นส่วนที่มีความแม่นยำ
-                </span>
+    <main>
+        <section
+            class="relative w-full min-h-[100svh] lg:min-h-screen flex items-center hero-bg pt-28 pb-24 lg:pt-20 overflow-hidden">
+            <div id="hero-overlay" class="absolute inset-0 bg-black/10 z-0 pointer-events-none transition-opacity">
             </div>
-
-   <!-- 2. หัวข้อหลัก -->
-            <h1
-                class="lang-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-12 opacity-0 animate-fade-in-up delay-400 [animation-fill-mode:forwards]"
-                style="line-height: 1.2;"
-                data-th="พลังแห่งวิศวกรรม<br class='hidden sm:block'><span class='sm:hidden'> </span>ขับเคลื่อนสู่อนาคต" 
-                data-en="<span class='text-3xl sm:text-4xl md:text-5xl lg:text-6xl'>The Power of Engineering<br>Driving Tomorrow</span>">
-                พลังแห่งวิศวกรรม<br class="hidden sm:block">
-                <span class="sm:hidden"> </span>ขับเคลื่อนสู่อนาคต
-            </h1>
-            <!-- 3. ข้อความรายละเอียด (ปรับให้อ่านง่ายขึ้นบนมือถือ) -->
-            <p
-                class="lang-text text-gray-200 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 max-w-xl leading-relaxed font-light opacity-0 animate-fade-in-up delay-600 [animation-fill-mode:forwards]"
-                data-th="ที่ Single Point Engineering “เราส่งมอบความเป็นเลิศ” ไม่ใช่เพียงแค่คำมั่นสัญญา แต่เป็นรากฐานของการดำเนินงานของเราในแต่ละวัน ลูกค้าของเราให้ความสำคัญกับผลิตภัณฑ์ที่มีความแม่นยำสูง ความเข้าใจอย่างลึกซึ้งในภาคอุตสาหกรรม และการบริการที่ตอบสนองอย่างรวดเร็ว เรามุ่งมั่นในการสร้างความร่วมมือระยะยาวและการสนับสนุนเชิงรุกเพื่อช่วยให้ลูกค้าเติบโตและประสบความสำเร็จ" 
-                data-en="At Single Point Engineering, 'We Deliver Excellence' is not just a promise, but the foundation of our daily operations. Our customers value high-precision products, deep industry understanding, and responsive service.">
-            ที่ Single Point Engineering “เราส่งมอบความเป็นเลิศ” ไม่ใช่เพียงแค่คำมั่นสัญญา แต่เป็นรากฐานของการดำเนินงานของเราในแต่ละวัน ลูกค้าของเราให้ความสำคัญกับผลิตภัณฑ์ที่มีความแม่นยำสูง ความเข้าใจอย่างลึกซึ้งในภาคอุตสาหกรรม และการบริการที่ตอบสนองอย่างรวดเร็ว เรามุ่งมั่นในการสร้างความร่วมมือระยะยาวและการสนับสนุนเชิงรุกเพื่อช่วยให้ลูกค้าเติบโตและประสบความสำเร็จ
-            </p>
-
-            <!-- 4. ปุ่ม Action (ครอบ span ไว้ที่ข้อความเพื่อรักษาไอคอนไว้) -->
-            <div
-                class="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-5 mb-10 sm:mb-12 opacity-0 animate-fade-in-up delay-800 [animation-fill-mode:forwards]">
-               <!-- ปุ่มที่ 1: สินค้าทั้งหมด (เปลี่ยนจาก button เป็น a แล้วใส่ href) -->
-<!-- ปุ่มที่ 1: สินค้าทั้งหมด (เปิดแท็บใหม่) -->
-<a href="item.html" target="_blank" rel="noopener noreferrer"
-    class="w-full sm:w-auto bg-[#05853f] hover:bg-green-700 text-white px-6 sm:px-8 py-3.5 sm:py-4 lg:py-3.5 rounded-xl text-base lg:text-lg font-medium transition-all flex items-center justify-center gap-3 shadow-lg shadow-spen-green/20 hover:scale-105">
-    <span class="lang-text" data-th="สินค้าทั้งหมด" data-en="All Products">สินค้าทั้งหมด</span> 
-    <i class="ph ph-arrow-right text-lg"></i>
-</a>
-
-<!-- ปุ่มที่ 2: ติดต่อเรา (เปิดแท็บใหม่) -->
-<a href="contact_us.html" target="_blank" rel="noopener noreferrer"
-    class="w-full sm:w-auto bg-gradient-to-r from-white/30 to-white/10 hover:from-white/40 hover:to-white/20 border border-white/30 text-white px-6 sm:px-8 py-3.5 sm:py-4 lg:py-3.5 rounded-xl text-base lg:text-lg font-medium transition-all backdrop-blur-md flex items-center justify-center gap-3 shadow-lg shadow-black/10 hover:scale-105">
-    <span class="lang-text" data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</span> 
-    <i class="ph ph-arrow-right text-lg"></i>
-</a>
-            </div>
-
-            <!-- 5. โลโก้ลูกค้า (ปรับขนาดวงกลมให้เล็กลงนิดหน่อยในมือถือ) -->
-            <div
-                class="flex items-center gap-3 sm:gap-4 opacity-0 animate-fade-in-up delay-1000 [animation-fill-mode:forwards]">
-                <div class="flex -space-x-2 sm:-space-x-1 hover:-space-x-0 transition-all duration-300">
+            <div class="w-full max-w-[1400px] mx-auto px-5 sm:px-8 relative z-10">
+                <div id="hero-content" class="max-w-4xl mt-4 sm:mt-10 transition-transform duration-75 ease-out">
                     <div
-                        class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white flex items-center justify-center p-1.5 z-30 shadow-md hover:scale-110 transition-transform cursor-pointer">
-                        <img src="components/images/Group 185783.svg" alt="Customer 1"
-                            class="w-full h-full object-contain">
-                    </div>
-                    <div
-                        class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white flex items-center justify-center p-1.5 z-20 shadow-md hover:scale-110 transition-transform cursor-pointer">
-                        <img src="components/images/Logo_Circle_Cosmo.svg" alt="Customer 2"
-                            class="w-full h-full object-contain">
-                    </div>
-                    <div
-                        class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white flex items-center justify-center p-1.5 z-10 shadow-md hover:scale-110 transition-transform cursor-pointer">
-                        <img src="components/images/Logo_Circle_Kyocera.svg" alt="Customer 3"
-                            class="w-full h-full object-contain">
-                    </div>
-                </div>
-                <div
-                    class="text-white text-xs sm:text-sm font-light tracking-wide leading-tight cursor-pointer hover:text-[#05853f] transition-colors">
-                    <span class="block lang-text" data-th="ดูทั้งหมด" data-en="See All">ดูทั้งหมด</span>
-                    <span class="block lang-text" data-th="ลูกค้าของเรา" data-en="Our Customers">ลูกค้าของเรา</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-    <!-- Statistics Section -->
-  <section
-    class="py-14 border-b border-gray-200 relative overflow-hidden bg-gray-100 bg-[url('components/images/background.jpg')] bg-cover bg-center">
-
-    <!-- เลเยอร์สีขาวบางๆ เพื่อช่วยให้ตัวหนังสืออ่านง่ายขึ้นเวลามีพื้นหลัง (ปรับความเข้มที่ bg-white/80) -->
-    <div class="absolute inset-0 bg-white/80 lg:bg-white/60 pointer-events-none"></div>
-
-    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 relative z-10">
-        <!-- ปรับเป็น Grid 2 คอลัมน์บนมือถือ และเรียงแถวเดียวบนหน้าจอใหญ่ -->
-        <div class="grid grid-cols-2 gap-y-10 gap-x-4 lg:flex lg:justify-between lg:items-center w-full">
-
-            <!-- Stat 1: Years Experience -->
-            <div class="stat-item flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 opacity-0">
-                <img src="components/images/Years Experience.svg" alt="Clock Icon"
-                    class="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm">
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                    <h3 class="text-4xl md:text-[42px] font-black text-black leading-none tracking-tight">
-                        <span class="counter-value" data-target="30">0</span>+
-                    </h3>
-                    <p class="lang-text text-xs md:text-[14px] text-gray-700 font-medium md:font-light mt-1.5 tracking-wide"
-                        data-th="ปีแห่งประสบการณ์" data-en="Years Experience">
-                        Years Experience
-                    </p>
-                </div>
-            </div>
-
-            <!-- Stat 2: Global Customers -->
-            <div class="stat-item flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 opacity-0">
-                <img src="components/images/Global Customers.svg" alt="Globe Icon"
-                    class="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm">
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                    <h3 class="text-4xl md:text-[42px] font-black text-black leading-none tracking-tight">
-                        <span class="counter-value" data-target="190">0</span>+
-                    </h3>
-                    <p class="lang-text text-xs md:text-[14px] text-gray-700 font-medium md:font-light mt-1.5 tracking-wide"
-                        data-th="ลูกค้าทั่วโลก" data-en="Global Customers">
-                        Global Customers
-                    </p>
-                </div>
-            </div>
-
-            <!-- Stat 3: Factory Area -->
-            <div class="stat-item flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 opacity-0">
-                <img src="components/images/Factory Area.svg" alt="Factory Icon"
-                    class="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm">
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                    <h3 class="text-4xl md:text-[42px] font-black text-black leading-none tracking-tight flex items-baseline">
-                        <span class="counter-value" data-target="2.8" data-decimals="1">0.0</span>K
-                        <span class="text-base md:text-[20px] font-bold ml-1 md:ml-1.5 tracking-normal">sq.m.</span>
-                    </h3>
-                    <p class="lang-text text-xs md:text-[14px] text-gray-700 font-medium md:font-light mt-1.5 tracking-wide"
-                        data-th="พื้นที่โรงงาน" data-en="Factory Area">
-                        Factory Area
-                    </p>
-                </div>
-            </div>
-
-            <!-- Stat 4: Employees -->
-            <div class="stat-item flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 opacity-0">
-                <img src="components/images/Icon_Employees.svg" alt="User Icon"
-                    class="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm">
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                    <h3 class="text-4xl md:text-[42px] font-black text-black leading-none tracking-tight">
-                        <span class="counter-value" data-target="190">0</span>
-                    </h3>
-                    <p class="lang-text text-xs md:text-[14px] text-gray-700 font-medium md:font-light mt-1.5 tracking-wide"
-                        data-th="พนักงาน" data-en="Employees">
-                        Employees
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-    <!-- About Us Section -->
-   <section class="py-20 md:py-34 bg-white overflow-hidden">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-8 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-
-                <!-- ฝั่งซ้าย: รูปภาพ (เฟดและเลื่อนลงจากด้านบน) -->
-                <div
-                    class="order-2 lg:order-1 relative w-full aspect-[4/3] about-img opacity-0 -translate-y-16 transition-all duration-1000 ease-out">
-                    <div class="absolute inset-0 w-full h-full rounded-2xl overflow-hidden">
-                        <img src="components/images/AdobeStock.png" alt="SPEN Factory Building"
-                            class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- ฝั่งขวา: ข้อความ (เพิ่ม id="about-parallax" สำหรับทำเอฟเฟกต์เลื่อนตามเมาส์) -->
-                <div id="about-parallax" class="order-1 lg:order-2 flex flex-col justify-center">
-
-                    <!-- ก้อนที่ 1: หัวข้อย่อย -->
-                    <div
-                        class="about-item flex items-center gap-3 mb-4 opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-                        <div class="w-6 h-[2px] bg-[#05853f]"></div>
-                        <span class="lang-text text-black font-bold text-xl tracking-wide" data-th="เกี่ยวกับเรา" data-en="About Us">เกี่ยวกับเรา</span>
-                    </div>
-
-                    <!-- ก้อนที่ 2: หัวข้อหลัก -->
-                   <h2
-                        class="about-item lang-text text-4xl md:text-5xl font-black text-black mb-10 leading-[1.3] md:leading-[1.4] tracking-tight opacity-0 translate-y-12 transition-all duration-1000 ease-out"
-                        data-th="บริษัท ซิงเกิ้ล พอยท์ <br>เอ็นจิเนียริ่ง จำกัด" 
-                        data-en="Single Point <br>Engineering Co., Ltd.">
-                        บริษัท ซิงเกิ้ล พอยท์ <br>เอ็นจิเนียริ่ง จำกัด
-                    </h2>
-
-                    <!-- ก้อนที่ 3 และ 4: ย่อหน้าข้อความ -->
-                    <div
-                        class="text-gray-500 font-light text-base md:text-[17px] leading-relaxed tracking-wide space-y-4">
-                        <p class="about-item lang-text opacity-0 translate-y-12 transition-all duration-1000 ease-out"
-                            data-th=" ผู้นำด้านวิศวกรรมผลิตภัณฑ์ที่มีความแม่นยำ และเทคโนโลยีการตรวจสอบที่ทันสมัย ด้วยประสบการณ์กว่า 30+ ปีที่ได้รับความไว้วางใจจากพันธมิตรทั่วโลก" 
-                            data-en="Leader in quality engineering, high-precision products, modern inspection technology. 30+ years experience trusted by global partners.">
-                            ผู้นำด้านวิศวกรรมผลิตภัณฑ์ที่มีความแม่นยำ และเทคโนโลยีการตรวจสอบที่ทันสมัย ด้วยประสบการณ์กว่า 30+ ปีที่ได้รับความไว้วางใจจากพันธมิตรทั่วโลก
-                        </p>
-                        <p class="about-item lang-text opacity-0 translate-y-12 transition-all duration-1000 ease-out"
-                            data-th="  ตลอดเวลาที่ผ่านมา Single Point Engineering (SPEN) เป็นพันธมิตรที่ได้รับความไว้วางใจในการผลิตชิ้นส่วนที่มีความแม่นยำ ในฐานะบริษัทที่ได้รับการส่งเสริมจาก BOI พร้อมด้วยโรงงานที่ทันสมัยสองแห่งในประเทศไทย SPEN สร้างขึ้นบนรากฐานแห่งความเป็นเลิศ การขยายธุรกิจอย่างต่อเนื่อง และนวัตกรรมทางเทคนิค" 
-                            data-en="For over 28 years, Single Point Engineering (SPEN) has been a trusted partner in high-precision manufacturing. As a BOI-promoted company with two state-of-the-art facilities in Thailand, SPEN is built on a legacy of excellence, continuous expansion, and technical innovation.">
-                            ตลอดเวลาที่ผ่านมา Single Point Engineering (SPEN) เป็นพันธมิตรที่ได้รับความไว้วางใจในการผลิตชิ้นส่วนที่มีความแม่นยำ ในฐานะบริษัทที่ได้รับการส่งเสริมจาก BOI พร้อมด้วยโรงงานที่ทันสมัยสองแห่งในประเทศไทย SPEN สร้างขึ้นบนรากฐานแห่งความเป็นเลิศ การขยายธุรกิจอย่างต่อเนื่อง และนวัตกรรมทางเทคนิค
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Products Section -->
-   <section class="py-20 md:py-34 bg-white overflow-hidden">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-8 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-
-                <!-- ฝั่งบน (Mobile) / ฝั่งขวา (Desktop): รูปภาพ -->
-                <div
-                    class="order-1 lg:order-2 relative w-full aspect-[4/3] lg:aspect-[4/3.5] product-img opacity-0 -translate-y-16 transition-all duration-1000 ease-out">
-                    <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden">
-                        <img src="components/images/Our Products/That Powers Progress.png" alt="Precision Inspection"
-                            class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- ฝั่งล่าง (Mobile) / ฝั่งซ้าย (Desktop): ข้อความ (มี id="products-parallax") -->
-                <div id="products-parallax"
-                    class="order-2 lg:order-1 flex flex-col justify-center transition-transform duration-75 ease-out">
-
-                    <!-- ก้อนที่ 1: หัวข้อย่อย -->
-                    <div
-                        class="product-item flex items-center gap-3 mb-4 opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-                        <div class="w-6 h-[2px] bg-[#05853f]"></div>
-                        <span class="lang-text text-black font-bold text-lg md:text-xl tracking-wide" 
-                              data-th="ผลิตภัณฑ์ของเรา" 
-                              data-en="Our Products">
-                              ผลิตภัณฑ์ของเรา
+                        class="flex items-center gap-3 mb-4 opacity-0 animate-fade-in-up delay-200 [animation-fill-mode:forwards]">
+                        <div class="w-5 sm:w-6 h-[1.5px] bg-gray-200"></div>
+                        <span
+                            class="lang-text text-gray-200 text-sm sm:text-base lg:text-lg font-light tracking-wide uppercase sm:normal-case"
+                            data-th="การผลิตชิ้นส่วนที่มีความแม่นยำ" data-en="High Precision Manufacturing">
+                            การผลิตชิ้นส่วนที่มีความแม่นยำ
                         </span>
                     </div>
-
-                  <!-- ก้อนที่ 2: หัวข้อหลัก -->
-<h2
-    class="product-item lang-text text-4xl md:text-5xl font-black text-black mb-6 md:mb-8 leading-[1.3] md:leading-[1.4] tracking-tight opacity-0 translate-y-12 transition-all duration-1000 ease-out text-balance break-keep"
-    data-th="พลังขับเคลื่อน&nbsp;ความก้าวหน้า"
-    data-en="That Powers Progress">
-    พลังขับเคลื่อน&nbsp;ความก้าวหน้า
-</h2>
-
-<!-- ก้อนที่ 3: เนื้อหาพารากราฟ -->
-<div
-    class="product-item text-gray-500 font-light text-base md:text-[17px] leading-relaxed tracking-wide space-y-4 mb-8 md:mb-10 opacity-0 translate-y-12 transition-all duration-1000 ease-out text-pretty break-keep">
-    
-    <p class="lang-text"
-       data-th="มาตรฐานคุณภาพระดับสากล ความมุ่งมั่นของเราด้านคุณภาพและความแม่นยำสะท้อนให้เห็นผ่านใบรับรองมาตรฐานที่เป็นที่ยอมรับในระดับสากล ได้แก่ ISO&nbsp;9001:2015 ด้านการบริหารจัดการคุณภาพ ISO&nbsp;14001:2015 ด้านความรับผิดชอบต่อสิ่งแวดล้อม และ IATF&nbsp;16949:2016 สำหรับการผลิตชิ้นส่วนยานยนต์ มาตรฐานเหล่านี้มิใช่เพียงใบรับรอง แต่คือกรอบแนวคิดที่กำหนดวิธีการทำงาน กระบวนการคิด และการส่งมอบผลงานของเราในทุกขั้นตอน"
-       data-en="Our commitment to quality and compliance is reflected in our globally recognized certifications: ISO 9001:2015 for quality management, ISO 14001:2015 for environmental responsibility, and IATF 16949:2016 for automotive-grade manufacturing. These standards are more than checkboxes, they define how we work, think, and deliver.">
-     มาตรฐานคุณภาพระดับสากล ความมุ่งมั่นของเราด้านคุณภาพและความแม่นยำสะท้อนให้เห็นผ่านใบรับรองมาตรฐานที่เป็นที่ยอมรับในระดับสากล ได้แก่ ISO&nbsp;9001:2015 ด้านการบริหารจัดการคุณภาพ ISO&nbsp;14001:2015 ด้านความรับผิดชอบต่อสิ่งแวดล้อม และ IATF&nbsp;16949:2016 สำหรับการผลิตชิ้นส่วนยานยนต์ มาตรฐานเหล่านี้มิใช่เพียงใบรับรอง แต่คือกรอบแนวคิดที่กำหนดวิธีการทำงาน กระบวนการคิด และการส่งมอบผลงานของเราในทุกขั้นตอน
-    </p>
-    
-    <p class="lang-text"
-       data-th="อุตสาหกรรมที่เราให้บริการ SPEN ภาคภูมิใจที่ได้เป็นส่วนหนึ่งในการขับเคลื่อนอุตสาหกรรมที่มีมาตรฐานสูงที่สุดในโลก อาทิ ยานยนต์ การบินและอวกาศ ฮาร์ดดิสก์ไดรฟ์ กล้องถ่ายภาพ อุปกรณ์ทางการแพทย์ และอุปกรณ์อิเล็กทรอนิกส์ ไม่ว่าคุณกำลังเตรียมเปิดตัวผลิตภัณฑ์ใหม่ หรือกำลังมองหาพันธมิตรด้านการผลิตในระยะยาว SPEN&nbsp;พร้อมส่งมอบความแม่นยำ ความน่าเชื่อถือ และการตอบสนองที่รวดเร็ว เพื่อรองรับทุกความต้องการทางธุรกิจของคุณ"
-       data-en="SPEN proudly serves some of the world's most demanding industries, including automotive, aerospace, hard disk drives, cameras, medical devices, and electronics. Whether you're launching a new product or seeking a long-term manufacturing partner, SPEN delivers the precision, reliability, and responsiveness your business demands.">
-     อุตสาหกรรมที่เราให้บริการ SPEN ภาคภูมิใจที่ได้เป็นส่วนหนึ่งในการขับเคลื่อนอุตสาหกรรมที่มีมาตรฐานสูงที่สุดในโลก อาทิ ยานยนต์ การบินและอวกาศ ฮาร์ดดิสก์ไดรฟ์ กล้องถ่ายภาพ อุปกรณ์ทางการแพทย์ และอุปกรณ์อิเล็กทรอนิกส์ ไม่ว่าคุณกำลังเตรียมเปิดตัวผลิตภัณฑ์ใหม่ หรือกำลังมองหาพันธมิตรด้านการผลิตในระยะยาว SPEN&nbsp;พร้อมส่งมอบความแม่นยำ ความน่าเชื่อถือ และการตอบสนองที่รวดเร็ว เพื่อรองรับทุกความต้องการทางธุรกิจของคุณ
-    </p>
-</div>
-
-                    <!-- ก้อนที่ 4: โลโก้ Certifications (ปรับย่อขนาดลงในมือถือ และเว้นระยะให้สวยงาม) -->
+                    <h1 class="lang-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-12 opacity-0 animate-fade-in-up delay-400 [animation-fill-mode:forwards]"
+                        style="line-height: 1.2;"
+                        data-th="พลังแห่งวิศวกรรม<br class='hidden sm:block'><span class='sm:hidden'> </span>ขับเคลื่อนสู่อนาคต"
+                        data-en="<span class='text-3xl sm:text-4xl md:text-5xl lg:text-6xl'>The Power of Engineering<br>Driving Tomorrow</span>">
+                        พลังแห่งวิศวกรรม<br class="hidden sm:block">
+                        <span class="sm:hidden"> </span>ขับเคลื่อนสู่อนาคต
+                    </h1>
+                    <p class="lang-text text-gray-200 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 max-w-xl leading-relaxed font-light opacity-0 animate-fade-in-up delay-600 [animation-fill-mode:forwards]"
+                        data-th="ที่ Single Point Engineering “เราส่งมอบความเป็นเลิศ” ไม่ใช่เพียงแค่คำมั่นสัญญา แต่เป็นรากฐานของการดำเนินงานของเราในแต่ละวัน ลูกค้าของเราให้ความสำคัญกับผลิตภัณฑ์ที่มีความแม่นยำสูง ความเข้าใจอย่างลึกซึ้งในภาคอุตสาหกรรม และการบริการที่ตอบสนองอย่างรวดเร็ว เรามุ่งมั่นในการสร้างความร่วมมือระยะยาวและการสนับสนุนเชิงรุกเพื่อช่วยให้ลูกค้าเติบโตและประสบความสำเร็จ"
+                        data-en="At Single Point Engineering, 'We Deliver Excellence' is not just a promise, but the foundation of our daily operations. Our customers value high-precision products, deep industry understanding, and responsive service.">
+                        ที่ Single Point Engineering “เราส่งมอบความเป็นเลิศ” ไม่ใช่เพียงแค่คำมั่นสัญญา
+                        แต่เป็นรากฐานของการดำเนินงานของเราในแต่ละวัน
+                        ลูกค้าของเราให้ความสำคัญกับผลิตภัณฑ์ที่มีความแม่นยำสูง ความเข้าใจอย่างลึกซึ้งในภาคอุตสาหกรรม
+                        และการบริการที่ตอบสนองอย่างรวดเร็ว
+                        เรามุ่งมั่นในการสร้างความร่วมมือระยะยาวและการสนับสนุนเชิงรุกเพื่อช่วยให้ลูกค้าเติบโตและประสบความสำเร็จ
+                    </p>
                     <div
-                        class="product-item flex flex-wrap items-center gap-3 sm:gap-4 opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-                        <img src="components/images/Our Products/IATF 16949.svg" alt="IATF 16949"
-                            class="h-10 sm:h-12 md:h-14 w-auto object-contain">
-                        <img src="components/images/Our Products/ISO 9001.svg" alt="ISO 9001"
-                            class="h-10 sm:h-12 md:h-14 w-auto object-contain">
-                        <img src="components/images/Our Products/MASCI.svg" alt="ISO 14001"
-                            class="h-10 sm:h-12 md:h-14 w-auto object-contain">
-                        <img src="components/images/Our Products/INTERCERT.svg" alt="Cert 4"
-                            class="h-10 sm:h-12 md:h-14 w-auto object-contain">
-                        <img src="components/images/Our Products/BSI.svg" alt="Cert 5"
-                            class="h-10 sm:h-12 md:h-14 w-auto object-contain border border-gray-200 rounded bg-white">
+                        class="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-5 mb-10 sm:mb-12 opacity-0 animate-fade-in-up delay-800 [animation-fill-mode:forwards]">
+                        <a href="item.html" target="_blank" rel="noopener noreferrer"
+                            class="w-full sm:w-auto bg-[#05853f] hover:bg-green-700 text-white px-6 sm:px-8 py-3.5 sm:py-4 lg:py-3.5 rounded-xl text-base lg:text-lg font-medium transition-all flex items-center justify-center gap-3 shadow-lg shadow-spen-green/20 hover:scale-105">
+                            <span class="lang-text" data-th="สินค้าทั้งหมด" data-en="All Products">สินค้าทั้งหมด</span>
+                            <i class="ph ph-arrow-right text-lg"></i>
+                        </a>
+                        <a href="contact_us.html" target="_blank" rel="noopener noreferrer"
+                            class="w-full sm:w-auto bg-gradient-to-r from-white/30 to-white/10 hover:from-white/40 hover:to-white/20 border border-white/30 text-white px-6 sm:px-8 py-3.5 sm:py-4 lg:py-3.5 rounded-xl text-base lg:text-lg font-medium transition-all backdrop-blur-md flex items-center justify-center gap-3 shadow-lg shadow-black/10 hover:scale-105">
+                            <span class="lang-text" data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</span>
+                            <i class="ph ph-arrow-right text-lg"></i>
+                        </a>
+                    </div>
+                    <!-- ส่วนปุ่มกด -->
+                    <div onclick="document.getElementById('trusted-section').scrollIntoView({ behavior: 'smooth' });"
+    class="flex items-center gap-3 sm:gap-4 opacity-0 animate-fade-in-up delay-1000 [animation-fill-mode:forwards] cursor-pointer">
+    <div class="flex -space-x-2 sm:-space-x-1 hover:-space-x-0 transition-all duration-300">
+        
+    
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white flex items-center justify-center overflow-hidden z-30 shadow-md hover:scale-110 transition-transform relative">
+            <img src="components/images/Customer-1.png" alt="Customer 1"
+                class="w-full h-full object-contain scale-[1.1]">
+        </div>
+        
+        <!-- รูปที่ 2 -->
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white flex items-center justify-center overflow-hidden z-20 shadow-md hover:scale-110 transition-transform relative">
+            <img src="components/images/Customer-2.png" alt="Customer 2"
+                class="w-full h-full object-contain scale-[1.1]">
+        </div>
+        
+        <!-- รูปที่ 3 -->
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white flex items-center justify-center overflow-hidden z-10 shadow-md hover:scale-110 transition-transform relative">
+            <img src="components/images/Customer-3.png" alt="Customer 3"
+                class="w-full h-full object-contain scale-[1.1]">
+        </div>
+        
+    </div>
+    <div class="text-white text-xs sm:text-sm font-light tracking-wide leading-tight hover:text-[#05853f] transition-colors">
+        <span class="block lang-text" data-th="ดูทั้งหมด" data-en="See All">ดูทั้งหมด</span>
+        <span class="block lang-text" data-th="ลูกค้าของเรา" data-en="Our Customers">ลูกค้าของเรา</span>
+    </div>
+</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section
+            class="py-14 border-b border-gray-200 relative overflow-hidden bg-gray-100 bg-[url('components/images/background.jpg')] bg-cover bg-center">
+            <div class="absolute inset-0 bg-white/80 lg:bg-white/60 pointer-events-none"></div>
+
+            <div class="max-w-[1400px] mx-auto px-5 sm:px-8 relative z-10">
+                <div class="grid grid-cols-2 gap-y-10 gap-x-4 lg:flex lg:justify-between lg:items-center w-full">
+                    <div
+                        class="stat-item flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 opacity-0">
+                        <img src="components/images/Years Experience.svg" alt="Clock Icon"
+                            class="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm">
+                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                            <h3 class="text-4xl md:text-[42px] font-black text-black leading-none tracking-tight">
+                                <span class="counter-value" data-target="30">0</span>+
+                            </h3>
+                            <p class="lang-text text-xs md:text-[14px] text-gray-700 font-medium md:font-light mt-1.5 tracking-wide"
+                                data-th="ปีแห่งประสบการณ์" data-en="Years Experience">
+                                Years Experience
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="stat-item flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 opacity-0">
+                        <img src="components/images/Global Customers.svg" alt="Globe Icon"
+                            class="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm">
+                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                            <h3 class="text-4xl md:text-[42px] font-black text-black leading-none tracking-tight">
+                                <span class="counter-value" data-target="190">0</span>+
+                            </h3>
+                            <p class="lang-text text-xs md:text-[14px] text-gray-700 font-medium md:font-light mt-1.5 tracking-wide"
+                                data-th="ลูกค้าทั่วโลก" data-en="Global Customers">
+                                Global Customers
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="stat-item flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 opacity-0">
+                        <img src="components/images/Factory Area.svg" alt="Factory Icon"
+                            class="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm">
+                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                            <h3
+                                class="text-4xl md:text-[42px] font-black text-black leading-none tracking-tight flex items-baseline">
+                                <span class="counter-value" data-target="2.8" data-decimals="1">0.0</span>K
+                                <span
+                                    class="text-base md:text-[20px] font-bold ml-1 md:ml-1.5 tracking-normal">sq.m.</span>
+                            </h3>
+                            <p class="lang-text text-xs md:text-[14px] text-gray-700 font-medium md:font-light mt-1.5 tracking-wide"
+                                data-th="พื้นที่โรงงาน" data-en="Factory Area">
+                                Factory Area
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="stat-item flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 opacity-0">
+                        <img src="components/images/Icon_Employees.svg" alt="User Icon"
+                            class="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-sm">
+                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                            <h3 class="text-4xl md:text-[42px] font-black text-black leading-none tracking-tight">
+                                <span class="counter-value" data-target="190">0</span>
+                            </h3>
+                            <p class="lang-text text-xs md:text-[14px] text-gray-700 font-medium md:font-light mt-1.5 tracking-wide"
+                                data-th="พนักงาน" data-en="Employees">
+                                Employees
+                            </p>
+                        </div>
                     </div>
 
                 </div>
             </div>
-    </section>
+        </section>
 
-   <section class="py-20 md:py-32 bg-white overflow-hidden">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-8 w-full">
+        <!-- About Us Section -->
+        <section class="py-20 md:py-34 bg-white overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-8 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <div
+                        class="order-2 lg:order-1 relative w-full aspect-[4/3] about-img opacity-0 -translate-y-16 transition-all duration-1000 ease-out">
+                        <div class="absolute inset-0 w-full h-full rounded-2xl overflow-hidden">
+                            <img src="components/images/AdobeStock.png" alt="SPEN Factory Building"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div id="about-parallax" class="order-1 lg:order-2 flex flex-col justify-center">
+                        <div
+                            class="about-item flex items-center gap-3 mb-4 opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                            <div class="w-6 h-[2px] bg-[#05853f]"></div>
+                            <span class="lang-text text-black font-bold text-xl tracking-wide" data-th="เกี่ยวกับเรา"
+                                data-en="About Us">เกี่ยวกับเรา</span>
+                        </div>
+                        <h2 class="about-item lang-text text-4xl md:text-5xl font-black text-black mb-10 leading-[1.3] md:leading-[1.4] tracking-tight opacity-0 translate-y-12 transition-all duration-1000 ease-out"
+                            data-th="บริษัท ซิงเกิ้ล พอยท์ <br>เอ็นจิเนียริ่ง จำกัด"
+                            data-en="Single Point <br>Engineering Co., Ltd.">
+                            บริษัท ซิงเกิ้ล พอยท์ <br>เอ็นจิเนียริ่ง จำกัด
+                        </h2>
+                        <div
+                            class="text-gray-500 font-light text-base md:text-[17px] leading-relaxed tracking-wide space-y-4">
+                            <p class="about-item lang-text opacity-0 translate-y-12 transition-all duration-1000 ease-out"
+                                data-th=" ผู้นำด้านวิศวกรรมผลิตภัณฑ์ที่มีความแม่นยำ และเทคโนโลยีการตรวจสอบที่ทันสมัย ด้วยประสบการณ์กว่า 30+ ปีที่ได้รับความไว้วางใจจากพันธมิตรทั่วโลก"
+                                data-en="Leader in quality engineering, high-precision products, modern inspection technology. 30+ years experience trusted by global partners.">
+                                ผู้นำด้านวิศวกรรมผลิตภัณฑ์ที่มีความแม่นยำ และเทคโนโลยีการตรวจสอบที่ทันสมัย
+                                ด้วยประสบการณ์กว่า 30+ ปีที่ได้รับความไว้วางใจจากพันธมิตรทั่วโลก
+                            </p>
+                            <p class="about-item lang-text opacity-0 translate-y-12 transition-all duration-1000 ease-out"
+                                data-th="  ตลอดเวลาที่ผ่านมา Single Point Engineering (SPEN) เป็นพันธมิตรที่ได้รับความไว้วางใจในการผลิตชิ้นส่วนที่มีความแม่นยำ ในฐานะบริษัทที่ได้รับการส่งเสริมจาก BOI พร้อมด้วยโรงงานที่ทันสมัยสองแห่งในประเทศไทย SPEN สร้างขึ้นบนรากฐานแห่งความเป็นเลิศ การขยายธุรกิจอย่างต่อเนื่อง และนวัตกรรมทางเทคนิค"
+                                data-en="For over 28 years, Single Point Engineering (SPEN) has been a trusted partner in high-precision manufacturing. As a BOI-promoted company with two state-of-the-art facilities in Thailand, SPEN is built on a legacy of excellence, continuous expansion, and technical innovation.">
+                                ตลอดเวลาที่ผ่านมา Single Point Engineering (SPEN)
+                                เป็นพันธมิตรที่ได้รับความไว้วางใจในการผลิตชิ้นส่วนที่มีความแม่นยำ
+                                ในฐานะบริษัทที่ได้รับการส่งเสริมจาก BOI พร้อมด้วยโรงงานที่ทันสมัยสองแห่งในประเทศไทย SPEN
+                                สร้างขึ้นบนรากฐานแห่งความเป็นเลิศ การขยายธุรกิจอย่างต่อเนื่อง และนวัตกรรมทางเทคนิค
+                            </p>
+                        </div>
 
-            <!-- Wrapper พิเศษสำหรับทำ Parallax (id="serve-title-parallax") -->
-         <div id="serve-title-parallax" class="transition-transform duration-75 ease-out">
+                    </div>
 
-    <!-- Header: Plus Sign & Text -->
-    <div class="mb-10 sm:mb-16 md:mb-24 flex items-start gap-3 sm:gap-5 md:gap-8 serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-        
-        <!-- เครื่องหมายบวก: ปรับขนาดเริ่มต้นให้พอดีกับมือถือ และใส่ shrink-0 ป้องกันโดนบีบ -->
-        <span class="text-spen-green text-4xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black leading-none mt-1 sm:mt-1.5 md:mt-3 block shrink-0">
-            +
-        </span>
-        
-        <!-- ข้อความ: ปรับขนาดเริ่มต้นเป็น text-3xl และเพิ่ม text-balance break-keep -->
-        <h2 class="lang-text text-5xl sm:text-5xl md:text-7xl lg:text-[6rem] font-black text-black leading-[1.4] md:leading-[1.3] tracking-tight text-balance break-keep"
-            data-th="กลุ่มอุตสาหกรรม<br>ที่เราให้บริการ"
-            data-en="The Industries<br>We Serve">
-            กลุ่มอุตสาหกรรม<br>ที่เราให้บริการ
-        </h2>
-        
-    </div>
+                </div>
+            </div>
+        </section>
 
-</div>
+        <!-- Our Products Section -->
+        <section class="py-20 md:py-34 bg-white overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-8 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                    <div
+                        class="order-1 lg:order-2 relative w-full aspect-[4/3] lg:aspect-[4/3.5] product-img opacity-0 -translate-y-16 transition-all duration-1000 ease-out">
+                        <div class="absolute inset-0 w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden">
+                            <img src="components/images/Our Products/That Powers Progress.png"
+                                alt="Precision Inspection" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div id="products-parallax"
+                        class="order-2 lg:order-1 flex flex-col justify-center transition-transform duration-75 ease-out">
+                        <div
+                            class="product-item flex items-center gap-3 mb-4 opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                            <div class="w-6 h-[2px] bg-[#05853f]"></div>
+                            <span class="lang-text text-black font-bold text-lg md:text-xl tracking-wide"
+                                data-th="ผลิตภัณฑ์ของเรา" data-en="Our Products">
+                                ผลิตภัณฑ์ของเรา
+                            </span>
+                        </div>
+                        <h2 class="product-item lang-text text-4xl md:text-5xl font-black text-black mb-6 md:mb-8 leading-[1.3] md:leading-[1.4] tracking-tight opacity-0 translate-y-12 transition-all duration-1000 ease-out text-balance break-keep"
+                            data-th="พลังขับเคลื่อน&nbsp;ความก้าวหน้า" data-en="That Powers Progress">
+                            พลังขับเคลื่อน&nbsp;ความก้าวหน้า
+                        </h2>
+                        <div
+                            class="product-item text-gray-500 font-light text-base md:text-[17px] leading-relaxed tracking-wide space-y-4 mb-8 md:mb-10 opacity-0 translate-y-12 transition-all duration-1000 ease-out text-pretty break-keep">
 
-            <!-- Middle Content Section -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12 mb-16 lg:mb-20 items-start">
+                            <p class="lang-text"
+                                data-th="มาตรฐานคุณภาพระดับสากล ความมุ่งมั่นของเราด้านคุณภาพและความแม่นยำสะท้อนให้เห็นผ่านใบรับรองมาตรฐานที่เป็นที่ยอมรับในระดับสากล ได้แก่ ISO&nbsp;9001:2015 ด้านการบริหารจัดการคุณภาพ ISO&nbsp;14001:2015 ด้านความรับผิดชอบต่อสิ่งแวดล้อม และ IATF&nbsp;16949:2016 สำหรับการผลิตชิ้นส่วนยานยนต์ มาตรฐานเหล่านี้มิใช่เพียงใบรับรอง แต่คือกรอบแนวคิดที่กำหนดวิธีการทำงาน กระบวนการคิด และการส่งมอบผลงานของเราในทุกขั้นตอน"
+                                data-en="Our commitment to quality and compliance is reflected in our globally recognized certifications: ISO 9001:2015 for quality management, ISO 14001:2015 for environmental responsibility, and IATF 16949:2016 for automotive-grade manufacturing. These standards are more than checkboxes, they define how we work, think, and deliver.">
+                                มาตรฐานคุณภาพระดับสากล
+                                ความมุ่งมั่นของเราด้านคุณภาพและความแม่นยำสะท้อนให้เห็นผ่านใบรับรองมาตรฐานที่เป็นที่ยอมรับในระดับสากล
+                                ได้แก่ ISO&nbsp;9001:2015 ด้านการบริหารจัดการคุณภาพ ISO&nbsp;14001:2015
+                                ด้านความรับผิดชอบต่อสิ่งแวดล้อม และ IATF&nbsp;16949:2016 สำหรับการผลิตชิ้นส่วนยานยนต์
+                                มาตรฐานเหล่านี้มิใช่เพียงใบรับรอง แต่คือกรอบแนวคิดที่กำหนดวิธีการทำงาน กระบวนการคิด
+                                และการส่งมอบผลงานของเราในทุกขั้นตอน
+                            </p>
 
-                <!-- Left Column: Heading & Text -->
-                <div class="flex flex-col serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-                    <h2
-                        class="lang-text text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[3rem] font-black text-black leading-[1.2] md:leading-[1.3] tracking-tight mb-6 md:mb-8"
-                        data-th="โซลูชันของเรา"
-                        data-en="Premium<br>Solutions">
-                        โซลูชันของเรา
+                            <p class="lang-text"
+                                data-th="อุตสาหกรรมที่เราให้บริการ SPEN ภาคภูมิใจที่ได้เป็นส่วนหนึ่งในการขับเคลื่อนอุตสาหกรรมที่มีมาตรฐานสูงที่สุดในโลก อาทิ ยานยนต์ การบินและอวกาศ ฮาร์ดดิสก์ไดรฟ์ กล้องถ่ายภาพ อุปกรณ์ทางการแพทย์ และอุปกรณ์อิเล็กทรอนิกส์ ไม่ว่าคุณกำลังเตรียมเปิดตัวผลิตภัณฑ์ใหม่ หรือกำลังมองหาพันธมิตรด้านการผลิตในระยะยาว SPEN&nbsp;พร้อมส่งมอบความแม่นยำ ความน่าเชื่อถือ และการตอบสนองที่รวดเร็ว เพื่อรองรับทุกความต้องการทางธุรกิจของคุณ"
+                                data-en="SPEN proudly serves some of the world's most demanding industries, including automotive, aerospace, hard disk drives, cameras, medical devices, and electronics. Whether you're launching a new product or seeking a long-term manufacturing partner, SPEN delivers the precision, reliability, and responsiveness your business demands.">
+                                อุตสาหกรรมที่เราให้บริการ SPEN
+                                ภาคภูมิใจที่ได้เป็นส่วนหนึ่งในการขับเคลื่อนอุตสาหกรรมที่มีมาตรฐานสูงที่สุดในโลก อาทิ
+                                ยานยนต์ การบินและอวกาศ ฮาร์ดดิสก์ไดรฟ์ กล้องถ่ายภาพ อุปกรณ์ทางการแพทย์
+                                และอุปกรณ์อิเล็กทรอนิกส์ ไม่ว่าคุณกำลังเตรียมเปิดตัวผลิตภัณฑ์ใหม่
+                                หรือกำลังมองหาพันธมิตรด้านการผลิตในระยะยาว SPEN&nbsp;พร้อมส่งมอบความแม่นยำ
+                                ความน่าเชื่อถือ และการตอบสนองที่รวดเร็ว เพื่อรองรับทุกความต้องการทางธุรกิจของคุณ
+                            </p>
+                        </div>
+                        <div
+                            class="product-item flex flex-wrap items-center gap-3 sm:gap-4 opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                            <img src="components/images/Our Products/IATF 16949.svg" alt="IATF 16949"
+                                class="h-10 sm:h-12 md:h-14 w-auto object-contain">
+                            <img src="components/images/Our Products/ISO 9001.svg" alt="ISO 9001"
+                                class="h-10 sm:h-12 md:h-14 w-auto object-contain">
+                            <img src="components/images/Our Products/MASCI.svg" alt="ISO 14001"
+                                class="h-10 sm:h-12 md:h-14 w-auto object-contain">
+                            <img src="components/images/Our Products/INTERCERT.svg" alt="Cert 4"
+                                class="h-10 sm:h-12 md:h-14 w-auto object-contain">
+                            <img src="components/images/Our Products/BSI.svg" alt="Cert 5"
+                                class="h-10 sm:h-12 md:h-14 w-auto object-contain border border-gray-200 rounded bg-white">
+                        </div>
+
+                    </div>
+                </div>
+        </section>
+
+        <section class="py-20 md:py-32 bg-white overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-8 w-full">
+                <div id="serve-title-parallax" class="transition-transform duration-75 ease-out">
+                    <div
+                        class="mb-10 sm:mb-16 md:mb-24 flex items-start gap-3 sm:gap-5 md:gap-8 serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <span
+                            class="text-spen-green text-4xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black leading-none mt-1 sm:mt-1.5 md:mt-3 block shrink-0">
+                            +
+                        </span>
+                        <h2 class="lang-text text-5xl sm:text-5xl md:text-7xl lg:text-[6rem] font-black text-black leading-[1.4] md:leading-[1.3] tracking-tight text-balance break-keep"
+                            data-th="กลุ่มอุตสาหกรรม<br>ที่เราให้บริการ" data-en="The Industries<br>We Serve">
+                            กลุ่มอุตสาหกรรม<br>ที่เราให้บริการ
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12 mb-16 lg:mb-20 items-start">
+                    <div
+                        class="flex flex-col serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <h2 class="lang-text text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[3rem] font-black text-black leading-[1.2] md:leading-[1.3] tracking-tight mb-6 md:mb-8"
+                            data-th="โซลูชันของเรา" data-en="Premium<br>Solutions">
+                            โซลูชันของเรา
+                        </h2>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-8 h-[2px] bg-spen-green"></div>
+                            <h3 class="lang-text text-xl md:text-2xl font-bold text-black" data-th="ผลิตภัณฑ์ของเรา"
+                                data-en="Our Products">ผลิตภัณฑ์ของเรา</h3>
+                        </div>
+                        <p class="lang-text text-gray-500 text-sm md:text-base leading-relaxed pr-4"
+                            data-th="สำรวจชิ้นส่วนเครื่องจักรกลของเรา ซึ่งได้รับการออกแบบมาเพื่อตอบสนองความต้องการของอุตสาหกรรมระดับโลก"
+                            data-en="Explore our range of high-precision machined componentss engineered<br class='hidden xl:block'> to meet the demanding requirements of global industries.">
+                            สำรวจชิ้นส่วนเครื่องจักรกลของเรา
+                            ซึ่งได้รับการออกแบบมาเพื่อตอบสนองความต้องการของอุตสาหกรรมระดับโลก
+                        </p>
+                    </div>
+                    <div
+                        class="flex flex-col items-start text-left w-full pt-4 lg:pt-10 serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <img src="components/images/Serve/Icon_HDD.svg" alt="HDD Icon"
+                            class="h-10 md:h-12 w-auto mb-6 md:mb-8">
+                        <div class="w-full h-[1px] bg-gray-300 mb-6"></div>
+                        <h4 class="lang-text text-xl md:text-2xl font-bold text-black mb-3 md:mb-4"
+                            data-th="ชิ้นส่วนฮาร์ดดิสก์ (HDD)" data-en="HDD Parts">ชิ้นส่วนฮาร์ดดิสก์ (HDD)</h4>
+                        <p class="lang-text text-gray-500 text-sm md:text-base leading-relaxed pr-4"
+                            data-th="เราตอบสนองความต้องการของคุณด้วยวิศวกรรม<br class='hidden lg:block'>และผลิตภัณฑ์ที่มีคุณภาพ"
+                            data-en="We satisfy your needs with stringent<br class='hidden lg:block'> engineering and high quality products.">
+                            เราตอบสนองความต้องการของคุณด้วยวิศวกรรม<br class="hidden lg:block">
+                            และผลิตภัณฑ์ที่มีคุณภาพ
+                        </p>
+                    </div>
+                    <div
+                        class="flex flex-col items-start text-left w-full pt-4 lg:pt-10 serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <div class="relative mb-6 md:mb-8">
+                            <img src="components/images/Serve/Icon_Non HDD.svg" alt="NON-HDD Icon"
+                                class="h-10 md:h-12 w-auto">
+                        </div>
+                        <div class="w-full h-[1px] bg-gray-300 mb-6"></div>
+                        <h4 class="lang-text text-xl md:text-2xl font-bold text-black mb-3 md:mb-4"
+                            data-th="ชิ้นส่วนอื่นๆ (NON-HDD)" data-en="NON-HDD Parts">ชิ้นส่วนอื่นๆ (NON-HDD)</h4>
+                        <p class="lang-text text-gray-500 text-sm md:text-base leading-relaxed pr-4"
+                            data-th="เราให้การสนับสนุนตั้งแต่กระบวนการออกแบบ<br class='hidden lg:block'>ไปจนถึงการผลิตจำนวนมาก"
+                            data-en="We support from design to mass<br class='hidden lg:block'> production.">
+                            เราให้การสนับสนุนตั้งแต่กระบวนการออกแบบ<br class="hidden lg:block">
+                            ไปจนถึงการผลิตจำนวนมาก
+                        </p>
+                    </div>
+
+                </div>
+                <div id="product-slider"
+                    class="flex gap-4 sm:gap-5 md:gap-6 overflow-x-auto pb-6 hide-scrollbar snap-x snap-mandatory justify-start cursor-grab scroll-smooth serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+
+                    <!-- Card 1 -->
+                    <div
+                        class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                        <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                            <img src="components/images/Serve/electronics.jpg"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                alt="Electronics">
+                        </div>
+                        <div
+                            class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                            <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg"
+                                data-th="อิเล็กทรอนิกส์" data-en="Electronics">อิเล็กทรอนิกส์</h5>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                        <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                            <img src="components/images/Serve/automotive.jpg"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                alt="Automotive">
+                        </div>
+                        <div
+                            class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                            <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="ยานยนต์"
+                                data-en="Automotive">ยานยนต์</h5>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                        <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                            <img src="components/images/Serve/machine part.jpg"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                alt="Machined Parts">
+                        </div>
+                        <div
+                            class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                            <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg"
+                                data-th="ชิ้นส่วนเครื่องจักรกล" data-en="Machined Parts">ชิ้นส่วนเครื่องจักรกล</h5>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div
+                        class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                        <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                            <img src="components/images/Serve/hard drive.jpg"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                alt="Hard Drive">
+                        </div>
+                        <div
+                            class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                            <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg"
+                                data-th="ฮาร์ดไดรฟ์" data-en="Hard Drive">ฮาร์ดไดรฟ์</h5>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div
+                        class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                        <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                            <img src="components/images/Serve/watch.jpg"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                alt="Watch">
+                        </div>
+                        <div
+                            class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                            <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="นาฬิกา"
+                                data-en="Watch">นาฬิกา</h5>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div
+                        class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                        <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                            <img src="components/images/Serve/camera.jpg"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                alt="Camera">
+                        </div>
+                        <div
+                            class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                            <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg"
+                                data-th="กล้องถ่ายรูป" data-en="Camera">กล้องถ่ายรูป</h5>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div
+                        class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                        <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                            <img src="components/images/Serve/Medical.jpg"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                alt="Medical">
+                        </div>
+                        <div
+                            class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                            <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg"
+                                data-th="อุปกรณ์การแพทย์" data-en="Medical">อุปกรณ์การแพทย์</h5>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div
+                        class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                        <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                            <img src="components/images/Serve/Aerospace.jpg"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                alt="Aerospace">
+                        </div>
+                        <div
+                            class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                            <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="การบิน"
+                                data-en="Aerospace">การบิน</h5>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div
+                        class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
+                        <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
+                            <img src="components/images/Serve/drone.jpg"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                alt="Drones">
+                        </div>
+                        <div
+                            class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
+                            <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="โดรน"
+                                data-en="Drones">โดรน</h5>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="flex justify-center items-center mt-6 md:mt-10 gap-3 md:gap-4 h-6 serve-item opacity-0 translate-y-8 transition-all duration-1000 ease-out"
+                    id="slider-dots">
+                </div>
+            </div>
+        </section>
+
+
+        <section
+            class="py-20 md:py-32 bg-spen-dark text-white relative bg-[url('components/images/Core_Services/Frame.jpg')] bg-cover bg-center bg-no-repeat overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full relative z-10">
+                <div
+                    class="text-center mb-12 md:mb-16 core-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                    <div class="flex justify-center items-center gap-2 mb-4">
+                        <div class="w-6 h-[2px] bg-spen-green"></div>
+                        <span class="lang-text text-spen-green font-semibold uppercase tracking-wider text-sm"
+                            data-th="ความเชี่ยวชาญ" data-en="Expertise">ความเชี่ยวชาญ</span>
+                        <div class="w-6 h-[2px] bg-spen-green"></div>
+                    </div>
+                    <h2 class="lang-text text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.3] md:leading-[1.4]"
+                        data-th="บริการหลักของเรา" data-en="Our Core Services">บริการหลักของเรา</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+                    <div id="core-img-container"
+                        class="order-1 lg:order-1 rounded-2xl md:rounded-[2rem] overflow-hidden h-[300px] sm:h-[400px] lg:h-auto relative bg-black core-item opacity-0 -translate-y-12 transition-all duration-1000 ease-out shadow-2xl">
+                        <img src="components/images/Core_Services/Frame.jpg"
+                            class="w-full h-full object-cover opacity-80 transition-opacity duration-500 absolute inset-0"
+                            alt="Core Service">
+                    </div>
+                    <div class="order-2 lg:order-2 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 h-full"
+                        id="service-cards-container">
+                        <div class="service-card core-item opacity-0 translate-y-12 relative border border-white/10 bg-white/5 p-6 md:p-8 rounded-2xl transition-transform duration-500 flex flex-col cursor-pointer overflow-hidden z-0"
+                            data-index="0">
+                            <div
+                                class="card-active-bg absolute inset-0 bg-[url('components/images/Core_Services/AdobeStock_986289906_2%20(1).jpg')] bg-cover bg-center opacity-0 transition-opacity duration-500 z-0">
+                            </div>
+                            <div
+                                class="card-active-overlay absolute inset-0 bg-white/95 opacity-0 transition-opacity duration-500 z-0">
+                            </div>
+                            <div class="relative z-10">
+                                <img class="service-icon w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 transition-all duration-500"
+                                    src="components/images/Core_Services/Ellipse 5(1).svg"
+                                    data-active="components/images/Core_Services/Ellipse 5-4 (1).svg"
+                                    data-inactive="components/images/Core_Services/Ellipse 5 (1).svg"
+                                    alt="Quality Icon">
+                                <h4 class="lang-text service-title text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-500 text-white leading-[1.3] md:leading-[1.4]"
+                                    data-th="คุณภาพ <br>& ความแม่นยำ" data-en="Quality <br>& Precision">
+                                    คุณภาพ <br>& ความแม่นยำ</h4>
+                                <p class="lang-text service-desc text-sm leading-relaxed transition-colors duration-500 text-white"
+                                    data-th="  ที่ SPEN ความแม่นยำไม่ใช่แค่เป้าหมาย แต่คือการรับประกัน ด้วยความแม่นยำในการตัดเฉือนต่ำกว่า 3 ไมครอน และการรับรองมาตรฐาน ISO 9001, IATF 16949 และ ISO 14001 เรามั่นใจว่าทุกงานมีมาตรฐาน"
+                                    data-en="At SPEN, precision isn’t a goal—it’s a guarantee. With machining tolerances under 3 microns and ISO 9001, IATF 16949, and ISO 14001 certifications, we ensure every part meets the highest standards.">
+                                    ที่ SPEN ความแม่นยำไม่ใช่แค่เป้าหมาย แต่คือการรับประกัน
+                                    ด้วยความแม่นยำในการตัดเฉือนต่ำกว่า 3 ไมครอน และการรับรองมาตรฐาน ISO 9001, IATF 16949
+                                    และ ISO 14001 เรามั่นใจว่าทุกงานมีมาตรฐาน
+                                </p>
+                            </div>
+                        </div>
+                        <div class="service-card core-item opacity-0 translate-y-12 relative border border-white/10 bg-white/5 p-6 md:p-8 rounded-2xl transition-transform duration-500 flex flex-col cursor-pointer overflow-hidden z-0"
+                            data-index="1">
+                            <div
+                                class="card-active-bg absolute inset-0 bg-[url('components/images/Core_Services/AdobeStock_986289906_2%20(1).jpg')] bg-cover bg-center opacity-0 transition-opacity duration-500 z-0">
+                            </div>
+                            <div
+                                class="card-active-overlay absolute inset-0 bg-white/95 opacity-0 transition-opacity duration-500 z-0">
+                            </div>
+
+                            <div class="relative z-10">
+                                <img class="service-icon w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 transition-all duration-500"
+                                    src="components/images/Core_Services/Ellipse 5-5 (1).svg"
+                                    data-active="components/images/Core_Services/Ellipse 5-1 (1).svg"
+                                    data-inactive="components/images/Core_Services/Ellipse 5-5 (1).svg"
+                                    alt="Equipment Icon">
+                                <h4 class="lang-text service-title text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-500 text-white leading-[1.3] md:leading-[1.4]"
+                                    data-th="ศักยภาพ <br>& เครื่องจักร" data-en="Capabilities <br>& Equipment">
+                                    ศักยภาพ <br>& เครื่องจักร</h4>
+                                <p class="lang-text service-desc text-sm leading-relaxed transition-colors duration-500 text-white"
+                                    data-th="ด้วยเครื่องจักร CNC ที่ทันสมัยกว่า 140 เครื่องในโรงงานที่ได้รับการส่งเสริมจาก BOI ทั้งสองแห่ง SPEN พร้อมส่งมอบงานกลึง งานกัด และการผลิตชิ้นส่วนที่ซับซ้อนที่มีความแม่นยำในปริมาณมาก"
+                                    data-en="With over 140 advanced CNC machines across two BOI-approved facilities, SPEN delivers high precision turning, milling, and complex components manufacturing at scale.">
+                                    ด้วยเครื่องจักร CNC ที่ทันสมัยกว่า 140 เครื่องในโรงงานที่ได้รับการส่งเสริมจาก BOI
+                                    ทั้งสองแห่ง SPEN พร้อมส่งมอบงานกลึง งานกัด
+                                    และการผลิตชิ้นส่วนที่ซับซ้อนที่มีความแม่นยำในปริมาณมาก
+                                </p>
+                            </div>
+                        </div>
+                        <div class="service-card core-item opacity-0 translate-y-12 relative border border-white/10 bg-white/5 p-6 md:p-8 rounded-2xl transition-transform duration-500 flex flex-col cursor-pointer overflow-hidden z-0"
+                            data-index="2">
+                            <div
+                                class="card-active-bg absolute inset-0 bg-[url('components/images/Core_Services/AdobeStock_986289906_2%20(1).jpg')] bg-cover bg-center opacity-0 transition-opacity duration-500 z-0">
+                            </div>
+                            <div
+                                class="card-active-overlay absolute inset-0 bg-white/95 opacity-0 transition-opacity duration-500 z-0">
+                            </div>
+
+                            <div class="relative z-10">
+                                <img class="service-icon w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 transition-all duration-500"
+                                    src="components/images/Core_Services/Ellipse 5-2 (1).svg"
+                                    data-active="components/images/Core_Services/Ellipse 5-6 (1).svg"
+                                    data-inactive="components/images/Core_Services/Ellipse 5-2 (1).svg"
+                                    alt="Process Icon">
+                                <h4 class="lang-text service-title text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-500 text-white leading-[1.3] md:leading-[1.4]"
+                                    data-th="การควบคุม <br>& การตรวจสอบย้อนกลับ"
+                                    data-en="Process Control <br>& Traceability">
+                                    การควบคุม <br>& การตรวจสอบย้อนกลับ</h4>
+                                <p class="lang-text service-desc text-sm leading-relaxed transition-colors duration-500 text-white"
+                                    data-th="SPEN รักษาการควบคุมกระบวนการอย่างเข้มงวดในทุกขั้นตอนการผลิต รองรับด้วยการตรวจสอบแบบเรียลไทม์และขั้นตอนการทำงานที่ได้รับการรับรอง ISO การตรวจสอบย้อนกลับได้เต็มรูปแบบช่วยให้มั่นใจในความโปร่งใส"
+                                    data-en="SPEN maintains strict process control at every stage of production, supported by real-time monitoring and ISO-certified workflows. Full traceability ensures accountability.">
+                                    SPEN รักษาการควบคุมกระบวนการอย่างเข้มงวดในทุกขั้นตอนการผลิต
+                                    รองรับด้วยการตรวจสอบแบบเรียลไทม์และขั้นตอนการทำงานที่ได้รับการรับรอง ISO
+                                    การตรวจสอบย้อนกลับได้เต็มรูปแบบช่วยให้มั่นใจในความโปร่งใส
+                                </p>
+                            </div>
+                        </div>
+                        <div class="service-card core-item opacity-0 translate-y-12 relative border border-white/10 bg-white/5 p-6 md:p-8 rounded-2xl transition-transform duration-500 flex flex-col cursor-pointer overflow-hidden z-0"
+                            data-index="3">
+                            <div
+                                class="card-active-bg absolute inset-0 bg-[url('components/images/Core_Services/AdobeStock_986289906_2%20(1).jpg')] bg-cover bg-center opacity-0 transition-opacity duration-500 z-0">
+                            </div>
+                            <div
+                                class="card-active-overlay absolute inset-0 bg-white/95 opacity-0 transition-opacity duration-500 z-0">
+                            </div>
+
+                            <div class="relative z-10">
+                                <img class="service-icon w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 transition-all duration-500"
+                                    src="components/images/Core_Services/Ellipse 5-3 (1).svg"
+                                    data-active="components/images/Core_Services/Ellipse 5-7 (1).svg"
+                                    data-inactive="components/images/Core_Services/Ellipse 5-3 (1).svg"
+                                    alt="Delivery Icon">
+                                <h4 class="lang-text service-title text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-500 text-white leading-[1.3] md:leading-[1.4]"
+                                    data-th="การส่งมอบ <br>ตรงเวลา" data-en="On-Time <br>Delivery">
+                                    การส่งมอบ <br>ตรงเวลา</h4>
+                                <p class="lang-text service-desc text-sm leading-relaxed transition-colors duration-500 text-white"
+                                    data-th="SPEN ให้ความสำคัญกับการส่งมอบตรงเวลาผ่านการวางแผนการผลิตที่พิถีพิถัน การติดตามขั้นตอนการทำงานแบบเรียลไทม์ และการประสานงานเชิงรุกกับลูกค้าเพื่อตอบสนองกำหนดเวลาที่กระชั้นชิด"
+                                    data-en="SPEN prioritizes on-time delivery through meticulous production planning, real-time workflow tracking, and proactive coordination with clients to meet tight deadlines.">
+                                    SPEN ให้ความสำคัญกับการส่งมอบตรงเวลาผ่านการวางแผนการผลิตที่พิถีพิถัน
+                                    การติดตามขั้นตอนการทำงานแบบเรียลไทม์
+                                    และการประสานงานเชิงรุกกับลูกค้าเพื่อตอบสนองกำหนดเวลาที่กระชั้นชิด
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-r from-[#023318] to-[#069948] py-16 md:py-24 overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 text-white">
+                    <h2 class="core-value-item lang-text opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out text-5xl sm:text-6xl lg:text-6xl font-black leading-[1.2] lg:leading-[1.1] lg:w-1/4 text-center lg:text-left"
+                        data-th="ค่านิยมหลัก" data-en="Core<br class='hidden lg:block'> Values">
+                        ค่านิยมหลัก
                     </h2>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-8 h-[2px] bg-spen-green"></div>
-                        <h3 class="lang-text text-xl md:text-2xl font-bold text-black" data-th="ผลิตภัณฑ์ของเรา" data-en="Our Products">ผลิตภัณฑ์ของเรา</h3>
-                    </div>
-                    <p class="lang-text text-gray-500 text-sm md:text-base leading-relaxed pr-4"
-                       data-th="สำรวจชิ้นส่วนเครื่องจักรกลของเรา ซึ่งได้รับการออกแบบมาเพื่อตอบสนองความต้องการของอุตสาหกรรมระดับโลก"
-                       data-en="Explore our range of high-precision machined componentss engineered<br class='hidden xl:block'> to meet the demanding requirements of global industries.">
-                        สำรวจชิ้นส่วนเครื่องจักรกลของเรา ซึ่งได้รับการออกแบบมาเพื่อตอบสนองความต้องการของอุตสาหกรรมระดับโลก
-                    </p>
-                </div>
-
-                <!-- Center Column: HDD Parts -->
-                <div
-                    class="flex flex-col items-start text-left w-full pt-4 lg:pt-10 serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-                    <img src="components/images/Serve/Icon_HDD.svg" alt="HDD Icon"
-                        class="h-10 md:h-12 w-auto mb-6 md:mb-8">
-                    <div class="w-full h-[1px] bg-gray-300 mb-6"></div>
-                    <h4 class="lang-text text-xl md:text-2xl font-bold text-black mb-3 md:mb-4" data-th="ชิ้นส่วนฮาร์ดดิสก์ (HDD)" data-en="HDD Parts">ชิ้นส่วนฮาร์ดดิสก์ (HDD)</h4>
-                    <p class="lang-text text-gray-500 text-sm md:text-base leading-relaxed pr-4"
-                       data-th="เราตอบสนองความต้องการของคุณด้วยวิศวกรรม<br class='hidden lg:block'>และผลิตภัณฑ์ที่มีคุณภาพ"
-                       data-en="We satisfy your needs with stringent<br class='hidden lg:block'> engineering and high quality products.">
-                        เราตอบสนองความต้องการของคุณด้วยวิศวกรรม<br class="hidden lg:block">
-                        และผลิตภัณฑ์ที่มีคุณภาพ
-                    </p>
-                </div>
-
-                <!-- Right Column: NON-HDD Parts -->
-                <div
-                    class="flex flex-col items-start text-left w-full pt-4 lg:pt-10 serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-                    <div class="relative mb-6 md:mb-8">
-                        <img src="components/images/Serve/Icon_Non HDD.svg" alt="NON-HDD Icon"
-                            class="h-10 md:h-12 w-auto">
-                    </div>
-                    <div class="w-full h-[1px] bg-gray-300 mb-6"></div>
-                    <h4 class="lang-text text-xl md:text-2xl font-bold text-black mb-3 md:mb-4" data-th="ชิ้นส่วนอื่นๆ (NON-HDD)" data-en="NON-HDD Parts">ชิ้นส่วนอื่นๆ (NON-HDD)</h4>
-                    <p class="lang-text text-gray-500 text-sm md:text-base leading-relaxed pr-4"
-                       data-th="เราให้การสนับสนุนตั้งแต่กระบวนการออกแบบ<br class='hidden lg:block'>ไปจนถึงการผลิตจำนวนมาก"
-                       data-en="We support from design to mass<br class='hidden lg:block'> production.">
-                        เราให้การสนับสนุนตั้งแต่กระบวนการออกแบบ<br class="hidden lg:block">
-                        ไปจนถึงการผลิตจำนวนมาก
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Products Gallery (สไลด์การ์ด) -->
-            <div id="product-slider"
-                class="flex gap-4 sm:gap-5 md:gap-6 overflow-x-auto pb-6 hide-scrollbar snap-x snap-mandatory justify-start cursor-grab scroll-smooth serve-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-
-                <!-- Card 1 -->
-                <div
-                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
-                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
-                        <img src="components/images/Serve/electronics.jpg"
-                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                            alt="Electronics">
-                    </div>
-                    <div
-                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
-                        <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="อิเล็กทรอนิกส์" data-en="Electronics">อิเล็กทรอนิกส์</h5>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div
-                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
-                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
-                        <img src="components/images/Serve/automotive.jpg"
-                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                            alt="Automotive">
-                    </div>
-                    <div
-                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
-                        <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="ยานยนต์" data-en="Automotive">ยานยนต์</h5>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div
-                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
-                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
-                        <img src="components/images/Serve/machine part.jpg"
-                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                            alt="Machined Parts">
-                    </div>
-                    <div
-                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
-                        <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="ชิ้นส่วนเครื่องจักรกล" data-en="Machined Parts">ชิ้นส่วนเครื่องจักรกล</h5>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div
-                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
-                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
-                        <img src="components/images/Serve/hard drive.jpg"
-                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                            alt="Hard Drive">
-                    </div>
-                    <div
-                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
-                        <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="ฮาร์ดไดรฟ์" data-en="Hard Drive">ฮาร์ดไดรฟ์</h5>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div
-                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
-                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
-                        <img src="components/images/Serve/watch.jpg"
-                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                            alt="Watch">
-                    </div>
-                    <div
-                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
-                        <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="นาฬิกา" data-en="Watch">นาฬิกา</h5>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div
-                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
-                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
-                        <img src="components/images/Serve/camera.jpg"
-                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                            alt="Camera">
-                    </div>
-                    <div
-                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
-                        <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="กล้องถ่ายรูป" data-en="Camera">กล้องถ่ายรูป</h5>
-                    </div>
-                </div>
-
-                <!-- Card 7 -->
-                <div
-                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
-                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
-                        <img src="components/images/Serve/Medical.jpg"
-                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                            alt="Medical">
-                    </div>
-                    <div
-                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
-                        <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="อุปกรณ์การแพทย์" data-en="Medical">อุปกรณ์การแพทย์</h5>
-                    </div>
-                </div>
-
-                <div
-                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
-                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
-                        <img src="components/images/Serve/Aerospace.jpg"
-                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                            alt="Aerospace">
-                    </div>
-                    <div
-                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
-                        <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="การบิน" data-en="Aerospace">การบิน</h5>
-                    </div>
-                </div>
-
-                <!-- Card 8 -->
-                <div
-                    class="flex-none w-[75%] sm:w-[45%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] snap-start group flex flex-col">
-                    <div class="h-48 md:h-52 xl:h-56 relative overflow-hidden bg-gray-900 pointer-events-none">
-                        <img src="components/images/Serve/drone.jpg"
-                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                            alt="Drones">
-                    </div>
-                    <div
-                        class="p-4 md:p-5 xl:p-6 text-center bg-white flex-grow flex items-center justify-center pointer-events-none">
-                        <h5 class="lang-text font-bold text-black text-sm md:text-base xl:text-lg" data-th="โดรน" data-en="Drones">โดรน</h5>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Pagination Indicator (ทำงานร่วมกับ JS เดิมของคุณ) -->
-            <div class="flex justify-center items-center mt-6 md:mt-10 gap-3 md:gap-4 h-6 serve-item opacity-0 translate-y-8 transition-all duration-1000 ease-out"
-                id="slider-dots">
-                <!-- จุดไข่ปลาจะถูกสร้างและจัดการคลาสด้วย JavaScript -->
-            </div>
-
-        </div>
-    </section>
-
-
-    <section
-        class="py-20 md:py-32 bg-spen-dark text-white relative bg-[url('components/images/Core_Services/Frame.jpg')] bg-cover bg-center bg-no-repeat overflow-hidden">
-
-
-        <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full relative z-10">
-
-            <!-- Header -->
-            <div
-                class="text-center mb-12 md:mb-16 core-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-                <div class="flex justify-center items-center gap-2 mb-4">
-                    <div class="w-6 h-[2px] bg-spen-green"></div>
-                    <span class="lang-text text-spen-green font-semibold uppercase tracking-wider text-sm" data-th="ความเชี่ยวชาญ" data-en="Expertise">ความเชี่ยวชาญ</span>
-                    <div class="w-6 h-[2px] bg-spen-green"></div>
-                </div>
-                <h2 class="lang-text text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.3] md:leading-[1.4]" data-th="บริการหลักของเรา" data-en="Our Core Services">บริการหลักของเรา</h2>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-
-                <!-- ฝั่งซ้าย: รูปภาพใหญ่ (ย่อความสูงลงในมือถือเพื่อไม่ให้กินที่เกินไป) -->
-                <div id="core-img-container"
-                    class="order-1 lg:order-1 rounded-2xl md:rounded-[2rem] overflow-hidden h-[300px] sm:h-[400px] lg:h-auto relative bg-black core-item opacity-0 -translate-y-12 transition-all duration-1000 ease-out shadow-2xl">
-                    <img src="components/images/Core_Services/Frame.jpg"
-                        class="w-full h-full object-cover opacity-80 transition-opacity duration-500 absolute inset-0"
-                        alt="Core Service">
-                </div>
-
-                <!-- ฝั่งขวา: Services Grid -->
-                <div class="order-2 lg:order-2 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 h-full"
-                    id="service-cards-container">
-
-                    <!-- Service 1: Quality & Precision -->
-                    <!-- เพิ่ม core-item เพื่อให้ลอยขึ้นมาทีละก้อน -->
-                    <div class="service-card core-item opacity-0 translate-y-12 relative border border-white/10 bg-white/5 p-6 md:p-8 rounded-2xl transition-transform duration-500 flex flex-col cursor-pointer overflow-hidden z-0"
-                        data-index="0">
-
-                        <!-- เลเยอร์พื้นหลังที่จะสว่างขึ้นเมื่อ Active (ใช้วิธีนี้จะเปลี่ยนได้นุ่มนวลมาก) -->
+                    <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 lg:gap-10 w-full">
                         <div
-                            class="card-active-bg absolute inset-0 bg-[url('components/images/Core_Services/AdobeStock_986289906_2%20(1).jpg')] bg-cover bg-center opacity-0 transition-opacity duration-500 z-0">
-                        </div>
-                        <div
-                            class="card-active-overlay absolute inset-0 bg-white/95 opacity-0 transition-opacity duration-500 z-0">
+                            class="core-value-item opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out flex items-center gap-4 lg:gap-5">
+                            <img src="components/images/Core_Services/Icon_Goal (1).svg"
+                                class="w-16 h-16 md:w-16 lg:w-20 lg:h-20 object-contain shrink-0" alt="Excellence">
+                            <div class="flex flex-col text-left">
+                                <h4 class="lang-text font-bold text-xl md:text-xl lg:text-2xl mb-1 text-white leading-[1.3]"
+                                    data-th="ความเป็นเลิศ" data-en="Excellence">
+                                    ความเป็นเลิศ
+                                </h4>
+                                <p class="lang-text text-sm md:text-sm lg:text-base text-white/90 leading-relaxed font-light"
+                                    data-th="มุ่งมั่นสู่ความเป็นเลิศ<br class='hidden xl:block'>เหนือความคาดหมาย"
+                                    data-en="Commitment to <br class='hidden xl:block'> excellence beyond expectations">
+                                    มุ่งมั่นสู่ความเป็นเลิศ<br class="hidden xl:block">
+                                    เหนือความคาดหมาย
+                                </p>
+                            </div>
                         </div>
 
-                        <!-- เนื้อหาในการ์ด -->
-                        <div class="relative z-10">
-                            <img class="service-icon w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 transition-all duration-500"
-                                src="components/images/Core_Services/Ellipse 5(1).svg"
-                                data-active="components/images/Core_Services/Ellipse 5-4 (1).svg"
-                                data-inactive="components/images/Core_Services/Ellipse 5 (1).svg" alt="Quality Icon">
-                            <h4
-                                class="lang-text service-title text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-500 text-white leading-[1.3] md:leading-[1.4]"
-                                data-th="คุณภาพ <br>& ความแม่นยำ"
-                                data-en="Quality <br>& Precision">
-                                คุณภาพ <br>& ความแม่นยำ</h4>
-                            <p class="lang-text service-desc text-sm leading-relaxed transition-colors duration-500 text-white"
-                               data-th="  ที่ SPEN ความแม่นยำไม่ใช่แค่เป้าหมาย แต่คือการรับประกัน ด้วยความแม่นยำในการตัดเฉือนต่ำกว่า 3 ไมครอน และการรับรองมาตรฐาน ISO 9001, IATF 16949 และ ISO 14001 เรามั่นใจว่าทุกงานมีมาตรฐาน"
-                               data-en="At SPEN, precision isn’t a goal—it’s a guarantee. With machining tolerances under 3 microns and ISO 9001, IATF 16949, and ISO 14001 certifications, we ensure every part meets the highest standards.">
-                                ที่ SPEN ความแม่นยำไม่ใช่แค่เป้าหมาย แต่คือการรับประกัน ด้วยความแม่นยำในการตัดเฉือนต่ำกว่า 3 ไมครอน และการรับรองมาตรฐาน ISO 9001, IATF 16949 และ ISO 14001 เรามั่นใจว่าทุกงานมีมาตรฐาน
-                            </p>
+                        <!-- Item 2: Customer Focus -->
+                        <div
+                            class="core-value-item opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out flex items-center gap-4 lg:gap-5">
+                            <img src="components/images/Core_Services/Icon Customer Focus (1).svg"
+                                class="w-16 h-16 md:w-16 lg:w-20 lg:h-20 object-contain shrink-0" alt="Customer Focus">
+                            <div class="flex flex-col text-left">
+                                <h4 class="lang-text font-bold text-xl md:text-xl lg:text-2xl mb-1 text-white leading-[1.3]"
+                                    data-th="ความใส่ใจ" data-en="Customer Focus">
+                                    ความใส่ใจ
+                                </h4>
+                                <p class="lang-text text-sm md:text-sm lg:text-base text-white/90 leading-relaxed font-light"
+                                    data-th="ยึดลูกค้ามาเป็นอันดับแรก<br class='hidden xl:block'>เพื่อความสัมพันธ์ระยะยาว"
+                                    data-en="Customers first, <br class='hidden xl:block'> long-term relationships">
+                                    ยึดลูกค้ามาเป็นอันดับแรก<br class="hidden xl:block">
+                                    เพื่อความสัมพันธ์ระยะยาว
+                                </p>
+                            </div>
                         </div>
+
+                        <!-- Item 3: Integrity -->
+                        <div
+                            class="core-value-item opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out flex items-center gap-4 lg:gap-5">
+                            <img src="components/images/Core_Services/Icon_Excellence (1).svg"
+                                class="w-16 h-16 md:w-16 lg:w-20 lg:h-20 object-contain shrink-0" alt="Integrity">
+                            <div class="flex flex-col text-left">
+                                <h4 class="lang-text font-bold text-xl md:text-xl lg:text-2xl mb-1 text-white leading-[1.3]"
+                                    data-th="ความซื่อสัตย์" data-en="Integrity">
+                                    ความซื่อสัตย์
+                                </h4>
+                                <p class="lang-text text-sm md:text-sm lg:text-base text-white/90 leading-relaxed font-light"
+                                    data-th="มีจริยธรรม โปร่งใส<br class='hidden xl:block'>และเชื่อถือได้"
+                                    data-en="Ethics, transparency, trust">
+                                    มีจริยธรรม โปร่งใส<br class="hidden xl:block">และเชื่อถือได้
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <!-- Service 2: Capabilities & Equipment -->
-                    <div class="service-card core-item opacity-0 translate-y-12 relative border border-white/10 bg-white/5 p-6 md:p-8 rounded-2xl transition-transform duration-500 flex flex-col cursor-pointer overflow-hidden z-0"
-                        data-index="1">
-                        <div
-                            class="card-active-bg absolute inset-0 bg-[url('components/images/Core_Services/AdobeStock_986289906_2%20(1).jpg')] bg-cover bg-center opacity-0 transition-opacity duration-500 z-0">
-                        </div>
-                        <div
-                            class="card-active-overlay absolute inset-0 bg-white/95 opacity-0 transition-opacity duration-500 z-0">
-                        </div>
-
-                        <div class="relative z-10">
-                            <img class="service-icon w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 transition-all duration-500"
-                                src="components/images/Core_Services/Ellipse 5-5 (1).svg"
-                                data-active="components/images/Core_Services/Ellipse 5-1 (1).svg"
-                                data-inactive="components/images/Core_Services/Ellipse 5-5 (1).svg" alt="Equipment Icon">
-                            <h4
-                                class="lang-text service-title text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-500 text-white leading-[1.3] md:leading-[1.4]"
-                                data-th="ศักยภาพ <br>& เครื่องจักร"
-                                data-en="Capabilities <br>& Equipment">
-                                ศักยภาพ <br>& เครื่องจักร</h4>
-                            <p class="lang-text service-desc text-sm leading-relaxed transition-colors duration-500 text-white"
-                               data-th="ด้วยเครื่องจักร CNC ที่ทันสมัยกว่า 140 เครื่องในโรงงานที่ได้รับการส่งเสริมจาก BOI ทั้งสองแห่ง SPEN พร้อมส่งมอบงานกลึง งานกัด และการผลิตชิ้นส่วนที่ซับซ้อนที่มีความแม่นยำในปริมาณมาก"
-                               data-en="With over 140 advanced CNC machines across two BOI-approved facilities, SPEN delivers high precision turning, milling, and complex components manufacturing at scale.">
-                                ด้วยเครื่องจักร CNC ที่ทันสมัยกว่า 140 เครื่องในโรงงานที่ได้รับการส่งเสริมจาก BOI ทั้งสองแห่ง SPEN พร้อมส่งมอบงานกลึง งานกัด และการผลิตชิ้นส่วนที่ซับซ้อนที่มีความแม่นยำในปริมาณมาก
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Service 3: Process Control & Traceability -->
-                    <div class="service-card core-item opacity-0 translate-y-12 relative border border-white/10 bg-white/5 p-6 md:p-8 rounded-2xl transition-transform duration-500 flex flex-col cursor-pointer overflow-hidden z-0"
-                        data-index="2">
-                        <div
-                            class="card-active-bg absolute inset-0 bg-[url('components/images/Core_Services/AdobeStock_986289906_2%20(1).jpg')] bg-cover bg-center opacity-0 transition-opacity duration-500 z-0">
-                        </div>
-                        <div
-                            class="card-active-overlay absolute inset-0 bg-white/95 opacity-0 transition-opacity duration-500 z-0">
-                        </div>
-
-                        <div class="relative z-10">
-                            <img class="service-icon w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 transition-all duration-500"
-                                src="components/images/Core_Services/Ellipse 5-2 (1).svg"
-                                data-active="components/images/Core_Services/Ellipse 5-6 (1).svg"
-                                data-inactive="components/images/Core_Services/Ellipse 5-2 (1).svg" alt="Process Icon">
-                            <h4
-                                class="lang-text service-title text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-500 text-white leading-[1.3] md:leading-[1.4]"
-                                data-th="การควบคุม <br>& การตรวจสอบย้อนกลับ"
-                                data-en="Process Control <br>& Traceability">
-                                การควบคุม <br>& การตรวจสอบย้อนกลับ</h4>
-                            <p class="lang-text service-desc text-sm leading-relaxed transition-colors duration-500 text-white"
-                               data-th="SPEN รักษาการควบคุมกระบวนการอย่างเข้มงวดในทุกขั้นตอนการผลิต รองรับด้วยการตรวจสอบแบบเรียลไทม์และขั้นตอนการทำงานที่ได้รับการรับรอง ISO การตรวจสอบย้อนกลับได้เต็มรูปแบบช่วยให้มั่นใจในความโปร่งใส"
-                               data-en="SPEN maintains strict process control at every stage of production, supported by real-time monitoring and ISO-certified workflows. Full traceability ensures accountability.">
-                                SPEN รักษาการควบคุมกระบวนการอย่างเข้มงวดในทุกขั้นตอนการผลิต รองรับด้วยการตรวจสอบแบบเรียลไทม์และขั้นตอนการทำงานที่ได้รับการรับรอง ISO การตรวจสอบย้อนกลับได้เต็มรูปแบบช่วยให้มั่นใจในความโปร่งใส
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Service 4: On-Time Delivery -->
-                    <div class="service-card core-item opacity-0 translate-y-12 relative border border-white/10 bg-white/5 p-6 md:p-8 rounded-2xl transition-transform duration-500 flex flex-col cursor-pointer overflow-hidden z-0"
-                        data-index="3">
-                        <div
-                            class="card-active-bg absolute inset-0 bg-[url('components/images/Core_Services/AdobeStock_986289906_2%20(1).jpg')] bg-cover bg-center opacity-0 transition-opacity duration-500 z-0">
-                        </div>
-                        <div
-                            class="card-active-overlay absolute inset-0 bg-white/95 opacity-0 transition-opacity duration-500 z-0">
-                        </div>
-
-                        <div class="relative z-10">
-                            <img class="service-icon w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 transition-all duration-500"
-                                src="components/images/Core_Services/Ellipse 5-3 (1).svg"
-                                data-active="components/images/Core_Services/Ellipse 5-7 (1).svg"
-                                data-inactive="components/images/Core_Services/Ellipse 5-3 (1).svg" alt="Delivery Icon">
-                            <h4
-                                class="lang-text service-title text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-500 text-white leading-[1.3] md:leading-[1.4]"
-                                data-th="การส่งมอบ <br>ตรงเวลา"
-                                data-en="On-Time <br>Delivery">
-                                การส่งมอบ <br>ตรงเวลา</h4>
-                            <p class="lang-text service-desc text-sm leading-relaxed transition-colors duration-500 text-white"
-                               data-th="SPEN ให้ความสำคัญกับการส่งมอบตรงเวลาผ่านการวางแผนการผลิตที่พิถีพิถัน การติดตามขั้นตอนการทำงานแบบเรียลไทม์ และการประสานงานเชิงรุกกับลูกค้าเพื่อตอบสนองกำหนดเวลาที่กระชั้นชิด"
-                               data-en="SPEN prioritizes on-time delivery through meticulous production planning, real-time workflow tracking, and proactive coordination with clients to meet tight deadlines.">
-                                SPEN ให้ความสำคัญกับการส่งมอบตรงเวลาผ่านการวางแผนการผลิตที่พิถีพิถัน การติดตามขั้นตอนการทำงานแบบเรียลไทม์ และการประสานงานเชิงรุกกับลูกค้าเพื่อตอบสนองกำหนดเวลาที่กระชั้นชิด
-                            </p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ปรับ bg-gradient-to-r และใช้รหัสสี from-[#023318] (เขียวเข้ม) ไปยัง to-[#069948] (เขียวสว่าง) -->
-  <section class="bg-gradient-to-r from-[#023318] to-[#069948] py-16 md:py-24 overflow-hidden">
-        <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full">
-            <!-- จัดให้เป็นแนวนอนบน Desktop และแนวตั้งบน Mobile -->
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 text-white">
-
-                <!-- Left: Title -->
-                <h2
-                    class="core-value-item lang-text opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out text-5xl sm:text-6xl lg:text-6xl font-black leading-[1.2] lg:leading-[1.1] lg:w-1/4 text-center lg:text-left"
-                    data-th="ค่านิยมหลัก"
-                    data-en="Core<br class='hidden lg:block'> Values">
-                    ค่านิยมหลัก
-                </h2>
-
-                <!-- Right: Values Grid (เรียง 3 คอลัมน์บนแท็บเล็ตและคอมฯ, 1 คอลัมน์บนมือถือ) -->
-                <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 lg:gap-10 w-full">
-
-                    <!-- Item 1: Excellence -->
+        <section class="py-20 bg-white overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full">
+                <div class="flex flex-col items-center text-center">
+                    <div class="flex justify-center items-center gap-3 sm:gap-4 mb-4 mt-10">
+                        <div class="w-8 md:w-10 h-[2px] md:h-[3px] bg-spen-green"></div>
+                        <span class="lang-text text-black font-extrabold text-lg md:text-xl tracking-wide break-keep"
+                            data-th="กลุ่มตลาด" data-en="Market Segments">
+                            กลุ่มตลาด
+                        </span>
+                    </div>
+                    <h2 class="lang-text text-3xl md:text-4xl lg:text-5xl font-black text-black mb-16 md:mb-20 leading-[1.3] md:leading-[1.4]"
+                        data-th="กลุ่มอุตสาหกรรมที่ SPEN ให้บริการ" data-en="Industry sectors served by SPEN">
+                        กลุ่มอุตสาหกรรมที่ SPEN ให้บริการ
+                    </h2>
+                </div>
+                <div class="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row justify-center items-center sm:place-items-center w-full -space-y-6 sm:space-y-0 sm:gap-8 md:gap-12 lg:gap-0 lg:-space-x-[4%] mb-20 md:mb-32"
+                    id="stats-container">
                     <div
-                        class="core-value-item opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out flex items-center gap-4 lg:gap-5">
-                        <!-- ขยายไอคอนให้ใหญ่ขึ้น -->
-                        <img src="components/images/Core_Services/Icon_Goal (1).svg"
-                            class="w-16 h-16 md:w-16 lg:w-20 lg:h-20 object-contain shrink-0" alt="Excellence">
-                        <div class="flex flex-col text-left">
-                            <h4 class="lang-text font-bold text-xl md:text-xl lg:text-2xl mb-1 text-white leading-[1.3]" 
-                                data-th="ความเป็นเลิศ" 
-                                data-en="Excellence">
-                                ความเป็นเลิศ
-                            </h4>
-                            <p class="lang-text text-sm md:text-sm lg:text-base text-white/90 leading-relaxed font-light"
-                               data-th="มุ่งมั่นสู่ความเป็นเลิศ<br class='hidden xl:block'>เหนือความคาดหมาย"
-                               data-en="Commitment to <br class='hidden xl:block'> excellence beyond expectations">
-                                มุ่งมั่นสู่ความเป็นเลิศ<br class="hidden xl:block">
-                                เหนือความคาดหมาย
-                            </p>
-                        </div>
-                    </div>
+                        class="stat-circle opacity-0 translate-y-10 transition-all duration-500 ease-out z-10 shrink-0 relative w-[240px] sm:w-[260px] md:w-[280px] lg:w-[28%] aspect-square rounded-full bg-white/85 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(6,153,72,0.15)] mx-auto">
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
+                            <defs>
+                                <linearGradient id="greenGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#069948" stop-opacity="1" />
+                                    <stop offset="100%" stop-color="#069948" stop-opacity="0.05" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="49" fill="none" stroke="url(#greenGrad1)" stroke-width="1.5"
+                                class="draw-border"></circle>
+                        </svg>
 
-                    <!-- Item 2: Customer Focus -->
+                        <div class="flex items-baseline text-spen-green font-bold relative z-10">
+                            <span
+                                class="text-6xl sm:text-7xl lg:text-[4rem] xl:text-[5.5rem] tracking-tight stat-number"
+                                data-target="44">0</span>
+                            <span class="text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">%</span>
+                        </div>
+                        <span
+                            class="lang-text text-sm md:text-base xl:text-lg text-gray-500 font-medium mt-1 xl:mt-2 relative z-10"
+                            data-th="อิเล็กทรอนิกส์" data-en="Electronics">อิเล็กทรอนิกส์</span>
+                    </div>
                     <div
-                        class="core-value-item opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out flex items-center gap-4 lg:gap-5">
-                        <!-- ขยายไอคอนให้ใหญ่ขึ้น -->
-                        <img src="components/images/Core_Services/Icon Customer Focus (1).svg"
-                            class="w-16 h-16 md:w-16 lg:w-20 lg:h-20 object-contain shrink-0" alt="Customer Focus">
-                        <div class="flex flex-col text-left">
-                            <h4 class="lang-text font-bold text-xl md:text-xl lg:text-2xl mb-1 text-white leading-[1.3]" 
-                                data-th="ความใส่ใจ" 
-                                data-en="Customer Focus">
-                                ความใส่ใจ
-                            </h4>
-                            <p class="lang-text text-sm md:text-sm lg:text-base text-white/90 leading-relaxed font-light"
-                               data-th="ยึดลูกค้ามาเป็นอันดับแรก<br class='hidden xl:block'>เพื่อความสัมพันธ์ระยะยาว"
-                               data-en="Customers first, <br class='hidden xl:block'> long-term relationships">
-                                ยึดลูกค้ามาเป็นอันดับแรก<br class="hidden xl:block">
-                                เพื่อความสัมพันธ์ระยะยาว
-                            </p>
-                        </div>
-                    </div>
+                        class="stat-circle opacity-0 translate-y-10 transition-all duration-500 ease-out z-20 shrink-0 relative w-[240px] sm:w-[260px] md:w-[280px] lg:w-[28%] aspect-square rounded-full bg-white/85 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(6,153,72,0.15)] mx-auto">
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
+                            <defs>
+                                <linearGradient id="greenGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#069948" stop-opacity="1" />
+                                    <stop offset="100%" stop-color="#069948" stop-opacity="0.05" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="49" fill="none" stroke="url(#greenGrad2)" stroke-width="1.5"
+                                class="draw-border"></circle>
+                        </svg>
 
-                    <!-- Item 3: Integrity -->
+                        <div class="flex items-baseline text-spen-green font-bold relative z-10">
+                            <span
+                                class="text-6xl sm:text-7xl lg:text-[4rem] xl:text-[5.5rem] tracking-tight stat-number"
+                                data-target="31">0</span>
+                            <span class="text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">%</span>
+                        </div>
+                        <span
+                            class="lang-text text-sm md:text-base xl:text-lg text-gray-500 font-medium mt-1 xl:mt-2 relative z-10"
+                            data-th="ยานยนต์" data-en="Automotive">ยานยนต์</span>
+                    </div>
                     <div
-                        class="core-value-item opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out flex items-center gap-4 lg:gap-5">
-                        <!-- ขยายไอคอนให้ใหญ่ขึ้น -->
-                        <img src="components/images/Core_Services/Icon_Excellence (1).svg"
-                            class="w-16 h-16 md:w-16 lg:w-20 lg:h-20 object-contain shrink-0" alt="Integrity">
-                        <div class="flex flex-col text-left">
-                            <h4 class="lang-text font-bold text-xl md:text-xl lg:text-2xl mb-1 text-white leading-[1.3]" 
-                                data-th="ความซื่อสัตย์" 
-                                data-en="Integrity">
-                                ความซื่อสัตย์
-                            </h4>
-                            <p class="lang-text text-sm md:text-sm lg:text-base text-white/90 leading-relaxed font-light"
-                               data-th="มีจริยธรรม โปร่งใส<br class='hidden xl:block'>และเชื่อถือได้"
-                               data-en="Ethics, transparency, trust">
-                                มีจริยธรรม โปร่งใส<br class="hidden xl:block">และเชื่อถือได้
-                            </p>
+                        class="stat-circle opacity-0 translate-y-10 transition-all duration-500 ease-out z-30 shrink-0 relative w-[240px] sm:w-[260px] md:w-[280px] lg:w-[28%] aspect-square rounded-full bg-white/85 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(6,153,72,0.15)] mx-auto">
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
+                            <defs>
+                                <linearGradient id="greenGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#069948" stop-opacity="1" />
+                                    <stop offset="100%" stop-color="#069948" stop-opacity="0.05" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="49" fill="none" stroke="url(#greenGrad3)" stroke-width="1.5"
+                                class="draw-border"></circle>
+                        </svg>
+
+                        <div class="flex items-baseline text-spen-green font-bold relative z-10">
+                            <span
+                                class="text-6xl sm:text-7xl lg:text-[4rem] xl:text-[5.5rem] tracking-tight stat-number"
+                                data-target="16">0</span>
+                            <span class="text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">%</span>
                         </div>
+                        <span
+                            class="lang-text text-sm md:text-base xl:text-lg text-gray-500 font-medium mt-1 xl:mt-2 relative z-10"
+                            data-th="ชิ้นส่วนเครื่องจักรกล" data-en="Machined Parts">ชิ้นส่วนเครื่องจักรกล</span>
+                    </div>
+                    <div
+                        class="stat-circle opacity-0 translate-y-10 transition-all duration-500 ease-out z-40 shrink-0 relative w-[240px] sm:w-[260px] md:w-[280px] lg:w-[28%] aspect-square rounded-full bg-white/85 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(6,153,72,0.15)] mx-auto">
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
+                            <defs>
+                                <linearGradient id="greenGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#069948" stop-opacity="1" />
+                                    <stop offset="100%" stop-color="#069948" stop-opacity="0.05" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="49" fill="none" stroke="url(#greenGrad4)" stroke-width="1.5"
+                                class="draw-border"></circle>
+                        </svg>
+
+                        <div class="flex items-baseline text-spen-green font-bold relative z-10">
+                            <span
+                                class="text-6xl sm:text-7xl lg:text-[4rem] xl:text-[5.5rem] tracking-tight stat-number"
+                                data-target="3.5" data-decimal="1">0</span>
+                            <span class="text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">%</span>
+                        </div>
+                        <span
+                            class="lang-text text-sm md:text-base xl:text-lg text-gray-500 font-medium mt-1 xl:mt-2 relative z-10"
+                            data-th="ฮาร์ดไดรฟ์และนาฬิกา" data-en="Hard Drive & Watch">ฮาร์ดไดรฟ์และนาฬิกา</span>
                     </div>
 
                 </div>
             </div>
-        </div>
-    </section>
 
-<section class="py-20 bg-white overflow-hidden">
-
-    <!-- 1. Market Segments & Circle Stats -->
-    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full">
-        <!-- Header Section -->
-        <div class="flex flex-col items-center text-center">
- <div class="flex justify-center items-center gap-3 sm:gap-4 mb-4 mt-10">
-    <!-- ปรับเส้นสีเขียวให้ยาวและหนาขึ้นตามขนาดข้อความ -->
-    <div class="w-8 md:w-10 h-[2px] md:h-[3px] bg-spen-green"></div>
-    
-    <!-- ขยายขนาดฟอนต์จาก text-sm เป็น text-lg md:text-xl และเพิ่มความหนาเป็น font-extrabold -->
-    <span class="lang-text text-black font-extrabold text-lg md:text-xl tracking-wide break-keep" 
-          data-th="กลุ่มตลาด" 
-          data-en="Market Segments">
-          กลุ่มตลาด
-    </span>
-</div>
-            <h2 class="lang-text text-3xl md:text-4xl lg:text-5xl font-black text-black mb-16 md:mb-20 leading-[1.3] md:leading-[1.4]"
-                data-th="กลุ่มอุตสาหกรรมที่ SPEN ให้บริการ" 
-                data-en="Industry sectors served by SPEN">
-                กลุ่มอุตสาหกรรมที่ SPEN ให้บริการ
-            </h2>
-        </div>
-
-        <!-- Circle Stats (Responsive Layout: เรียงซ้อนแนวตั้ง -> ตาราง 2x2 -> เรียงซ้อนแนวนอน) -->
-       <div class="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row justify-center items-center sm:place-items-center w-full -space-y-6 sm:space-y-0 sm:gap-8 md:gap-12 lg:gap-0 lg:-space-x-[4%] mb-20 md:mb-32" id="stats-container">
-
-    <!-- Stat 1: Electronics -->
-    <div class="stat-circle opacity-0 translate-y-10 transition-all duration-500 ease-out z-10 shrink-0 relative w-[240px] sm:w-[260px] md:w-[280px] lg:w-[28%] aspect-square rounded-full bg-white/85 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(6,153,72,0.15)] mx-auto">
-        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
-            <defs>
-                <linearGradient id="greenGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#069948" stop-opacity="1" />
-                    <stop offset="100%" stop-color="#069948" stop-opacity="0.05" />
-                </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="49" fill="none" stroke="url(#greenGrad1)" stroke-width="1.5" class="draw-border"></circle>
-        </svg>
-
-        <div class="flex items-baseline text-spen-green font-bold relative z-10">
-            <span class="text-6xl sm:text-7xl lg:text-[4rem] xl:text-[5.5rem] tracking-tight stat-number" data-target="44">0</span>
-            <span class="text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">%</span>
-        </div>
-        <span class="lang-text text-sm md:text-base xl:text-lg text-gray-500 font-medium mt-1 xl:mt-2 relative z-10" data-th="อิเล็กทรอนิกส์" data-en="Electronics">อิเล็กทรอนิกส์</span>
-    </div>
-
-    <!-- Stat 2: Automotive (เปลี่ยนเป็นวงเขียว) -->
-    <div class="stat-circle opacity-0 translate-y-10 transition-all duration-500 ease-out z-20 shrink-0 relative w-[240px] sm:w-[260px] md:w-[280px] lg:w-[28%] aspect-square rounded-full bg-white/85 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(6,153,72,0.15)] mx-auto">
-        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
-            <defs>
-                <linearGradient id="greenGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#069948" stop-opacity="1" />
-                    <stop offset="100%" stop-color="#069948" stop-opacity="0.05" />
-                </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="49" fill="none" stroke="url(#greenGrad2)" stroke-width="1.5" class="draw-border"></circle>
-        </svg>
-
-        <div class="flex items-baseline text-spen-green font-bold relative z-10">
-            <span class="text-6xl sm:text-7xl lg:text-[4rem] xl:text-[5.5rem] tracking-tight stat-number" data-target="31">0</span>
-            <span class="text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">%</span>
-        </div>
-        <span class="lang-text text-sm md:text-base xl:text-lg text-gray-500 font-medium mt-1 xl:mt-2 relative z-10" data-th="ยานยนต์" data-en="Automotive">ยานยนต์</span>
-    </div>
-
-    <!-- Stat 3: Machined Parts (เปลี่ยนเป็นวงเขียว) -->
-    <div class="stat-circle opacity-0 translate-y-10 transition-all duration-500 ease-out z-30 shrink-0 relative w-[240px] sm:w-[260px] md:w-[280px] lg:w-[28%] aspect-square rounded-full bg-white/85 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(6,153,72,0.15)] mx-auto">
-        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
-            <defs>
-                <linearGradient id="greenGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#069948" stop-opacity="1" />
-                    <stop offset="100%" stop-color="#069948" stop-opacity="0.05" />
-                </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="49" fill="none" stroke="url(#greenGrad3)" stroke-width="1.5" class="draw-border"></circle>
-        </svg>
-
-        <div class="flex items-baseline text-spen-green font-bold relative z-10">
-            <span class="text-6xl sm:text-7xl lg:text-[4rem] xl:text-[5.5rem] tracking-tight stat-number" data-target="16">0</span>
-            <span class="text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">%</span>
-        </div>
-        <span class="lang-text text-sm md:text-base xl:text-lg text-gray-500 font-medium mt-1 xl:mt-2 relative z-10" data-th="ชิ้นส่วนเครื่องจักรกล" data-en="Machined Parts">ชิ้นส่วนเครื่องจักรกล</span>
-    </div>
-
-    <!-- Stat 4: Hard Drive & Watch (เปลี่ยนเป็นวงเขียว) -->
-    <div class="stat-circle opacity-0 translate-y-10 transition-all duration-500 ease-out z-40 shrink-0 relative w-[240px] sm:w-[260px] md:w-[280px] lg:w-[28%] aspect-square rounded-full bg-white/85 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(6,153,72,0.15)] mx-auto">
-        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
-            <defs>
-                <linearGradient id="greenGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#069948" stop-opacity="1" />
-                    <stop offset="100%" stop-color="#069948" stop-opacity="0.05" />
-                </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="49" fill="none" stroke="url(#greenGrad4)" stroke-width="1.5" class="draw-border"></circle>
-        </svg>
-
-        <div class="flex items-baseline text-spen-green font-bold relative z-10">
-            <span class="text-6xl sm:text-7xl lg:text-[4rem] xl:text-[5.5rem] tracking-tight stat-number" data-target="3.5" data-decimal="1">0</span>
-            <span class="text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">%</span>
-        </div>
-        <span class="lang-text text-sm md:text-base xl:text-lg text-gray-500 font-medium mt-1 xl:mt-2 relative z-10" data-th="ฮาร์ดไดรฟ์และนาฬิกา" data-en="Hard Drive & Watch">ฮาร์ดไดรฟ์และนาฬิกา</span>
-    </div>
-
-</div>
-    </div>
-
-    <!-- 2. Map Section -->
-   <div class="mb-20 md:mb-32 relative pt-10 px-5 sm:px-8 max-w-[1400px] mx-auto w-full" id="map-section">
-
-    <!-- Title -->
-    <div id="map-title-parallax" class="transition-transform duration-75 ease-out z-20 relative">
-        <!-- เพิ่มระยะ mb-14 md:mb-20 เพื่อไม่ให้ทับรูป และเพิ่ม text-balance -->
-        <h2 class="lang-text text-4xl sm:text-5xl md:text-[5.5rem] font-black text-black text-center mb-14 md:mb-20 leading-[1.4] md:leading-[1.1] tracking-tight text-balance"
-            data-th="ได้รับความไว้วางใจจาก<br>ผู้นำในอุตสาหกรรม" 
-            data-en="Trusted By<br>Industry Leaders">
-            ได้รับความไว้วางใจจาก<br>ผู้นำในอุตสาหกรรม
-        </h2>
-    </div>
-
-    <div class="relative w-full mx-auto">
-        <!-- Map Image -->
-        <img src="components/images/Core_Services/World+Map.png" alt="World Map"
-            class="w-full h-auto object-contain opacity-0 translate-y-10 scale-95 transition-all duration-1000 ease-out relative z-0"
-            id="world-map-img">
-
-        <!-- Bottom Left Text -->
-        <!-- เพิ่ม mt-12 ในมือถือเพื่อดึงลงมาไม่ให้เบียดรูป และขยาย max-w ให้กว้างขึ้นรับกับฟอนต์ใหม่ -->
-        <div class="static md:absolute bottom-0 left-0 max-w-[300px] lg:max-w-[360px] mx-auto md:mx-0 mt-12 md:mt-0 text-center md:text-left opacity-0 translate-y-8 transition-all duration-1000 delay-300 ease-out z-10" id="map-text">
-            <!-- ขยายฟอนต์เป็น text-sm md:text-base เพิ่ม font-semibold และ text-pretty ป้องกันคำขาด -->
-            <p class="lang-text text-sx md:text-base text-gray-400 leading-relaxed font-semibold animate-[float_5s_ease-in-out_infinite] text-pretty break-keep"
-               data-th="ได้รับความไว้วางใจจากผู้ผลิตและบริษัทเทคโนโลยีชั้นนำระดับโลก SPEN ส่งมอบชิ้นส่วนวิศวกรรมที่มีความแม่นยำ ซึ่งตรงตามมาตรฐานคุณภาพ ความน่าเชื่อถือ และประสิทธิภาพ" 
-               data-en="Trusted by leading global manufacturers and technology companies, SPEN delivers precision-engineered components that meet the highest standards of quality, reliability, and performance.">
-                ได้รับความไว้วางใจจากผู้ผลิตและบริษัทเทคโนโลยีชั้นนำระดับโลก SPEN ส่งมอบชิ้นส่วนวิศวกรรมที่มีความแม่นยำ ซึ่งตรงตามมาตรฐานคุณภาพ ความน่าเชื่อถือ และประสิทธิภาพ
-            </p>
-        </div>
-
-        <!-- Green Circle Badge -->
-        <!-- ขยายวงกลมในมือถือเป็น w-32 h-32 และขยับ top-[10%] ในมือถือเพื่อไม่ให้ทับหัวข้อ -->
-        <div class="absolute top-[10%] right-[-10px] sm:top-[20%] md:top-1/2 md:right-[-20px] lg:right-[-40px] transform md:-translate-y-1/2 bg-[#069948] text-white w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full flex flex-col items-center justify-center shadow-[0_15px_40px_rgba(6,153,72,0.3)] opacity-0 scale-50 transition-all duration-700 delay-500 cubic-bezier-out z-20 animate-[bounce_4s_ease-in-out_infinite]" id="map-badge">
-            <div class="flex items-start leading-none mb-1 md:mb-1.5">
-                <!-- ขยายตัวเลข 190 ให้ใหญ่ขึ้น -->
-                <span class="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight" id="map-counter" data-target="190">0</span>
-                <span class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight">+</span>
-            </div>
-            <!-- ขยายฟอนต์ภาษาไทย และปรับให้หนาขึ้น (font-bold) -->
-            <span class="lang-text text-[10px] sm:text-xs md:text-sm font-bold text-center leading-tight mt-1"
-                  data-th="บริษัทระดับโลก<br>ที่ไว้วางใจเรา" 
-                  data-en="Global Company<br>Trust Ours">
-                บริษัทระดับโลก<br>ที่ไว้วางใจเรา
-            </span>
-        </div>
-    </div>
-</div>
-    <!-- 3. Trusted by specialists (Logos) -->
-    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full">
-        <div class="text-left">
-            <h3 class="lang-text text-3xl md:text-4xl lg:text-5xl font-black text-black mb-10 md:mb-14 leading-[1.3] md:leading-[1.4]" data-th="ได้รับความไว้วางใจจากผู้เชี่ยวชาญ" data-en="Trusted by specialists">ได้รับความไว้วางใจจากผู้เชี่ยวชาญ</h3>
-
-            <!-- Category 1: Customer -->
-            <div class="mb-10 md:mb-14 logo-section opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-                <div class="flex items-center gap-3 mb-4 md:mb-6">
-                    <div class="w-6 h-[2px] bg-spen-green"></div>
-                    <span class="lang-text text-gray-500 text-sm font-semibold uppercase tracking-wider" data-th="ลูกค้า" data-en="Customer">ลูกค้า</span>
+            <div class="mb-20 md:mb-32 relative pt-10 px-5 sm:px-8 max-w-[1400px] mx-auto w-full" id="map-section">
+                <div id="map-title-parallax" class="transition-transform duration-75 ease-out z-20 relative">
+                    <h2 class="lang-text text-4xl sm:text-5xl md:text-[5.5rem] font-black text-black text-center mb-14 md:mb-20 leading-[1.4] md:leading-[1.1] tracking-tight text-balance"
+                        data-th="ได้รับความไว้วางใจจาก<br>ผู้นำในอุตสาหกรรม" data-en="Trusted By<br>Industry Leaders">
+                        ได้รับความไว้วางใจจาก<br>ผู้นำในอุตสาหกรรม
+                    </h2>
                 </div>
-                <div class="flex flex-wrap gap-5 sm:gap-6 lg:gap-8 items-center justify-start">
-                    <img src="components/images/Logo_Company_Single/Group 188318.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188319.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188320.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188321.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188325.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188326.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 1883s19.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188328.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188329.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188322.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188323.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188324.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+
+                <div class="relative w-full mx-auto">
+                    <img src="components/images/Core_Services/World+Map.png" alt="World Map"
+                        class="w-full h-auto object-contain opacity-0 translate-y-10 scale-95 transition-all duration-1000 ease-out relative z-0"
+                        id="world-map-img">
+                    <div class="static md:absolute bottom-0 left-0 max-w-[300px] lg:max-w-[360px] mx-auto md:mx-0 mt-12 md:mt-0 text-center md:text-left opacity-0 translate-y-8 transition-all duration-1000 delay-300 ease-out z-10"
+                        id="map-text">
+                        <p class="lang-text text-sx md:text-base text-gray-400 leading-relaxed font-semibold animate-[float_5s_ease-in-out_infinite] text-pretty break-keep"
+                            data-th="ได้รับความไว้วางใจจากผู้ผลิตและบริษัทเทคโนโลยีชั้นนำระดับโลก SPEN ส่งมอบชิ้นส่วนวิศวกรรมที่มีความแม่นยำ ซึ่งตรงตามมาตรฐานคุณภาพ ความน่าเชื่อถือ และประสิทธิภาพ"
+                            data-en="Trusted by leading global manufacturers and technology companies, SPEN delivers precision-engineered components that meet the highest standards of quality, reliability, and performance.">
+                            ได้รับความไว้วางใจจากผู้ผลิตและบริษัทเทคโนโลยีชั้นนำระดับโลก SPEN
+                            ส่งมอบชิ้นส่วนวิศวกรรมที่มีความแม่นยำ ซึ่งตรงตามมาตรฐานคุณภาพ ความน่าเชื่อถือ และประสิทธิภาพ
+                        </p>
+                    </div>
+
+                    <div class="absolute top-[10%] right-[-10px] sm:top-[20%] md:top-1/2 md:right-[-20px] lg:right-[-40px] transform md:-translate-y-1/2 bg-[#069948] text-white w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full flex flex-col items-center justify-center shadow-[0_15px_40px_rgba(6,153,72,0.3)] opacity-0 scale-50 transition-all duration-700 delay-500 cubic-bezier-out z-20 animate-[bounce_4s_ease-in-out_infinite]"
+                        id="map-badge">
+                        <div class="flex items-start leading-none mb-1 md:mb-1.5">
+                            <span class="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight" id="map-counter"
+                                data-target="190">0</span>
+                            <span class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight">+</span>
+                        </div>
+                        <span
+                            class="lang-text text-[10px] sm:text-xs md:text-sm font-bold text-center leading-tight mt-1"
+                            data-th="บริษัทระดับโลก<br>ที่ไว้วางใจเรา" data-en="Global Company<br>Trust Ours">
+                            บริษัทระดับโลก<br>ที่ไว้วางใจเรา
+                        </span>
+                    </div>
                 </div>
             </div>
-
-            <!-- Category 2: Material Suppliers -->
-            <div class="mb-10 md:mb-14 logo-section opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-                <div class="flex items-center gap-3 mb-4 md:mb-6">
-                    <div class="w-6 h-[2px] bg-spen-green"></div>
-                    <span class="lang-text text-gray-500 text-sm font-semibold uppercase tracking-wider" data-th="ผู้จัดจำหน่ายวัตถุดิบ" data-en="Material Suppliers">ผู้จัดจำหน่ายวัตถุดิบ</span>
-                </div>
-                <div class="flex flex-wrap gap-5 sm:gap-6 lg:gap-8 items-center justify-start">
-                    <img src="components/images/Logo_Company_Single/Group 188318-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188319-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188320-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188321-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188325-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188326-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 188327-1.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                </div>
-            </div>
-
-            <!-- Category 3: Tooling Suppliers -->
-            <div class="mb-10 md:mb-14 logo-section opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-                <div class="flex items-center gap-3 mb-4 md:mb-6">
-                    <div class="w-6 h-[2px] bg-spen-green"></div>
-                    <span class="lang-text text-gray-500 text-sm font-semibold uppercase tracking-wider" data-th="ผู้จัดหาเครื่องมือ" data-en="Tooling Suppliers">ผู้จัดหาเครื่องมือ</span>
-                </div>
-                <div class="flex flex-wrap gap-5 sm:gap-6 lg:gap-8 items-center justify-start">
-                    <img src="components/images/Logo_Company_Single/Group 188322z.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                    <img src="components/images/Logo_Company_Single/Group 1883s19.png" class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-    <!-- เพิ่มภาพพื้นหลังผ่านสไตล์ inline หรือคลาส CSS (อย่าลืมเปลี่ยน path รูปภาพพื้นหลังของคุณ) -->
-  <!-- เพิ่ม min-h-[100svh] lg:min-h-screen และ flex items-center เพื่อให้เต็มจอ -->
-<section class="min-h-[100svh] lg:min-h-screen flex items-center py-20 md:py-28 text-white relative bg-[url('components/images/Serve/Rectangle.jpg')] bg-cover bg-top bg-no-repeat overflow-hidden">
-
-    <!-- ปรับความมืดจาก 70% ลดเหลือ 30% เพื่อให้ภาพพื้นหลังสว่างและชัดเจนขึ้น -->
-    <div class="absolute inset-0 bg-black/30"></div>
-
-    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-            <!-- ฝั่งซ้าย: ข้อความ -->
-            <div id="cert-text-parallax" class="transition-transform duration-75 ease-out flex flex-col justify-center">
-                
-    <!-- ขยายขนาด, เพิ่ม font-extrabold และ text-balance เพื่อให้บรรทัดยาวเท่าๆ กัน -->
-    <h2 class="cert-item opacity-0 translate-y-12 transition-all duration-1000 ease-out text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-[1.3] md:leading-[1.4] drop-shadow-md text-balance">
-        <!-- แยกบรรทัดด้วย span block แทน <br> -->
-        <span class="lang-text block" data-th="การรับรอง" data-en="International">การรับรอง</span>
-        <span class="lang-text block" data-th="มาตรฐานสากล" data-en="Certification">มาตรฐานสากล</span>
-    </h2>
-    
-
-<div class="cert-item opacity-0 translate-y-12 transition-all duration-1000 ease-out flex items-center gap-3 md:gap-4 mb-6 drop-shadow-sm">
-    <div class="w-8 md:w-10 h-[2px] md:h-[3px] bg-spen-green"></div>
-    <span class="lang-text text-white font-bold uppercase tracking-wider text-base md:text-lg lg:text-xl break-keep text-balance"
-          data-th="ได้รับการรับรองระบบการจัดการ" 
-          data-en="Management System Certified">
-          ได้รับการรับรองระบบการจัดการ
-    </span> 
-</div>
-    
-  
-    <p class="cert-item lang-text opacity-0 translate-y-12 transition-all duration-1000 ease-out text-white/90 drop-shadow-sm mb-6 leading-relaxed text-base md:text-lg lg:text-xl text-pretty break-keep"
-       data-th="ซึ่งผลิตภัณฑ์ทั้งหมดได้รับการตรวจสอบคุณภาพตลอดกระบวนการผลิตโดยผู้ตรวจสอบที่ผ่านการรับรอง วัตถุดิบที่มีคุณภาพทั้งหมดจะได้รับการตรวจสอบเมื่อมาถึง การตรวจสอบจะดำเนินต่อไปตลอดกระบวนการผลิต ตามด้วยการสุ่มทดสอบผลิตภัณฑ์ โดยใช้เครื่องมือและอุปกรณ์ที่แม่นยำและเทคโนโลยีขั้นสูง พร้อมการจัดการตามมาตรฐานคุณภาพและสิ่งแวดล้อมระดับสากล"
-       data-en="All products are inspected for quality throughout the production process by the qualified inspector. All high quality raw materials are inspected on arrival. Inspection continues throughout the production process, followed by random testing of products, using accurate and high technology calibration instruments and equipment with management according to international quality and environmental standards.">
-     ซึ่งผลิตภัณฑ์ทั้งหมดได้รับการตรวจสอบคุณภาพตลอดกระบวนการผลิตโดยผู้ตรวจสอบที่ผ่านการรับรอง วัตถุดิบที่มีคุณภาพทั้งหมดจะได้รับการตรวจสอบเมื่อมาถึง การตรวจสอบจะดำเนินต่อไปตลอดกระบวนการผลิต ตามด้วยการสุ่มทดสอบผลิตภัณฑ์ โดยใช้เครื่องมือและอุปกรณ์ที่แม่นยำและเทคโนโลยีขั้นสูง พร้อมการจัดการตามมาตรฐานคุณภาพและสิ่งแวดล้อมระดับสากล
-    </p>
-    
- 
-    <p class="cert-item lang-text opacity-0 translate-y-12 transition-all duration-1000 ease-out text-white/90 drop-shadow-sm leading-relaxed text-base md:text-lg lg:text-xl text-pretty break-keep"
-       data-th="บริษัท&nbsp;ซิงเกิ้ล&nbsp;พอยท์&nbsp;เอ็นจิเนียริ่ง&nbsp;จำกัด มุ่งมั่นในการจัดการสิ่งแวดล้อมโดยปฏิบัติตามข้อกำหนดและกฎหมายที่เกี่ยวข้อง เพื่อใช้ทรัพยากรอย่างคุ้มค่า รวมถึงลดมลพิษทางน้ำ มลภาวะทางเสียง มลพิษทางอากาศ การปนเปื้อนในดิน และของเสียต่างๆ ตลอดจนการปรับปรุงและพัฒนาอย่างต่อเนื่องเพื่อรักษาคุณภาพชีวิตที่ดีของพนักงานและชุมชน"
-       data-en="Single Point Engineering Company Limited commits to environmental management by adhering to the requirements and related law in order to use resources worthily, including reduce water pollution, noise pollution, air pollution, soil contamination and various wastes, as well as continual improvement and development to maintain the good quality of life for employees and communities.">
-        บริษัท&nbsp;ซิงเกิ้ล&nbsp;พอยท์&nbsp;เอ็นจิเนียริ่ง&nbsp;จำกัด มุ่งมั่นในการจัดการสิ่งแวดล้อมโดยปฏิบัติตามข้อกำหนดและกฎหมายที่เกี่ยวข้อง เพื่อใช้ทรัพยากรอย่างคุ้มค่า รวมถึงลดมลพิษทางน้ำ มลภาวะทางเสียง มลพิษทางอากาศ การปนเปื้อนในดิน และของเสียต่างๆ ตลอดจนการปรับปรุงและพัฒนาอย่างต่อเนื่องเพื่อรักษาคุณภาพชีวิตที่ดีของพนักงานและชุมชน
-    </p>
-
-</div>
-            <!-- ฝั่งขวา: สไลเดอร์ใบเซอร์ + จุดไข่ปลา -->
-            <!-- เพิ่มระยะห่างบนมือถือด้วย mt-12 md:mt-16 -->
-            <div class="cert-item opacity-0 translate-y-12 transition-all duration-1000 ease-out relative flex flex-col items-center justify-center mt-12 md:mt-16 lg:mt-0">
-
-                <!-- กล่องสไลเดอร์ -->
-                <div class="w-full aspect-[1279/722] relative overflow-hidden rounded-2xl shadow-2xl bg-black/20 backdrop-blur-md border border-white/10" id="cert-slider">
-
-                    <!-- สไลด์ที่ 1 (ลบ p-3 ออก และใช้ object-cover เพื่อให้ภาพเต็มกรอบ) -->
-                    <div class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
-                        <img src="components/images/certificate/certificate-1.png" alt="Green Industry Certificate" class="w-full h-full object-cover">
-                    </div>
-
-                    <!-- สไลด์ที่ 2 -->
-                    <div class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
-                        <img src="components/images/certificate/certificate-2.png" alt="ISO 9001" class="w-full h-full object-cover">
-                    </div>
-
-                    <!-- สไลด์ที่ 3 -->
-                    <div class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
-                        <img src="components/images/certificate/certificate-3.png" alt="ISO 14001" class="w-full h-full object-cover">
-                    </div>
-
-                    <!-- สไลด์ที่ 4 -->
-                    <div class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
-                        <img src="components/images/certificate/certificate-4.png" alt="IATF 16949" class="w-full h-full object-cover">
-                    </div>
-
-                    <!-- สไลด์ที่ 5 -->
-                    <div class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
-                        <img src="components/images/certificate/certificate-5.png" alt="ISO 45001" class="w-full h-full object-cover">
-                    </div>
-
-                </div>
-
-                <!-- จุดไข่ปลา (Pagination Dots) ด้านล่าง -->
-                <div class="flex justify-center items-center mt-6 lg:mt-8 gap-3 h-6" id="cert-dots">
-                    <!-- จุดไข่ปลาจะถูกสร้างและจัดการคลาสด้วย JavaScript อัตโนมัติ -->
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="py-20 md:py-24 bg-white overflow-hidden">
-    <!-- ปรับ px-4 sm:px-8 ให้ระยะขอบเท่ากับ Section อื่นๆ -->
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-8 w-full">
-
-        <!-- หัวข้อหลัก -->
-        <div class="text-center mb-16 contact-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-            <h2 class="text-3xl md:text-5xl lg:text-[2.5rem] font-black text-black leading-[1.3] md:leading-[1.4] tracking-tight">
-                <!-- แยกข้อความเป็น 2 ท่อนเพื่อหลีกเลี่ยงการใส่ <br> ใน data-th -->
-                <span class="lang-text" data-th="&quot;เราภูมิใจที่ได้เป็น" data-en="&quot;We Are Proud To Be">"เราภูมิใจที่ได้เป็น</span>
-                <br class="hidden sm:block">
-                <span class="lang-text" data-th="เบื้องหลังความสำเร็จของลูกค้า&quot;" data-en="The Strength Behind Our Customer's Success&quot;">เบื้องหลังความสำเร็จของลูกค้า"</span>
-            </h2>
-        </div>
-
-        <!-- Layout หลัก -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
-
-            <!-- ฝั่งซ้าย: กล่องข้อมูลติดต่อ -->
-            <div class="bg-[#F7F7F7] rounded-2xl p-6 sm:p-10 md:p-14 shadow-sm contact-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-4 h-[2px] bg-[#008844]"></div>
-                    <span class="lang-text text-[#008844] font-medium text-sm" data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</span>
-                </div>
-
-                <h3 class="lang-text text-3xl sm:text-4xl md:text-[2.5rem] font-black text-black mb-4 tracking-tight leading-[1.3] md:leading-[1.4]" data-th="พร้อมให้บริการคุณ" data-en="Ready to Serve You">พร้อมให้บริการคุณ</h3>
-                <p class="lang-text text-gray-400 text-sm mb-10 md:mb-12" data-th="ทีมงานของเราพร้อมให้คำปรึกษาและตอบทุกข้อสงสัยของคุณ" data-en="Our team is ready to provide advice and answer all your questions">ทีมงานของเราพร้อมให้คำปรึกษาและตอบทุกข้อสงสัยของคุณ</p>
-
-                <div class="space-y-6 md:space-y-8">
-                    <!-- Address -->
-                   <!-- เปลี่ยนจาก div เป็น a และใส่ href, target, rel -->
-<a href="https://maps.google.com/?q=53,53/2+หมู่+3+สวนอุตสาหกรรมอินทรา+ตำบลน้ำตาล+อำเภออินทร์บุรี+จังหวัดสิงห์บุรี+16110" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   class="flex gap-4 md:gap-5 items-start group cursor-pointer block">
-    
-    <!-- ส่วนไอคอน (Hover effect จะทำงานตามปกติเพราะมีคลาส group ที่ตัวแม่) -->
-    <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#008844]/10 group-hover:bg-[#008844] transition-colors duration-300 flex items-center justify-center flex-shrink-0 text-[#008844] group-hover:text-white shadow-sm">
-        <i class="ph-fill ph-map-pin text-xl md:text-2xl"></i>
-    </div>
-    
-    <!-- ส่วนข้อความ -->
-    <div>
-        <!-- เพิ่ม group-hover:text-[#008844] เพื่อให้ตอนเอาเมาส์ชี้ ข้อความเปลี่ยนสีตามไอคอน เป็นการบอกใบ้ว่าคลิกได้ -->
-        <h4 class="lang-text font-bold text-black group-hover:text-[#008844] transition-colors duration-300 text-sm md:text-base mb-1" 
-            data-th="สำนักงานใหญ่" 
-            data-en="Head Office">
-            สำนักงานใหญ่
-        </h4>
-        <p class="text-gray-500 text-sm leading-relaxed">
-            <span class="lang-text" data-th="53,53/2 หมู่ 3 สวนอุตสาหกรรมอินทรา," data-en="53,53/2 Moo 3, Indra Industrial Park,">53,53/2 หมู่ 3 สวนอุตสาหกรรมอินทรา,</span><br>
-            <span class="lang-text" data-th="ตำบลน้ำตาล อำเภออินทร์บุรี จังหวัดสิงห์บุรี 16110 ประเทศไทย" data-en="Namtan, Inburi, Singburi 16110, Thailand">ตำบลน้ำตาล อำเภออินทร์บุรี จังหวัดสิงห์บุรี 16110 ประเทศไทย</span>
-        </p>
-    </div>
-
-</a>
-
-                    <!-- Phone -->
-                    <div class="flex gap-4 md:gap-5 items-start group">
-                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#008844]/10 group-hover:bg-[#008844] transition-colors duration-300 flex items-center justify-center flex-shrink-0 text-[#008844] group-hover:text-white shadow-sm">
-                            <i class="ph-fill ph-phone text-xl md:text-2xl"></i>
+            <div id="trusted-section" class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full scroll-mt-24">
+                <div class="text-left">
+                    <h3 class="lang-text text-3xl md:text-4xl lg:text-5xl font-black text-black mb-10 md:mb-14 leading-[1.3] md:leading-[1.4]"
+                        data-th="ได้รับความไว้วางใจจากผู้เชี่ยวชาญ" data-en="Trusted by specialists">
+                        ได้รับความไว้วางใจจากผู้เชี่ยวชาญ</h3>
+                    <div
+                        class="mb-10 md:mb-14 logo-section opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <div class="flex items-center gap-3 mb-4 md:mb-6">
+                            <div class="w-6 h-[2px] bg-spen-green"></div>
+                            <span class="lang-text text-gray-500 text-sm font-semibold uppercase tracking-wider"
+                                data-th="ลูกค้า" data-en="Customer">ลูกค้า</span>
                         </div>
-                        <div>
-                            <h4 class="lang-text font-bold text-black text-sm md:text-base mb-1" data-th="โทรศัพท์" data-en="Phone">โทรศัพท์</h4>
-                            <p class="lang-text text-gray-500 text-sm leading-relaxed" data-th="036-812-886 ต่อ 29<br>086-339-9079" data-en="+66 (0) 36-812-886 ext 29<br>086-339-9079">
-                                036-812-886 ต่อ 29<br>086-339-9079
-                            </p>
+                        <div class="flex flex-wrap gap-5 sm:gap-6 lg:gap-8 items-center justify-start">
+                            <img src="components/images/Logo_Company_Single/Group 188318.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188319.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188320.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188321.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188325.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188326.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 1883s19.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188328.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188329.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188322.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188323.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188324.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
                         </div>
                     </div>
-
-                    <!-- Email -->
-                    <div class="flex gap-4 md:gap-5 items-start group">
-                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#008844]/10 group-hover:bg-[#008844] transition-colors duration-300 flex items-center justify-center flex-shrink-0 text-[#008844] group-hover:text-white shadow-sm">
-                            <i class="ph-fill ph-envelope-simple text-xl md:text-2xl"></i>
+                    <div
+                        class="mb-10 md:mb-14 logo-section opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <div class="flex items-center gap-3 mb-4 md:mb-6">
+                            <div class="w-6 h-[2px] bg-spen-green"></div>
+                            <span class="lang-text text-gray-500 text-sm font-semibold uppercase tracking-wider"
+                                data-th="ผู้จัดจำหน่ายวัตถุดิบ"
+                                data-en="Material Suppliers">ผู้จัดจำหน่ายวัตถุดิบ</span>
                         </div>
-                        <div>
-                            <h4 class="lang-text font-bold text-black text-sm md:text-base mb-1" data-th="อีเมล" data-en="Email">อีเมล</h4>
-                            <a href="mailto:sale@spen.co.th" class="text-gray-500 text-sm hover:text-[#008844] transition-colors">sale@spen.co.th</a>
+                        <div class="flex flex-wrap gap-5 sm:gap-6 lg:gap-8 items-center justify-start">
+                            <img src="components/images/Logo_Company_Single/Group 188318-1.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188319-1.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188320-1.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188321-1.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188325-1.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188326-1.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 188327-1.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
                         </div>
                     </div>
-
-                    <!-- Fax -->
-                    <div class="flex gap-4 md:gap-5 items-start group">
-                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#008844]/10 group-hover:bg-[#008844] transition-colors duration-300 flex items-center justify-center flex-shrink-0 text-[#008844] group-hover:text-white shadow-sm">
-                            <i class="ph-fill ph-printer text-xl md:text-2xl"></i>
+                    <div
+                        class="mb-10 md:mb-14 logo-section opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <div class="flex items-center gap-3 mb-4 md:mb-6">
+                            <div class="w-6 h-[2px] bg-spen-green"></div>
+                            <span class="lang-text text-gray-500 text-sm font-semibold uppercase tracking-wider"
+                                data-th="ผู้จัดหาเครื่องมือ" data-en="Tooling Suppliers">ผู้จัดหาเครื่องมือ</span>
                         </div>
-                        <div>
-                            <h4 class="lang-text font-bold text-black text-sm md:text-base mb-1" data-th="แฟกซ์" data-en="Fax">แฟกซ์</h4>
-                            <p class="text-gray-500 text-sm">036-812-887</p>
+                        <div class="flex flex-wrap gap-5 sm:gap-6 lg:gap-8 items-center justify-start">
+                            <img src="components/images/Logo_Company_Single/Group 188322z.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
+                            <img src="components/images/Logo_Company_Single/Group 1883s19.png"
+                                class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain hover:scale-110 transition duration-300 drop-shadow-sm hover:drop-shadow-md">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ฝั่งขวา: ฟอร์มส่งข้อความ -->
-            <div class="lg:pt-6 contact-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
-                <h3 class="lang-text text-2xl sm:text-[1.75rem] font-bold text-black mb-6 md:mb-8 tracking-tight leading-[1.3] md:leading-[1.4]" data-th="ส่งข้อความถึงเรา" data-en="Send us a message">ส่งข้อความถึงเรา</h3>
+        </section>
 
-                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4 md:space-y-5">
-                    
-                    <!-- ใส่ Access Key ที่ได้จากอีเมลตรงนี้ -->
-                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+        <section
+            class="min-h-[100svh] lg:min-h-screen flex items-center py-20 md:py-28 text-white relative bg-[url('components/images/Serve/Rectangle.jpg')] bg-cover bg-top bg-no-repeat overflow-hidden">
+            <div class="absolute inset-0 bg-black/30"></div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-                        <div>
-                            <!-- เพิ่มคลาส lang-input สำหรับแปล Placeholder -->
-                            <input type="text" name="First Name" placeholder="ชื่อ*"
-                                class="lang-input w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition"
-                                data-th="ชื่อ*" data-en="First Name*" required>
+            <div class="max-w-[1400px] mx-auto px-5 sm:px-8 w-full relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div id="cert-text-parallax"
+                        class="transition-transform duration-75 ease-out flex flex-col justify-center">
+                        <h2
+                            class="cert-item opacity-0 translate-y-12 transition-all duration-1000 ease-out text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-[1.3] md:leading-[1.4] drop-shadow-md text-balance">
+                            <span class="lang-text block" data-th="การรับรอง" data-en="International">การรับรอง</span>
+                            <span class="lang-text block" data-th="มาตรฐานสากล"
+                                data-en="Certification">มาตรฐานสากล</span>
+                        </h2>
+
+
+                        <div
+                            class="cert-item opacity-0 translate-y-12 transition-all duration-1000 ease-out flex items-center gap-3 md:gap-4 mb-6 drop-shadow-sm">
+                            <div class="w-8 md:w-10 h-[2px] md:h-[3px] bg-spen-green"></div>
+                            <span
+                                class="lang-text text-white font-bold uppercase tracking-wider text-base md:text-lg lg:text-xl break-keep text-balance"
+                                data-th="ได้รับการรับรองระบบการจัดการ" data-en="Management System Certified">
+                                ได้รับการรับรองระบบการจัดการ
+                            </span>
                         </div>
-                        <div>
-                            <input type="text" name="Last Name" placeholder="นามสกุล*"
-                                class="lang-input w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition"
-                                data-th="นามสกุล*" data-en="Last Name*" required>
+
+
+                        <p class="cert-item lang-text opacity-0 translate-y-12 transition-all duration-1000 ease-out text-white/90 drop-shadow-sm mb-6 leading-relaxed text-base md:text-lg lg:text-xl text-pretty break-keep"
+                            data-th="ซึ่งผลิตภัณฑ์ทั้งหมดได้รับการตรวจสอบคุณภาพตลอดกระบวนการผลิตโดยผู้ตรวจสอบที่ผ่านการรับรอง วัตถุดิบที่มีคุณภาพทั้งหมดจะได้รับการตรวจสอบเมื่อมาถึง การตรวจสอบจะดำเนินต่อไปตลอดกระบวนการผลิต ตามด้วยการสุ่มทดสอบผลิตภัณฑ์ โดยใช้เครื่องมือและอุปกรณ์ที่แม่นยำและเทคโนโลยีขั้นสูง พร้อมการจัดการตามมาตรฐานคุณภาพและสิ่งแวดล้อมระดับสากล"
+                            data-en="All products are inspected for quality throughout the production process by the qualified inspector. All high quality raw materials are inspected on arrival. Inspection continues throughout the production process, followed by random testing of products, using accurate and high technology calibration instruments and equipment with management according to international quality and environmental standards.">
+                            ซึ่งผลิตภัณฑ์ทั้งหมดได้รับการตรวจสอบคุณภาพตลอดกระบวนการผลิตโดยผู้ตรวจสอบที่ผ่านการรับรอง
+                            วัตถุดิบที่มีคุณภาพทั้งหมดจะได้รับการตรวจสอบเมื่อมาถึง
+                            การตรวจสอบจะดำเนินต่อไปตลอดกระบวนการผลิต ตามด้วยการสุ่มทดสอบผลิตภัณฑ์
+                            โดยใช้เครื่องมือและอุปกรณ์ที่แม่นยำและเทคโนโลยีขั้นสูง
+                            พร้อมการจัดการตามมาตรฐานคุณภาพและสิ่งแวดล้อมระดับสากล
+                        </p>
+
+
+                        <p class="cert-item lang-text opacity-0 translate-y-12 transition-all duration-1000 ease-out text-white/90 drop-shadow-sm leading-relaxed text-base md:text-lg lg:text-xl text-pretty break-keep"
+                            data-th="บริษัท&nbsp;ซิงเกิ้ล&nbsp;พอยท์&nbsp;เอ็นจิเนียริ่ง&nbsp;จำกัด มุ่งมั่นในการจัดการสิ่งแวดล้อมโดยปฏิบัติตามข้อกำหนดและกฎหมายที่เกี่ยวข้อง เพื่อใช้ทรัพยากรอย่างคุ้มค่า รวมถึงลดมลพิษทางน้ำ มลภาวะทางเสียง มลพิษทางอากาศ การปนเปื้อนในดิน และของเสียต่างๆ ตลอดจนการปรับปรุงและพัฒนาอย่างต่อเนื่องเพื่อรักษาคุณภาพชีวิตที่ดีของพนักงานและชุมชน"
+                            data-en="Single Point Engineering Company Limited commits to environmental management by adhering to the requirements and related law in order to use resources worthily, including reduce water pollution, noise pollution, air pollution, soil contamination and various wastes, as well as continual improvement and development to maintain the good quality of life for employees and communities.">
+                            บริษัท&nbsp;ซิงเกิ้ล&nbsp;พอยท์&nbsp;เอ็นจิเนียริ่ง&nbsp;จำกัด
+                            มุ่งมั่นในการจัดการสิ่งแวดล้อมโดยปฏิบัติตามข้อกำหนดและกฎหมายที่เกี่ยวข้อง
+                            เพื่อใช้ทรัพยากรอย่างคุ้มค่า รวมถึงลดมลพิษทางน้ำ มลภาวะทางเสียง มลพิษทางอากาศ
+                            การปนเปื้อนในดิน และของเสียต่างๆ
+                            ตลอดจนการปรับปรุงและพัฒนาอย่างต่อเนื่องเพื่อรักษาคุณภาพชีวิตที่ดีของพนักงานและชุมชน
+                        </p>
+
+                    </div>
+                    <div
+                        class="cert-item opacity-0 translate-y-12 transition-all duration-1000 ease-out relative flex flex-col items-center justify-center mt-12 md:mt-16 lg:mt-0">
+                        <!-- คงสัดส่วนกรอบไว้ตามเดิม -->
+                        <div class="w-full max-w-lg mx-auto aspect-[7/10] relative overflow-hidden rounded-2xl shadow-2xl bg-black/20 backdrop-blur-md border border-white/10"
+                            id="cert-slider">
+
+                            <div
+                                class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
+                                <!-- เปลี่ยน object-contain เป็น object-cover -->
+                                <img src="components/images/certificate/Certifacate IATF16949-2016 (No.0500292)_page-0001.jpg"
+                                    alt="Green Industry Certificate" class="w-full h-full object-cover">
+                            </div>
+
+                            <div
+                                class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
+                                <img src="components/images/certificate/Certifacate ISO9001-2015 (No.10583763)_page-0001.jpg"
+                                    alt="ISO 9001" class="w-full h-full object-cover">
+                            </div>
+
+                            <div
+                                class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
+                                <img src="components/images/certificate/Certifacate ISO13485-2016 (No.IC-MD-2602169)_page-0001.jpg"
+                                    alt="ISO 14001" class="w-full h-full object-cover">
+                            </div>
+
+                            <div
+                                class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
+                                <img src="components/images/certificate/Certifacate ISO14001-2015 (No.EMS0709-268)_page-0002.jpg"
+                                    alt="IATF 16949" class="w-full h-full object-cover">
+                            </div>
+
+                            <div
+                                class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
+                                <img src="components/images/certificate/Certifacate ISO14064-1-2018 (No.CFV842007)_page-0001.jpg"
+                                    alt="ISO 45001" class="w-full h-full object-cover">
+                            </div>
+
+                            <div
+                                class="cert-slide absolute inset-0 w-full h-full transform translate-x-full transition-transform duration-700 ease-in-out flex items-center justify-center">
+                                <img src="components/images/certificate/GREEN INDUSTRY 24-27.jpg" alt="GREEN INDUSTRY"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                        </div>
+
+                        <div class="flex justify-center items-center mt-6 lg:mt-8 gap-3 h-6" id="cert-dots">
                         </div>
                     </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-                        <div>
-                            <input type="email" name="Email" placeholder="อีเมล*"
-                                class="lang-input w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition"
-                                data-th="อีเมล*" data-en="Email*" required>
-                        </div>
-                        <div>
-                            <input type="tel" name="Phone Number" placeholder="เบอร์โทรศัพท์*"
-                                class="lang-input w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition"
-                                data-th="เบอร์โทรศัพท์*" data-en="Phone Number*" required>
-                        </div>
-                    </div>
-
-                    <div>
-                        <textarea name="Message" placeholder="เขียนข้อความของคุณที่นี่..." rows="5"
-                            class="lang-input w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition resize-none"
-                            data-th="เขียนข้อความของคุณที่นี่..." data-en="Message Here..."></textarea>
-                    </div>
-
-                    <div>
-                        <button type="submit"
-                            class="w-full sm:w-auto justify-center bg-gradient-to-r from-[#00552b] to-[#008844] hover:from-[#004724] hover:to-[#007339] text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-green-900/20 hover:shadow-green-900/40 hover:-translate-y-1">
-                            <span class="lang-text" data-th="ส่งข้อความ" data-en="Send Message">ส่งข้อความ</span>
-                            <i class="ph ph-arrow-right text-base font-bold"></i>
-                        </button>
-                    </div>
-                </form>
+                </div>
             </div>
+        </section>
 
-        </div>
-    </div>
-</section>
+        <section class="py-20 md:py-24 bg-white overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-8 w-full">
+                <div
+                    class="text-center mb-16 contact-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-[2.5rem] font-black text-black leading-[1.3] md:leading-[1.4] tracking-tight">
+                        <span class="lang-text" data-th="&quot;เราภูมิใจที่ได้เป็น"
+                            data-en="&quot;We Are Proud To Be">"เราภูมิใจที่ได้เป็น</span>
+                        <br class="hidden sm:block">
+                        <span class="lang-text" data-th="เบื้องหลังความสำเร็จของลูกค้า&quot;"
+                            data-en="The Strength Behind Our Customer's Success&quot;">เบื้องหลังความสำเร็จของลูกค้า"</span>
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+                    <div
+                        class="bg-[#F7F7F7] rounded-2xl p-6 sm:p-10 md:p-14 shadow-sm contact-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-4 h-[2px] bg-[#008844]"></div>
+                            <span class="lang-text text-[#008844] font-medium text-sm" data-th="ติดต่อเรา"
+                                data-en="Contact Us">ติดต่อเรา</span>
+                        </div>
 
-</main>
+                        <h3 class="lang-text text-3xl sm:text-4xl md:text-[2.5rem] font-black text-black mb-4 tracking-tight leading-[1.3] md:leading-[1.4]"
+                            data-th="พร้อมให้บริการคุณ" data-en="Ready to Serve You">พร้อมให้บริการคุณ</h3>
+                        <p class="lang-text text-gray-400 text-sm mb-10 md:mb-12"
+                            data-th="ทีมงานของเราพร้อมให้คำปรึกษาและตอบทุกข้อสงสัยของคุณ"
+                            data-en="Our team is ready to provide advice and answer all your questions">
+                            ทีมงานของเราพร้อมให้คำปรึกษาและตอบทุกข้อสงสัยของคุณ</p>
 
+                        <div class="space-y-6 md:space-y-8">
+                            <a href="https://maps.google.com/?q=53,53/2+หมู่+3+สวนอุตสาหกรรมอินทรา+ตำบลน้ำตาล+อำเภออินทร์บุรี+จังหวัดสิงห์บุรี+16110"
+                                target="_blank" rel="noopener noreferrer"
+                                class="flex gap-4 md:gap-5 items-start group cursor-pointer block">
+                                <div
+                                    class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#008844]/10 group-hover:bg-[#008844] transition-colors duration-300 flex items-center justify-center flex-shrink-0 text-[#008844] group-hover:text-white shadow-sm">
+                                    <i class="ph-fill ph-map-pin text-xl md:text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="lang-text font-bold text-black group-hover:text-[#008844] transition-colors duration-300 text-sm md:text-base mb-1"
+                                        data-th="สำนักงานใหญ่" data-en="Head Office">
+                                        สำนักงานใหญ่
+                                    </h4>
+                                    <p class="text-gray-500 text-sm leading-relaxed">
+                                        <span class="lang-text" data-th="53,53/2 หมู่ 3 สวนอุตสาหกรรมอินทรา,"
+                                            data-en="53,53/2 Moo 3, Indra Industrial Park,">53,53/2 หมู่ 3
+                                            สวนอุตสาหกรรมอินทรา,</span><br>
+                                        <span class="lang-text"
+                                            data-th="ตำบลน้ำตาล อำเภออินทร์บุรี จังหวัดสิงห์บุรี 16110 ประเทศไทย"
+                                            data-en="Namtan, Inburi, Singburi 16110, Thailand">ตำบลน้ำตาล
+                                            อำเภออินทร์บุรี จังหวัดสิงห์บุรี 16110 ประเทศไทย</span>
+                                    </p>
+                                </div>
 
+                            </a>
+
+                            <!-- Phone -->
+                            <div class="flex gap-4 md:gap-5 items-start group">
+                                <div
+                                    class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#008844]/10 group-hover:bg-[#008844] transition-colors duration-300 flex items-center justify-center flex-shrink-0 text-[#008844] group-hover:text-white shadow-sm">
+                                    <i class="ph-fill ph-phone text-xl md:text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="lang-text font-bold text-black text-sm md:text-base mb-1"
+                                        data-th="โทรศัพท์" data-en="Phone">โทรศัพท์</h4>
+                                    <p class="lang-text text-gray-500 text-sm leading-relaxed"
+                                        data-th="036-812-886 ต่อ 29<br>086-339-9079"
+                                        data-en="+66 (0) 36-812-886 ext 29<br>086-339-9079">
+                                        036-812-886 ต่อ 29<br>086-339-9079
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="flex gap-4 md:gap-5 items-start group">
+                                <div
+                                    class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#008844]/10 group-hover:bg-[#008844] transition-colors duration-300 flex items-center justify-center flex-shrink-0 text-[#008844] group-hover:text-white shadow-sm">
+                                    <i class="ph-fill ph-envelope-simple text-xl md:text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="lang-text font-bold text-black text-sm md:text-base mb-1" data-th="อีเมล"
+                                        data-en="Email">อีเมล</h4>
+                                    <a href="mailto:sale@spen.co.th"
+                                        class="text-gray-500 text-sm hover:text-[#008844] transition-colors">sale@spen.co.th</a>
+                                </div>
+                            </div>
+
+                            <!-- Fax -->
+                            <div class="flex gap-4 md:gap-5 items-start group">
+                                <div
+                                    class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#008844]/10 group-hover:bg-[#008844] transition-colors duration-300 flex items-center justify-center flex-shrink-0 text-[#008844] group-hover:text-white shadow-sm">
+                                    <i class="ph-fill ph-printer text-xl md:text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="lang-text font-bold text-black text-sm md:text-base mb-1" data-th="แฟกซ์"
+                                        data-en="Fax">แฟกซ์</h4>
+                                    <p class="text-gray-500 text-sm">036-812-887</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:pt-6 contact-item opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                        <h3 class="lang-text text-2xl sm:text-[1.75rem] font-bold text-black mb-6 md:mb-8 tracking-tight leading-[1.3] md:leading-[1.4]"
+                            data-th="ส่งข้อความถึงเรา" data-en="Send us a message">ส่งข้อความถึงเรา</h3>
+
+                        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4 md:space-y-5">
+                            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                                <div>
+                                    <input type="text" name="First Name" placeholder="ชื่อ*"
+                                        class="lang-input w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition"
+                                        data-th="ชื่อ*" data-en="First Name*" required>
+                                </div>
+                                <div>
+                                    <input type="text" name="Last Name" placeholder="นามสกุล*"
+                                        class="lang-input w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition"
+                                        data-th="นามสกุล*" data-en="Last Name*" required>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                                <div>
+                                    <input type="email" name="Email" placeholder="อีเมล*"
+                                        class="lang-input w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition"
+                                        data-th="อีเมล*" data-en="Email*" required>
+                                </div>
+                                <div>
+                                    <input type="tel" name="Phone Number" placeholder="เบอร์โทรศัพท์*"
+                                        class="lang-input w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition"
+                                        data-th="เบอร์โทรศัพท์*" data-en="Phone Number*" required>
+                                </div>
+                            </div>
+
+                            <div>
+                                <textarea name="Message" placeholder="เขียนข้อความของคุณที่นี่..." rows="5"
+                                    class="lang-input w-full px-5 py-3.5 md:py-4 bg-[#f4f5f7] border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008844] text-sm text-gray-700 placeholder-gray-400 transition resize-none"
+                                    data-th="เขียนข้อความของคุณที่นี่..." data-en="Message Here..."></textarea>
+                            </div>
+
+                            <div>
+                                <button type="submit"
+                                    class="w-full sm:w-auto justify-center bg-gradient-to-r from-[#00552b] to-[#008844] hover:from-[#004724] hover:to-[#007339] text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-green-900/20 hover:shadow-green-900/40 hover:-translate-y-1">
+                                    <span class="lang-text" data-th="ส่งข้อความ"
+                                        data-en="Send Message">ส่งข้อความ</span>
+                                    <i class="ph ph-arrow-right text-base font-bold"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <div id="footer-placeholder"></div>
-<script src="components/js/main.js" defer></script>
-
+    <script src="components/js/main.js" defer></script>
 </body>
 
 </html>
